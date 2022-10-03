@@ -1,0 +1,757 @@
+/* FONTS */
+@font-face {
+  font-family: 'OpenSans-Regular';
+  src: local('OpenSans-Regular'),
+    url(../fonts/OpenSans-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'OpenSans-SemiBold';
+  src: local('OpenSans-SemiBold'),
+    url(../fonts/OpenSans-SemiBold.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'OpenSans-Bold';
+  src: local('OpenSans-Bold'),
+    url(../fonts/OpenSans-Bold.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'OpenSans-ExtraBold';
+  src: local('OpenSans-ExtraBold'),
+    url(../fonts/OpenSans-ExtraBold.ttf) format('truetype');
+}
+
+/* GENERAL STYLES */
+/* SCROLLBAR */
+::-webkit-scrollbar {
+  width: 13px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#c2157d, #e8380d);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(#9e1266, #b92d0a);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #10060f;
+  color: #ffffff;
+  font-family: OpenSans-SemiBold;
+  overflow-x: hidden;
+}
+
+footer span {
+  color: #8a8a8a;
+}
+
+footer a {
+  height: 24px;
+  text-decoration: none;
+  width: 24px;
+}
+
+/* SHANELLE STYLES */
+
+/* GENERAL */
+.shanelle-header {
+  background: linear-gradient(269.58deg, #c2157d 25.33%, #e8380d 82.24%);
+  font-size: 16px;
+  font-weight: 700;
+  height: 65px;
+  text-transform: uppercase;
+}
+
+.shanelle-loader {
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  left: 46%;
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.shanelle-rotated-text {
+  -moz-transform-origin: left center;
+  -moz-transform: rotate(-90deg);
+  -ms-transform-origin: left center;
+  -ms-transform: rotate(-90deg);
+  -o-transform-origin: left center;
+  -o-transform: rotate(-90deg);
+  -webkit-transform-origin: left center;
+  -webkit-transform: rotate(-90deg);
+  position: absolute;
+  transform-origin: left center;
+  transform: rotate(-90deg);
+  white-space: nowrap;
+}
+
+.shanelle-regular-text {
+  font-family: OpenSans-Regular;
+}
+
+.shanelle-bold-text {
+  font-family: OpenSans-Bold;
+}
+
+.shanelle-extra-bold-text {
+  font-family: OpenSans-ExtraBold;
+}
+
+.shanelle-container::before {
+  -webkit-mask-composite: xor;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  background: linear-gradient(180deg, #c2157d 0%, #e8380d 100%);
+  border-radius: 10px;
+  content: '';
+  inset: 0;
+  mask: initial;
+  mask-composite: exclude;
+  padding: 4px;
+  position: absolute;
+  width: 100%;
+}
+
+/* HOME */
+.shanelle-background-home {
+  background-image: url('../images/home/background-home.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.shanelle-catchphrase {
+  color: #473245;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 400;
+  height: 108px;
+  line-height: 27px;
+  width: 440px;
+}
+
+.shanelle-service-container {
+  background: linear-gradient(
+    rgba(194, 21, 125, 0.3) 0%,
+    rgba(232, 56, 13, 0.3) 100%
+  );
+  border-radius: 10px;
+  position: relative;
+}
+
+.shanelle-service-container h1 {
+  left: -0.5%;
+  top: 85%;
+}
+
+.shanelle-services {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 22px;
+  list-style: none;
+}
+
+/* PROJECTS */
+video {
+  border-radius: 10px;
+  width: 924px;
+}
+
+.shanelle-projects-title {
+  left: -2.5%;
+  top: 18%;
+}
+
+.shanelle-project-overlay {
+  background-color: rgba(16, 6, 15, 0.9);
+  border-radius: 10px;
+  bottom: 0;
+  color: white;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+}
+
+.shanelle-project-overlay::before {
+  opacity: 1;
+  z-index: 0;
+}
+
+.shanelle-project-overlay a {
+  position: absolute;
+  bottom: 4%;
+  right: 8%;
+}
+
+.shanelle-project-title {
+  font-size: 18px;
+}
+
+.shanelle-project-container:hover .shanelle-project-overlay {
+  opacity: 1;
+}
+
+.shanelle-projects-award-icon {
+  place-self: center;
+  right: 0;
+}
+
+.shanelle-award-background {
+  background: linear-gradient(
+    rgba(194, 21, 125, 0.3) 0%,
+    rgba(232, 56, 13, 0.3) 100%
+  );
+  height: 382px;
+  place-self: center;
+  position: absolute;
+  z-index: -1;
+}
+
+.shanelle-projects-award-text-container {
+  justify-content: center;
+  align-items: center;
+}
+
+.shanelle-projects-award-text-container p {
+  color: white;
+  font-style: italic;
+  text-align: justify;
+}
+
+.shanelle-projects-award {
+  line-height: 30px;
+}
+
+/* ABOUT US */
+.shanelle-about-us-container {
+  padding: 30px;
+  width: 90%;
+}
+
+.shanelle-about-us-container::before {
+  opacity: 0.6;
+  z-index: -1;
+}
+
+.shanelle-mission-vision-container::after,
+.shanelle-values-container::after {
+  border-color: #10060f;
+  border-style: solid;
+  content: '';
+  position: absolute;
+  width: 25%;
+}
+
+.shanelle-mission-vision-container::after {
+  border-width: 0 0 6px 6px;
+  bottom: 0;
+  height: 75%;
+  left: 0;
+}
+
+.shanelle-values-container::after {
+  border-width: 6px 6px 0 0;
+  height: 50%;
+  right: 0;
+  top: 0;
+}
+
+.shanelle-values-container h1 {
+  top: -12%;
+  right: 2%;
+  background: #10060f;
+  z-index: 1;
+}
+
+.shanelle-about-us-container .shanelle-rotated-text {
+  left: -5%;
+  top: 110%;
+}
+
+.shanelle-about-us-container h1 {
+  color: #473245;
+}
+
+.shanelle-about-us-container .shanelle-name {
+  background: #10060f;
+}
+
+.shanelle-about-us-container .shana {
+  top: -5%;
+  right: 5%;
+}
+
+.shanelle-about-us-container .michelle {
+  right: 15%;
+  bottom: -8%;
+}
+
+.shanelle-about-us-container p {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 22px;
+  text-align: justify;
+}
+
+.black-line {
+  background: #10060f;
+  bottom: 0;
+  left: 0;
+}
+
+.vertical-line {
+  width: 6px;
+}
+
+.horizontal-line {
+  height: 6px;
+}
+
+/* PRESS */
+.shanelle-press-title {
+  left: -1.5%;
+  top: 9%;
+}
+
+.shanelle-card {
+  background: #fcddec;
+  border-radius: 10px;
+  border: none;
+  font-style: italic;
+  font-weight: 600;
+  height: 385px;
+  position: relative;
+}
+
+.shanelle-card p {
+  color: #000000;
+  font-size: 14px;
+  line-height: 19px;
+  text-align: justify;
+}
+
+.shanelle-card a {
+  bottom: 5%;
+  font-size: 14px;
+  line-height: 16px;
+  position: absolute;
+  right: 5%;
+}
+
+/* CONTACT */
+.shanelle-contact-container {
+  background-image: url('../images/contact/contact-bg.svg');
+  background-position: 0% 20%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  height: 85vh;
+}
+
+.shanelle-contact-form-title {
+  text-transform: uppercase;
+}
+
+.shanelle-contact-form-container .form-control {
+  background: #d9d9d9;
+}
+
+.shanelle-contact-form-container .btn,
+.shanelle-contact-form-container .form-control {
+  border-radius: 10px;
+}
+
+.shanelle-contact-form-container .form-control:hover,
+.shanelle-contact-form-container .form-control:focus {
+  transform: scale(1.01);
+}
+
+.shanelle-contact-form-container .form-control:focus {
+  border-color: #d962a6;
+}
+
+.shanelle-contact-form-container .btn {
+  background: #d962a6;
+  border-color: #d962a6;
+  font-size: 20px;
+  outline: none;
+  text-transform: uppercase;
+}
+
+.shanelle-contact-form-container .btn:hover {
+  background: #f991cc;
+}
+
+/* UTILITIES STYLES */
+.mt-6 {
+  margin-top: 5rem !important;
+}
+
+.mt-7 {
+  margin-top: 6rem !important;
+}
+
+.mb-6 {
+  margin-bottom: 5rem !important;
+}
+
+.mb-7 {
+  margin-bottom: 6rem !important;
+}
+
+.animate__delay-0-5s {
+  animation-delay: 0.5s;
+}
+
+.animate__delay-1-5s {
+  animation-delay: 1.5s;
+}
+
+.animate__delay-2-5s {
+  animation-delay: 2.5s;
+}
+
+.link {
+  color: #d962a6;
+  text-decoration: none;
+}
+
+.link:hover {
+  -ms-filter: brightness(130%);
+  -webkit-filter: brightness(130%);
+  color: #d962a6;
+  filter: brightness(130%);
+}
+
+.float-right {
+  float: right;
+}
+
+/* TRANSITION STYLES */
+.transition {
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.scale:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.4));
+}
+
+.scale-1-2:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.4));
+}
+
+.brightness-200:hover {
+  -ms-filter: brightness(200%);
+  -webkit-filter: brightness(200%);
+  filter: brightness(200%);
+}
+
+.w-60 {
+  width: 60% !important;
+}
+
+/* RESPONSIVE STYLES */
+/* SMALL LAPTOPS */
+@media (min-width: 1024px) and (max-width: 1300px) {
+  /* SHANELLE STYLE */
+  /* HOME */
+  .shanelle-background-home {
+    background-position: top;
+    background-size: 110%;
+  }
+
+  .shanelle-service-container {
+    margin-top: -30px;
+  }
+
+  /* PROJECTS */
+  .shanelle-projects-title {
+    left: -1.5%;
+  }
+
+  .shanelle-award-background {
+    height: 350px;
+  }
+}
+
+/* LARGE SCREENS */
+@media (min-width: 2000px) {
+  /* SHANELLE STYLE */
+  /* CONTACT */
+  .shanelle-contact-container {
+    height: 70vh;
+  }
+}
+
+/* TABLET */
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* GENERAL STYLES */
+  body {
+    overflow-x: hidden;
+  }
+
+  .absolute-footer {
+    position: absolute;
+    width: 670px;
+    bottom: 3%;
+  }
+
+  /* SHANELLE STYLES */
+  /* HOME */
+  .shanelle-catchphrase {
+    width: 100%;
+  }
+
+  .shanelle-service-container {
+    margin: -4% 10px 0 10px;
+  }
+
+  .shanelle-second-service-container {
+    top: -5%;
+  }
+
+  .shanelle-service-container h1 {
+    top: 45%;
+  }
+
+  /* PROJECTS */
+  video {
+    width: 504px;
+  }
+
+  .shanelle-projects-title {
+    font-size: 36px;
+    left: 2.5%;
+    position: absolute;
+    top: -3%;
+  }
+
+  .shanelle-project-container .shanelle-container::before {
+    content: none;
+  }
+
+  .shanelle-projects-award-image {
+    width: 412px;
+    top: 15%;
+  }
+
+  .shanelle-projects-award-icon {
+    right: 0%;
+    top: 10%;
+  }
+
+  .shanelle-award-background {
+    height: 600px;
+  }
+
+  /* ABOUTS US */
+  .shanelle-about-us-container .shanelle-name {
+    background: transparent;
+  }
+
+  .shanelle-about-us-image-container {
+    height: 270px;
+  }
+
+  .shanelle-about-us-image-container img {
+    top: -30%;
+  }
+
+  /* PRESS */
+  .shanelle-press-title {
+    left: 3%;
+    top: -3%;
+  }
+
+  .shanelle-card {
+    height: 355px;
+  }
+}
+
+/* TABLET LANDSCAPE */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
+  /* GENERAL STYLES */
+  .absolute-footer {
+    margin-bottom: 1.5rem !important;
+    margin-top: 1.5rem !important;
+    position: relative;
+    width: 100%;
+  }
+
+  /* SHANELLE STYLES */
+  /* HOME */
+  .shanelle-catchphrase {
+    margin-top: 1% !important;
+  }
+
+  .shanelle-service-container {
+    margin: -5% 10px 0 10px;
+  }
+
+  .shanelle-service-container h1 {
+    top: 65%;
+  }
+
+  .shanelle-second-service-container {
+    top: 0;
+  }
+
+  /* PROJECTS */
+  .shanelle-award-background {
+    height: 400px;
+  }
+
+  .shanelle-projects-award-image {
+    top: 0%;
+    width: 450px;
+  }
+
+  .shanelle-projects-award-text-container p {
+    padding: 0 !important;
+    padding-right: 25% !important;
+    margin-left: 1rem;
+  }
+
+  #projects-section footer {
+    margin-top: 4rem !important;
+    margin-bottom: 2rem !important;
+  }
+
+  /* ABOUT US */
+  .shanelle-values-container h1 {
+    top: -10%;
+  }
+
+  .shanelle-about-us-container .shanelle-name {
+    background: #10060f;
+  }
+
+  .shanelle-about-us-container .michelle {
+    bottom: -7%;
+  }
+
+  .shanelle-about-us-image-container img {
+    top: 10%;
+    width: 90%;
+  }
+
+  /* PRESS */
+  #press-section footer {
+    margin-top: 1rem !important;
+    margin-bottom: 2rem !important;
+  }
+
+  /* CONTACT */
+  .shanelle-contact-container {
+    background-image: url(/src/assets/images/contact/contact-bg-tablet-landscape.svg);
+    background-position: 50px 0px;
+  }
+}
+
+/* PHONE */
+@media only screen and (max-width: 767px) {
+  /* GENERAL STYLES */
+  .shanelle-mobile-menu {
+    background: linear-gradient(90.41deg, #e8380d 0%, #c2157d 100%);
+    border-radius: 0px 0px 0px 10px;
+    right: 0;
+    width: 153px;
+    z-index: 1;
+  }
+
+  .shanelle-mobile-menu ul {
+    list-style: none;
+  }
+
+  .shanelle-mobile-menu li {
+    line-height: 50px;
+    text-transform: uppercase;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .scale:hover {
+    transform: none;
+    filter: none;
+  }
+
+  /* SHANELLE STYLES */
+  /* HOME */
+  .shanelle-catchphrase {
+    font-size: 15px;
+  }
+
+  .shanelle-service-container {
+    background: transparent;
+  }
+
+  .shanelle-services {
+    padding-left: 0;
+  }
+
+  .check-icon {
+    margin-left: -5px;
+  }
+
+  /* PROJECTS */
+  .shanelle-project-container .shanelle-container::before {
+    content: none;
+  }
+
+  .shanelle-award-background {
+    height: 640px;
+    place-self: flex-end;
+  }
+
+  /* ABOUT US */
+  .shanelle-about-us-container {
+    padding: 10px;
+  }
+
+  .shanelle-about-us-container::before,
+  .shanelle-about-us-container::after {
+    content: none;
+  }
+
+  .shanelle-about-us-container .shanelle-name {
+    background: transparent;
+    font-size: 20px;
+  }
+
+  .shanelle-about-us-container p {
+    font-size: 14px;
+  }
+
+  /* PRESS */
+  .shanelle-card {
+    height: 365px;
+  }
+
+  /* CONTACT */
+  .shanelle-form-thanks {
+    line-height: 33px;
+    color: #473245;
+  }
+}
