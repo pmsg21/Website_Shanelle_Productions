@@ -1,11 +1,13 @@
 import { MutableRefObject, useEffect, useState } from 'react';
 
-export const useDetectScrollTop = (ref: MutableRefObject<HTMLDivElement>) => {
+export const useDetectScrollTop = (
+  ref: MutableRefObject<HTMLDivElement | HTMLVideoElement>
+) => {
   const [isTopOfElement, setIsTopOfElement] = useState(false);
 
   const trackScrolling = () => {
     setIsTopOfElement(
-      window.scrollY + window.innerHeight >= ref.current.offsetTop
+      window.scrollY + window.innerHeight >= ref.current?.offsetTop
     );
   };
 

@@ -492,6 +492,11 @@ video {
   .shanelle-award-background {
     height: 350px;
   }
+
+  /* ABOUT US */
+  .shanelle-about-us-container .michelle {
+    bottom: -6%;
+  }
 }
 
 /* LARGE SCREENS */
@@ -519,6 +524,7 @@ video {
   /* SHANELLE STYLES */
   /* HOME */
   .shanelle-catchphrase {
+    font-size: 18px;
     width: 100%;
   }
 

@@ -48,11 +48,7 @@ export const Contact = () => {
             >
               <h1
                 className={`mt-${
-                  screenWidth > 1024 && screenWidth < 1300
-                    ? '0'
-                    : screenWidth > 1299
-                    ? '6'
-                    : '3'
+                  screenWidth > 1024 && screenWidth < 1300 ? '0' : '4'
                 } shanelle-${
                   screenWidth > 767 ? 'extra-' : ''
                 }bold-text mb-4 shanelle-contact-form-title`}

@@ -15,7 +15,7 @@ export const persons: Person[] = [
     imageAlt: 'Shana Headshot',
     imagePhone: ShanaPhone,
     imdb: 'https://www.imdb.com/name/nm10097060/?ref_=nv_sr_srsg_0',
-    secondParagraph: `She was born and raised in Caracas, Venezuela. Fluent in English, Spanish, and speaks intermediate French. She's an Associate of Arts in Sound Design For Visual Media And Sound Production for Audiovisuals.`,
+    secondParagraph: `She was born and raised in Caracas, Venezuela. Fluent in English, Spanish, and speaks intermediate French. She's an Associate of Arts in Sound Design For Visual Media and Sound Production for Audiovisuals.`,
     thirdParagraph: `Awarded academic-based Honorific Mentions from 2017 to 2019, Best Short Film in an Audiovisual Marathon in 2016, and Best Sound for Sci-Fi Scene in 2017, among others. She's also known for pursuing a singing career in a renowned Venezuelan musical group from 2013 to 2016.`,
     title: 'Alexandra Alvarez Pilonieta',
     titleClass: 'shana',

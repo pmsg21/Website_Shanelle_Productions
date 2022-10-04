@@ -14,6 +14,10 @@ export const ProjectCard = ({
 }: Project) => {
   const [isOpen, setIsOpen] = useState(false);
   const { screenWidth } = useScreenDimensions();
+  description =
+    screenWidth < 1025
+      ? description.substring(0, 1).toLowerCase() + description.substring(1)
+      : description;
 
   const getProjectFooter = () => {
     return (

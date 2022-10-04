@@ -13,13 +13,13 @@ export const ServicesListItem = ({ description }: ServicesListItemProps) => {
           xs={1}
           md={1}
           lg={1}
-          className={`pe-${screenWidth > 768 ? '0' : '2'}`}
+          className={`pe-${screenWidth > 767 ? '0' : '2'}`}
         >
           <Image
             src={Check}
             alt="Check icon"
             className={`me-2 transition scale-1-2 check-icon ${
-              screenWidth > 768 ? 'd-block m-auto pt-1' : ''
+              screenWidth > 767 ? 'd-block m-auto pt-1' : ''
             }`}
           />
         </Col>
@@ -27,7 +27,7 @@ export const ServicesListItem = ({ description }: ServicesListItemProps) => {
           xs={11}
           md={11}
           lg={11}
-          className={`ps-${screenWidth > 768 && !isPortrait ? '0' : '2'}`}
+          className={`ps-${screenWidth > 767 && !isPortrait ? '0' : '2'}`}
         >
           {description}
         </Col>

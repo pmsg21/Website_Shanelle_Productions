@@ -5,7 +5,7 @@ import { projects } from '../data/projects';
 import { useDetectScrollTop } from '../hooks/useDetectScrollTop';
 import { useRef, MutableRefObject } from 'react';
 import { useScreenDimensions } from '../hooks/useScreenDimensions';
-import ProjectsVideo from '../assets/images/projects/shanelle-productions-logo-reveal-landscape.mp4';
+import { Video } from '../components/projects/Video';
 import ShanelleYoutubeAward from '../assets/images/projects/shanelle-youtube-award.svg';
 import ShanelleYoutubeAwardIcon from '../assets/images/projects/shanelle-youtube-award-icon.svg';
 import ShanelleYoutubeAwardPhone from '../assets/images/projects/shanelle-youtube-award-phone.svg';
@@ -25,17 +25,7 @@ export const Projects = () => {
         {screenWidth < 768 ? (
           <h1 className="shanelle-bold-text text-uppercase ps-5">Projects</h1>
         ) : null}
-        <video
-          autoPlay
-          className={`${
-            screenWidth < 768 ? 'w-100 mt-3 mb-4' : 'mb-7'
-          } d-block m-auto animate__animated animate__fadeIn transition scale`}
-          loop
-          muted
-        >
-          <source src={ProjectsVideo} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+        <Video />
         <Row
           md={2}
           xs={1}
