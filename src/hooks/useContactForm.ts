@@ -48,8 +48,7 @@ export const useContactForm = (initialState: ContactForm) => {
     const { name, email, message } = values;
 
     axios({
-      // url: 'https://formspree.io/f/myyvwpdp',
-      url: 'https://formspree.io/f/mleadrwo',
+      url: 'https://formspree.io/f/myyvwpdp',
       method: 'post',
       headers: {
         Accept: 'application/json',
