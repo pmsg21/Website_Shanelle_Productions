@@ -37,9 +37,9 @@ export const Contact = () => {
             <Col></Col>
             <Col
               className={`mt-${
-                (screenWidth > 1024 && screenWidth < 1300) || isTabletPortrait
+                (screenWidth > 1024 && screenWidth < 1301) || isTabletPortrait
                   ? '6'
-                  : screenWidth > 1299
+                  : screenWidth > 1300
                   ? '7'
                   : '0'
               } ${
@@ -48,7 +48,7 @@ export const Contact = () => {
             >
               <h1
                 className={`mt-${
-                  screenWidth > 1024 && screenWidth < 1300 ? '0' : '4'
+                  screenWidth > 1024 && screenWidth < 1301 ? '0' : '4'
                 } shanelle-${
                   screenWidth > 767 ? 'extra-' : ''
                 }bold-text mb-4 shanelle-contact-form-title`}
@@ -74,7 +74,7 @@ export const Contact = () => {
           className={`${
             screenWidth > 767 && screenWidth < 1025
               ? 'absolute-footer'
-              : 'mt-5 mb-3'
+              : `mt-${screenWidth > 1300 ? '8' : '5'} mb-3`
           } animate__animated animate__fadeIn animate__delay-0-5s`}
         />
       </Container>

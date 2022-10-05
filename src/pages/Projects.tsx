@@ -6,9 +6,9 @@ import { useDetectScrollTop } from '../hooks/useDetectScrollTop';
 import { useRef, MutableRefObject } from 'react';
 import { useScreenDimensions } from '../hooks/useScreenDimensions';
 import { Video } from '../components/projects/Video';
-import ShanelleYoutubeAward from '../assets/images/projects/shanelle-youtube-award.svg';
+import ShanelleYoutubeAward from '../assets/images/projects/shanelle-youtube-award.png';
 import ShanelleYoutubeAwardIcon from '../assets/images/projects/shanelle-youtube-award-icon.svg';
-import ShanelleYoutubeAwardPhone from '../assets/images/projects/shanelle-youtube-award-phone.svg';
+import ShanelleYoutubeAwardPhone from '../assets/images/projects/shanelle-youtube-award-phone.png';
 
 export const Projects = () => {
   const awardsContainerRef = useRef() as MutableRefObject<HTMLDivElement>;

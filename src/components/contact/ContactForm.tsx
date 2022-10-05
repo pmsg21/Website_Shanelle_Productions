@@ -29,9 +29,11 @@ export const ContactForm = () => {
   const { screenWidth, isPortrait } = useScreenDimensions();
   const isTabletPortrait =
     screenWidth > 767 && screenWidth < 1025 && isPortrait;
+  const isSmallScreen =
+    isTabletPortrait || (screenWidth > 1024 && screenWidth < 1301);
 
   const getFeedbackMessage = () => {
-    if (isTabletPortrait) {
+    if (isSmallScreen) {
       return (
         <ToastContainer className="p-3" position="bottom-end">
           <Toast delay={4000} autohide bg={isSuccessful ? 'success' : 'danger'}>
@@ -67,7 +69,7 @@ export const ContactForm = () => {
       onSubmit={handleSubmit}
     >
       <Form.Group
-        className={`mb-4 ${isTabletPortrait ? 'position-relative' : ''}`}
+        className={`mb-4 ${isSmallScreen ? 'position-relative' : ''}`}
         controlId="name"
       >
         <Form.Control
@@ -80,12 +82,12 @@ export const ContactForm = () => {
           type="text"
           value={name}
         />
-        <Form.Control.Feedback type="invalid" tooltip={isTabletPortrait}>
+        <Form.Control.Feedback type="invalid" tooltip={isSmallScreen}>
           Please enter your name.
         </Form.Control.Feedback>
       </Form.Group>
       <Form.Group
-        className={`mb-4 ${isTabletPortrait ? 'position-relative' : ''}`}
+        className={`mb-4 ${isSmallScreen ? 'position-relative' : ''}`}
         controlId="email"
       >
         <Form.Control
@@ -99,12 +101,12 @@ export const ContactForm = () => {
           type="email"
           value={email}
         />
-        <Form.Control.Feedback type="invalid" tooltip={isTabletPortrait}>
+        <Form.Control.Feedback type="invalid" tooltip={isSmallScreen}>
           Please enter a valid email.
         </Form.Control.Feedback>
       </Form.Group>
       <Form.Group
-        className={`mb-4 ${isTabletPortrait ? 'position-relative' : ''}`}
+        className={`mb-4 ${isSmallScreen ? 'position-relative' : ''}`}
         controlId="message"
       >
         <Form.Control
@@ -118,7 +120,7 @@ export const ContactForm = () => {
           rows={6}
           value={message}
         />
-        <Form.Control.Feedback type="invalid" tooltip={isTabletPortrait}>
+        <Form.Control.Feedback type="invalid" tooltip={isSmallScreen}>
           Please enter your message.
         </Form.Control.Feedback>
       </Form.Group>

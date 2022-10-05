@@ -24,7 +24,7 @@ export const Home = () => {
               >
                 <Image
                   className={`mt-${
-                    screenWidth > 1024 && screenWidth < 1300 ? '4' : '6'
+                    screenWidth > 1024 && screenWidth < 1301 ? '4' : '6'
                   } scale transition w-100`}
                   alt="Shanelle Productions Logo Color"
                   src={LogoColorShaping}

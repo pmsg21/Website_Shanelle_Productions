@@ -1,10 +1,10 @@
 import { Person } from '../interfaces/about';
-import Michelle from '../assets/images/about/michelle-lugo-headshot.svg';
-import MichellePhone from '../assets/images/about/michelle-lugo-headshot-phone.svg';
-import MichelleTitle from '../assets/images/about/michelle-lugo.svg';
-import Shana from '../assets/images/about/shana-pilonieta-headshot.svg';
-import ShanaPhone from '../assets/images/about/shana-pilonieta-headshot-phone.svg';
-import ShanaTitle from '../assets/images/about/shana-pilonieta.svg';
+import Michelle from '../assets/images/about/michelle-lugo-headshot.png';
+import MichellePhone from '../assets/images/about/michelle-lugo-headshot-phone.png';
+import MichelleTitle from '../assets/images/about/michelle-lugo.png';
+import Shana from '../assets/images/about/shana-pilonieta-headshot.png';
+import ShanaPhone from '../assets/images/about/shana-pilonieta-headshot-phone.png';
+import ShanaTitle from '../assets/images/about/shana-pilonieta.png';
 
 export const persons: Person[] = [
   {

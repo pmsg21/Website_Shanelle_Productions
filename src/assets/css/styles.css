@@ -198,11 +198,15 @@ video {
 }
 
 .shanelle-project-title {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .shanelle-project-container:hover .shanelle-project-overlay {
   opacity: 1;
+}
+
+.shanelle-project-description-container {
+  font-size: 14px;
 }
 
 .shanelle-projects-award-icon {
@@ -360,7 +364,7 @@ video {
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
-  height: 85vh;
+  height: 75vh;
 }
 
 .shanelle-contact-form-title {
@@ -404,6 +408,10 @@ video {
 
 .mt-7 {
   margin-top: 6rem !important;
+}
+
+.mt-8 {
+  margin-top: 8rem !important;
 }
 
 .mb-6 {
@@ -472,7 +480,27 @@ video {
 
 /* RESPONSIVE STYLES */
 /* SMALL LAPTOPS */
-@media (min-width: 1024px) and (max-width: 1300px) {
+@media (min-width: 1025px) and (max-width: 1200px) {
+  /* SHANELLE STYLE */
+  /* PROJECTS */
+  .shanelle-project-title {
+    font-size: 14px;
+  }
+
+  .shanelle-project-description-container {
+    font-size: 12px;
+  }
+
+  .shanelle-award-background {
+    height: 300px !important;
+  }
+
+  .shanelle-projects-award-image {
+    margin-top: 6%;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1300px) {
   /* SHANELLE STYLE */
   /* HOME */
   .shanelle-background-home {
@@ -493,9 +521,19 @@ video {
     height: 350px;
   }
 
+  .shanelle-projects-award-text-container p {
+    font-size: 14px;
+    margin-right: 10%;
+  }
+
   /* ABOUT US */
   .shanelle-about-us-container .michelle {
     bottom: -6%;
+  }
+
+  /* CONTACT */
+  .shanelle-contact-container {
+    height: 80vh;
   }
 }
 

@@ -1,10 +1,10 @@
 import { Project } from '../interfaces/project';
-import AsOfYet from '../assets/images/projects/as-of-yet.svg';
-import Deployed from '../assets/images/projects/deployed.svg';
-import HighwayOne from '../assets/images/projects/highway-one.svg';
-import Memorama from '../assets/images/projects/memorama.svg';
-import Superstar from '../assets/images/projects/superstar.svg';
-import TheFallingWorld from '../assets/images/projects/the-falling-world.svg';
+import AsOfYet from '../assets/images/projects/as-of-yet.png';
+import Deployed from '../assets/images/projects/deployed.png';
+import HighwayOne from '../assets/images/projects/highway-one.png';
+import Memorama from '../assets/images/projects/memorama.png';
+import Superstar from '../assets/images/projects/superstar.png';
+import TheFallingWorld from '../assets/images/projects/the-falling-world.png';
 
 export const projects: Project[] = [
   {
