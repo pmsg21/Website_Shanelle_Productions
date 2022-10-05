@@ -16,7 +16,7 @@ export const Projects = () => {
   const { screenWidth } = useScreenDimensions();
 
   return (
-    <div id="projects-section">
+    <section id="projects-section">
       <Container
         className={`mt-${
           screenWidth < 768 ? '0' : '5'
@@ -150,7 +150,7 @@ export const Projects = () => {
           />
         </Container>
       ) : null}
-    </div>
+    </section>
   );
 };
 

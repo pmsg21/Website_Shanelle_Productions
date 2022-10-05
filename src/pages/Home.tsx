@@ -12,7 +12,7 @@ export const Home = () => {
   const { screenWidth } = useScreenDimensions();
 
   return (
-    <div id="home-section">
+    <main id="home-section">
       {screenWidth > 1024 ? (
         <Container fluid={screenWidth < 2000}>
           <Row className="mb-5 animate__animated animate__fadeIn">
@@ -95,7 +95,7 @@ export const Home = () => {
           />
         ) : null}
       </Container>
-    </div>
+    </main>
   );
 };
 

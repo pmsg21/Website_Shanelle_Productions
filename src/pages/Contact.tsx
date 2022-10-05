@@ -10,7 +10,7 @@ export const Contact = () => {
     screenWidth > 767 && screenWidth < 1025 && isPortrait;
 
   return (
-    <div id="contact-section">
+    <section id="contact-section">
       <div
         className={`${
           screenWidth > 1024 || isTabletPortrait
@@ -78,7 +78,7 @@ export const Contact = () => {
           } animate__animated animate__fadeIn animate__delay-0-5s`}
         />
       </Container>
-    </div>
+    </section>
   );
 };
 
