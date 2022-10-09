@@ -24,7 +24,11 @@ export const ProjectCard = ({
       <div className={screenWidth < 1025 ? 'mt-4' : ''}>
         <p className="mb-0 shanelle-extra-bold-text">{emphasisText}</p>
         <p className="text-end mt-3">
-          <a href={link} target="_blank" className="link transition">
+          <a
+            href={link}
+            target="_blank"
+            className="link transition shanelle-semi-bold-text"
+          >
             Go to IMDb
             <Image fluid alt="Link Icon" src={LinkIcon} className="ms-2 mb-1" />
           </a>
@@ -42,12 +46,14 @@ export const ProjectCard = ({
         } transition`}
       >
         {screenWidth > 1024 ? (
-          <div className="shanelle-project-description-container">
-            <p className="mb-3 shanelle-extra-bold-text shanelle-project-title">
-              {title}
-            </p>
-            <p className="mb-3 shanelle-project-description">{description}</p>
-            {getProjectFooter()}
+          <div className="shanelle-inner-container">
+            <div className="shanelle-project-description-container">
+              <p className="mb-3 shanelle-extra-bold-text shanelle-project-title">
+                {title}
+              </p>
+              <p className="mb-3 shanelle-project-description">{description}</p>
+              {getProjectFooter()}
+            </div>
           </div>
         ) : (
           <div>
@@ -61,7 +67,7 @@ export const ProjectCard = ({
               <div id="collapsed-description">{getProjectFooter()}</div>
             </Collapse>
             <p
-              className="link transition text-end"
+              className="link transition text-end shanelle-semi-bold-text"
               onClick={() => setIsOpen(!isOpen)}
             >
               {!isOpen ? 'More...' : '...Less'}

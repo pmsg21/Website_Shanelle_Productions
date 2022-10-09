@@ -72,12 +72,8 @@ export const Contact = () => {
       </div>
       <Container>
         <Footer
-          className={`${
-            screenWidth > 767 && screenWidth < 1025
-              ? 'absolute-footer'
-              : `mt-${screenWidth > 1300 ? '8' : '5'} mb-3`
-          } ${
-            screenWidth > 1024
+          className={`mt-${screenWidth > 1300 ? '8' : '5'} mb-3 ${
+            screenWidth > 1300
               ? 'shanelle-fixed-footer position-fixed w-100'
               : ''
           } animate__animated animate__fadeIn animate__delay-0-5s`}

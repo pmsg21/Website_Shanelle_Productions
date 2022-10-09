@@ -61,18 +61,20 @@ export const About = () => {
             <div
               className={`${
                 screenWidth < 1025 ? 'd-block m-auto mt-4' : 'mt-6'
-              } shanelle-about-us-container shanelle-container position-relative shanelle-mission-vision-container ${
+              } shanelle-container shanelle-about-us-container position-relative shanelle-mission-vision-container ${
                 screenWidth < 768 ? 'ps-0 pe-0' : ''
               }`}
             >
-              <p>
-                Our mission is to connect the emotions and senses of people
-                through audiovisual creations.
-              </p>
-              <p className={screenWidth < 768 ? 'mb-0' : ''}>
-                Our vision is to be a production company that helps people
-                communicate through audiovisual art.
-              </p>
+              <div className="shanelle-inner-container">
+                <p>
+                  Our mission is to connect the emotions and senses of people
+                  through audiovisual creations.
+                </p>
+                <p className={screenWidth < 768 ? 'mb-0' : ''}>
+                  Our vision is to be a production company that helps people
+                  communicate through audiovisual art.
+                </p>
+              </div>
             </div>
           </Col>
         </Row>
@@ -92,7 +94,7 @@ export const About = () => {
             <div
               className={`${
                 screenWidth < 1025 ? 'd-block m-auto' : ''
-              } shanelle-about-us-container shanelle-container position-relative shanelle-values-container ${
+              } shanelle-container shanelle-about-us-container position-relative shanelle-values-container ${
                 screenWidth < 768 ? 'ps-0 pe-0' : ''
               }`}
             >
@@ -102,14 +104,16 @@ export const About = () => {
                   classes="position-absolute ps-3 pe-3"
                 />
               ) : null}
-              <p>
-                At Shanelle Productions LLC we believe in quality, creativity,
-                innovation, passion, love, positivity, optimism, diversity,
-                honesty, loyalty, growth, respect, kindness, commitment,
-                learning, determination, recognition, security, independence,
-                excellence, enjoyment, gratitude, empowerment, freedom, peace,
-                resilience, change and inspiration.
-              </p>
+              <div className="shanelle-inner-container">
+                <p>
+                  At Shanelle Productions LLC we believe in quality, creativity,
+                  innovation, passion, love, positivity, optimism, diversity,
+                  honesty, loyalty, growth, respect, kindness, commitment,
+                  learning, determination, recognition, security, independence,
+                  excellence, enjoyment, gratitude, empowerment, freedom, peace,
+                  resilience, change and inspiration.
+                </p>
+              </div>
             </div>
           </Col>
           {screenWidth > 1024 ||

@@ -44,7 +44,7 @@ html {
 body {
   background-color: #10060f;
   color: #ffffff;
-  font-family: OpenSans-SemiBold;
+  font-family: OpenSans-Regular;
   overflow-x: hidden;
 }
 
@@ -95,8 +95,8 @@ footer a {
   white-space: nowrap;
 }
 
-.shanelle-regular-text {
-  font-family: OpenSans-Regular;
+.shanelle-semi-bold-text {
+  font-family: OpenSans-SemiBold;
 }
 
 .shanelle-bold-text {
@@ -107,18 +107,20 @@ footer a {
   font-family: OpenSans-ExtraBold;
 }
 
-.shanelle-container::before {
-  -webkit-mask-composite: xor;
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  background: linear-gradient(180deg, #c2157d 0%, #e8380d 100%);
+.shanelle-container {
+  background: linear-gradient(
+    rgba(194, 21, 125, 0.6) 0%,
+    rgba(232, 56, 13, 0.6) 100%
+  );
   border-radius: 10px;
-  content: '';
-  inset: 0;
-  mask: initial;
-  mask-composite: exclude;
-  padding: 4px;
-  position: absolute;
-  width: 100%;
+  padding: 4px !important;
+}
+
+.shanelle-inner-container {
+  background: #10060f;
+  border-radius: 10px;
+  height: 100%;
+  padding: 30px;
 }
 
 .shanelle-fixed-footer {
@@ -247,14 +249,8 @@ video {
 }
 
 /* ABOUT US */
-.shanelle-about-us-container {
-  padding: 30px;
-  width: 90%;
-}
-
-.shanelle-about-us-container::before {
-  opacity: 0.6;
-  z-index: -1;
+.shanelle-person-container {
+  padding: 50px;
 }
 
 .shanelle-mission-vision-container::after,
@@ -267,14 +263,14 @@ video {
 }
 
 .shanelle-mission-vision-container::after {
-  border-width: 0 0 6px 6px;
+  border-width: 0 0 10px 10px;
   bottom: 0;
   height: 75%;
   left: 0;
 }
 
 .shanelle-values-container::after {
-  border-width: 6px 6px 0 0;
+  border-width: 10px 10px 0 0;
   height: 50%;
   right: 0;
   top: 0;
@@ -307,14 +303,14 @@ video {
 
 .shanelle-about-us-container .michelle {
   right: 15%;
-  bottom: -8%;
+  bottom: -7%;
 }
 
 .shanelle-about-us-container p {
   color: #ffffff;
   font-size: 16px;
   font-weight: 600;
-  line-height: 22px;
+  line-height: 28px;
   text-align: justify;
 }
 
@@ -544,6 +540,10 @@ video {
     margin-right: 10%;
   }
 
+  .shanelle-projects-award-icon {
+    width: 9%;
+  }
+
   /* ABOUT US */
   .shanelle-about-us-container .michelle {
     bottom: -6%;
@@ -594,8 +594,8 @@ video {
     top: -3%;
   }
 
-  .shanelle-project-container .shanelle-container::before {
-    content: none;
+  #projects-section .shanelle-container {
+    background: none;
   }
 
   .shanelle-projects-award-image {
@@ -613,6 +613,22 @@ video {
   }
 
   /* ABOUTS US */
+  .shanelle-values-container h1 {
+    top: -10%;
+  }
+
+  .shanelle-mission-vision-container::after {
+    border-width: 0 0 15px 15px;
+    bottom: -5px;
+    left: -5px;
+  }
+
+  .shanelle-values-container::after {
+    border-width: 15px 15px 0 0;
+    right: -5px;
+    top: -5px;
+  }
+
   .shanelle-about-us-container .shanelle-name {
     background: transparent;
   }
@@ -632,7 +648,7 @@ video {
   }
 
   .shanelle-card {
-    height: 355px;
+    height: 380px;
   }
 }
 
@@ -674,6 +690,10 @@ video {
     width: 450px;
   }
 
+  .shanelle-projects-award-icon {
+    width: 10%;
+  }
+
   .shanelle-projects-award-text-container p {
     padding: 0 !important;
     padding-right: 25% !important;
@@ -687,7 +707,11 @@ video {
 
   /* ABOUT US */
   .shanelle-values-container h1 {
-    top: -10%;
+    top: -9%;
+  }
+
+  .shanelle-person-container {
+    padding: 20px;
   }
 
   .shanelle-about-us-container .shanelle-name {
@@ -748,6 +772,10 @@ video {
     filter: none;
   }
 
+  .shanelle-container {
+    background: none;
+  }
+
   /* SHANELLE STYLES */
   /* HOME */
   .shanelle-catchphrase {
@@ -767,7 +795,7 @@ video {
   }
 
   /* PROJECTS */
-  .shanelle-project-container .shanelle-container::before {
+  .shanelle-project-container {
     content: none;
   }
 
@@ -777,6 +805,14 @@ video {
   }
 
   /* ABOUT US */
+  .shanelle-inner-container {
+    padding: 20px;
+  }
+
+  .shanelle-person-container {
+    padding: 30px;
+  }
+
   .shanelle-about-us-container {
     padding: 10px;
   }
@@ -793,11 +829,12 @@ video {
 
   .shanelle-about-us-container p {
     font-size: 14px;
+    text-align: left;
   }
 
   /* PRESS */
   .shanelle-card {
-    height: 365px;
+    height: 380px;
   }
 
   /* CONTACT */

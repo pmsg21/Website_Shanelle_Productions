@@ -126,7 +126,7 @@ export const Projects = () => {
                     : isTopOfElement
                     ? 'animate__animated animate__fadeInRight opacity-1  animate__delay-0-5s'
                     : 'opacity-0'
-                } shanelle-regular-text shanelle-projects-award`}
+                } shanelle-projects-award`}
               >
                 As social media content post-producers, Michelle and Alexandra
                 have worked on several projects, highlighting their work for the

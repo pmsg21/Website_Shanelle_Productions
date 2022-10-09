@@ -11,7 +11,7 @@ export const Footer = ({ className }: FooterProps) => {
       {screenWidth > 767 ? (
         <Row>
           <Col>
-            <span className="transition brightness-200">
+            <span className="transition brightness-200 shanelle-semi-bold-text">
               Shanelle Productions LLC ®
             </span>
           </Col>

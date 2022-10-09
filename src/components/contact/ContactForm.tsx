@@ -74,7 +74,7 @@ export const ContactForm = () => {
       >
         <Form.Control
           autoComplete="off"
-          className="transition"
+          className="transition shanelle-semi-bold-text"
           disabled={isSending}
           onChange={handleInputChange}
           placeholder="Your Name"
@@ -92,7 +92,7 @@ export const ContactForm = () => {
       >
         <Form.Control
           autoComplete="off"
-          className="transition"
+          className="transition shanelle-semi-bold-text"
           disabled={isSending}
           onChange={handleInputChange}
           pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
@@ -112,7 +112,7 @@ export const ContactForm = () => {
         <Form.Control
           as="textarea"
           autoComplete="off"
-          className="transition"
+          className="transition shanelle-semi-bold-text"
           disabled={isSending}
           onChange={handleInputChange}
           placeholder="Message"

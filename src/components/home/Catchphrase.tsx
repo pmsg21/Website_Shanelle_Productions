@@ -17,7 +17,7 @@ export const Catchphrase = ({ classes }: { classes: string }) => {
 
   return (
     <p
-      className={`shanelle-catchphrase animate__animated animate__fadeIn ${classes}`}
+      className={`shanelle-catchphrase shanelle-semi-bold-text animate__animated animate__fadeIn ${classes}`}
     >
       {catchphrase.text}
     </p>

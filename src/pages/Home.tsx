@@ -89,9 +89,9 @@ export const Home = () => {
         </Row>
         {screenWidth > 767 ? (
           <Footer
-            className={`${
-              screenWidth > 1024 ? 'mt-5 mb-5' : 'absolute-footer'
-            } animate__animated animate__fadeIn animate__delay-1s`}
+            className={
+              'mt-5 mb-5 animate__animated animate__fadeIn animate__delay-1s'
+            }
           />
         ) : null}
       </Container>
