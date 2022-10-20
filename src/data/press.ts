@@ -55,6 +55,6 @@ export const press: Press[] = [
     alt: 'ShanelleProductions',
     image: ShanelleProductions,
     text: '“Michelle and Alexandra “Shana” decided to merge their names to create Shanelle, where they share content that is not only audiovisual but also musical, to show their great musical talent.”',
-    url: 'https://noticialdia.com/farandula/shanelle-talento-venezolano-en-tierras-cafeteras/',
+    url: 'https://revistavenezolana.com/2018/04/somos-el-complemento-ideal-en-muchos-sentidos-shanelle-talento-venezolano-en-tierras-cafeteras/',
   },
 ];

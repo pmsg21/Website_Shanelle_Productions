@@ -26,11 +26,13 @@ export const ContactForm = () => {
   );
   const [submitText, setSubmitText] = useState<string>('Submit');
   const { name, email, message, isSending, isSuccessful, hasError } = values;
-  const { screenWidth, isPortrait } = useScreenDimensions();
+  const { screenWidth, screenHeight, isPortrait } = useScreenDimensions();
   const isTabletPortrait =
     screenWidth > 767 && screenWidth < 1025 && isPortrait;
   const isSmallScreen =
-    isTabletPortrait || (screenWidth > 1024 && screenWidth < 1301);
+    isTabletPortrait ||
+    (screenWidth > 1024 && screenWidth < 1301) ||
+    (screenWidth > 1300 && screenHeight < 801);
 
   const getFeedbackMessage = () => {
     if (isSmallScreen) {

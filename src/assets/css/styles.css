@@ -176,7 +176,7 @@ video {
 }
 
 .shanelle-projects-title {
-  left: -2.5%;
+  left: -1.5%;
   top: 18%;
 }
 
@@ -248,6 +248,14 @@ video {
   line-height: 30px;
 }
 
+.shanelle-projects-award-link {
+  color: white;
+}
+
+.shanelle-projects-award-link:hover {
+  color: rgb(201, 201, 201);
+}
+
 /* ABOUT US */
 .shanelle-person-container {
   padding: 50px;
@@ -264,16 +272,16 @@ video {
 
 .shanelle-mission-vision-container::after {
   border-width: 0 0 10px 10px;
-  bottom: 0;
+  bottom: -1px;
   height: 75%;
-  left: 0;
+  left: -1px;
 }
 
 .shanelle-values-container::after {
   border-width: 10px 10px 0 0;
   height: 50%;
-  right: 0;
-  top: 0;
+  right: -1px;
+  top: -1px;
 }
 
 .shanelle-values-container h1 {
@@ -524,11 +532,6 @@ video {
 
   .shanelle-service-container {
     margin-top: -30px;
-  }
-
-  /* PROJECTS */
-  .shanelle-projects-title {
-    left: -1.5%;
   }
 
   .shanelle-award-background {

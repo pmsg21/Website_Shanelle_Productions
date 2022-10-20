@@ -131,7 +131,32 @@ export const Projects = () => {
                 As social media content post-producers, Michelle and Alexandra
                 have worked on several projects, highlighting their work for the
                 YouTube channels{' '}
-                <b>Novarise Invest, Novarise Latino, and Novarise Digital.</b>{' '}
+                <b>
+                  <a
+                    className="shanelle-projects-award-link transition"
+                    href="https://www.youtube.com/c/NOVARISEINVEST"
+                    target="_blank"
+                  >
+                    Novarise Invest
+                  </a>
+                  ,{' '}
+                  <a
+                    className="shanelle-projects-award-link transition"
+                    href="https://www.youtube.com/c/NOVARISELATINO"
+                    target="_blank"
+                  >
+                    Novarise Latino
+                  </a>
+                  , and{' '}
+                  <a
+                    className="shanelle-projects-award-link transition"
+                    href="https://www.youtube.com/c/NOVARISEDIGITAL"
+                    target="_blank"
+                  >
+                    Novarise Digital
+                  </a>
+                  .
+                </b>{' '}
                 In 2020, Michelle and Alexandra received a{' '}
                 <b>YouTube Creator Award</b> for their work on Novarise Latino.
                 Currently, they are the Creative Directors of Novarise, a

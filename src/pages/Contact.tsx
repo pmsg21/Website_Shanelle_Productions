@@ -5,7 +5,7 @@ import { useScreenDimensions } from '../hooks/useScreenDimensions';
 import ContactImage from '../assets/images/contact/contact-bg-tablet.svg';
 
 export const Contact = () => {
-  const { screenWidth, isPortrait } = useScreenDimensions();
+  const { screenWidth, screenHeight, isPortrait } = useScreenDimensions();
   const isTabletPortrait =
     screenWidth > 767 && screenWidth < 1025 && isPortrait;
 
@@ -40,8 +40,10 @@ export const Contact = () => {
               className={`mt-${
                 (screenWidth > 1024 && screenWidth < 1301) || isTabletPortrait
                   ? '6'
-                  : screenWidth > 1300
+                  : screenWidth > 1300 && screenHeight > 800
                   ? '7'
+                  : screenWidth > 1300 && screenHeight < 801
+                  ? '5'
                   : '0'
               } ${
                 screenWidth < 1025 ? 'ps-4 pe-4' : ''
@@ -72,8 +74,14 @@ export const Contact = () => {
       </div>
       <Container>
         <Footer
-          className={`mt-${screenWidth > 1300 ? '8' : '5'} mb-3 ${
-            screenWidth > 1300
+          className={`mt-${
+            screenWidth > 1300 && screenHeight > 800
+              ? '8'
+              : screenWidth > 1300 && screenHeight < 801
+              ? '6'
+              : '5'
+          } mb-3 ${
+            screenWidth > 1300 && screenHeight > 800
               ? 'shanelle-fixed-footer position-fixed w-100'
               : ''
           } animate__animated animate__fadeIn animate__delay-0-5s`}
