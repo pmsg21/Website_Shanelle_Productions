@@ -1,8 +1,9 @@
 import { Container, Row, Col, Image } from 'react-bootstrap';
 import { Footer } from '../components/shared/Footer';
 import { ProjectCard } from '../components/projects/ProjectCard';
-import { projects } from '../data/projects';
+import { projects, projectsAward } from '../data/projects';
 import { useDetectScrollTop } from '../hooks/useDetectScrollTop';
+import { useLanguage } from '../hooks/useLanguage';
 import { useRef, MutableRefObject } from 'react';
 import { useScreenDimensions } from '../hooks/useScreenDimensions';
 import { Video } from '../components/projects/Video';
@@ -11,9 +12,11 @@ import ShanelleYoutubeAwardIcon from '../assets/images/projects/shanelle-youtube
 import ShanelleYoutubeAwardPhone from '../assets/images/projects/shanelle-youtube-award-phone.png';
 
 export const Projects = () => {
+  const { screenWidth } = useScreenDimensions();
+  const { siteLanguage } = useLanguage();
   const awardsContainerRef = useRef() as MutableRefObject<HTMLDivElement>;
   const isTopOfElement = useDetectScrollTop(awardsContainerRef);
-  const { screenWidth } = useScreenDimensions();
+  const sectionTitle = siteLanguage === 'en' ? 'Projects' : 'Proyectos';
 
   return (
     <section id="projects-section">
@@ -23,7 +26,9 @@ export const Projects = () => {
         } p-0 animate__animated animate__fadeIn`}
       >
         {screenWidth < 768 ? (
-          <h1 className="shanelle-bold-text text-uppercase ps-5">Projects</h1>
+          <h1 className="shanelle-bold-text text-uppercase ps-3">
+            {sectionTitle}
+          </h1>
         ) : null}
         <Video />
         <Row
@@ -31,23 +36,27 @@ export const Projects = () => {
           xs={1}
           lg={3}
           className={`${
-            screenWidth < 768 ? 'w-100 ms-0 me-0' : ''
+            screenWidth < 768
+              ? 'w-100 ms-0 me-0'
+              : 'shanelle-projects-row-container m-auto'
           } g-3 position-relative`}
         >
           {screenWidth > 767 ? (
             <h1
               className={`${
                 screenWidth > 1024 ? 'shanelle-rotated-text' : ''
-              } shanelle-extra-bold-text shanelle-projects-title text-uppercase`}
+              } shanelle-extra-bold-text shanelle-projects-title ${
+                siteLanguage === 'es' ? 'shanelle-projects-title-es' : ''
+              } text-uppercase`}
             >
-              Projects
+              {sectionTitle}
             </h1>
           ) : null}
           {projects.map((item) => (
             <Col
-              className={`${screenWidth > 767 ? 'p-4' : 'ps-4 pe-4'} ${
-                screenWidth > 767 && screenWidth < 1025 ? 'pb-0' : ''
-              }`}
+              className={`${
+                screenWidth > 767 ? 'p-4 pt-0 pb-4 mt-0' : 'ps-3 pe-3'
+              } ${screenWidth > 767 && screenWidth < 1025 ? 'pb-0' : ''}`}
               key={item.id}
             >
               <ProjectCard {...item} />
@@ -127,41 +136,11 @@ export const Projects = () => {
                     ? 'animate__animated animate__fadeInRight opacity-1  animate__delay-0-5s'
                     : 'opacity-0'
                 } shanelle-projects-award`}
-              >
-                As social media content post-producers, Michelle and Alexandra
-                have worked on several projects, highlighting their work for the
-                YouTube channels{' '}
-                <b>
-                  <a
-                    className="shanelle-projects-award-link transition"
-                    href="https://www.youtube.com/c/NOVARISEINVEST"
-                    target="_blank"
-                  >
-                    Novarise Invest
-                  </a>
-                  ,{' '}
-                  <a
-                    className="shanelle-projects-award-link transition"
-                    href="https://www.youtube.com/c/NOVARISELATINO"
-                    target="_blank"
-                  >
-                    Novarise Latino
-                  </a>
-                  , and{' '}
-                  <a
-                    className="shanelle-projects-award-link transition"
-                    href="https://www.youtube.com/c/NOVARISEDIGITAL"
-                    target="_blank"
-                  >
-                    Novarise Digital
-                  </a>
-                  .
-                </b>{' '}
-                In 2020, Michelle and Alexandra received a{' '}
-                <b>YouTube Creator Award</b> for their work on Novarise Latino.
-                Currently, they are the Creative Directors of Novarise, a
-                renowned financial education company.
-              </p>
+                dangerouslySetInnerHTML={{
+                  __html:
+                    projectsAward[siteLanguage as keyof typeof projectsAward],
+                }}
+              ></p>
             </Col>
           </Row>
         </Container>

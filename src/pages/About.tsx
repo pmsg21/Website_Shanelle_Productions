@@ -2,13 +2,16 @@ import { AboutPerson } from '../components/about/AboutPerson';
 import { AboutTitle } from '../components/about/AboutTitle';
 import { Container, Row, Col, Image } from 'react-bootstrap';
 import { Footer } from '../components/shared/Footer';
-import { persons } from '../data/about';
+import { missionVisionValues, persons } from '../data/about';
+import { useLanguage } from '../hooks/useLanguage';
 import { useScreenDimensions } from '../hooks/useScreenDimensions';
 import LogoColor from '../assets/images/shared/logo-color.svg';
 import Shaping from '../assets/images/about/shaping-imagination-into-reality.svg';
 
 export const About = () => {
   const { screenWidth, isPortrait } = useScreenDimensions();
+  const { siteLanguage } = useLanguage();
+  const { mission, vision, values } = missionVisionValues;
 
   return (
     <section id="about-section">
@@ -18,7 +21,9 @@ export const About = () => {
         } p-0`}
       >
         {screenWidth < 768 ? (
-          <h1 className="shanelle-bold-text text-uppercase ps-5">About Us</h1>
+          <h1 className="shanelle-bold-text text-uppercase ps-3">
+            {siteLanguage === 'en' ? 'About Us' : 'Conócenos'}
+          </h1>
         ) : null}
         <Row
           className={`mb-${
@@ -66,13 +71,9 @@ export const About = () => {
               }`}
             >
               <div className="shanelle-inner-container">
-                <p>
-                  Our mission is to connect the emotions and senses of people
-                  through audiovisual creations.
-                </p>
+                <p>{mission[siteLanguage as keyof typeof mission]}</p>
                 <p className={screenWidth < 768 ? 'mb-0' : ''}>
-                  Our vision is to be a production company that helps people
-                  communicate through audiovisual art.
+                  {vision[siteLanguage as keyof typeof vision]}
                 </p>
               </div>
             </div>
@@ -100,19 +101,14 @@ export const About = () => {
             >
               {screenWidth > 767 ? (
                 <AboutTitle
-                  title="Our Values"
+                  title={
+                    siteLanguage === 'en' ? 'Our Values' : 'Nuestros Valores'
+                  }
                   classes="position-absolute ps-3 pe-3"
                 />
               ) : null}
               <div className="shanelle-inner-container">
-                <p>
-                  At Shanelle Productions LLC we believe in quality, creativity,
-                  innovation, passion, love, positivity, optimism, diversity,
-                  honesty, loyalty, growth, respect, kindness, commitment,
-                  learning, determination, recognition, security, independence,
-                  excellence, enjoyment, gratitude, empowerment, freedom, peace,
-                  resilience, change and inspiration.
-                </p>
+                <p>{values[siteLanguage as keyof typeof values]}</p>
               </div>
             </div>
           </Col>

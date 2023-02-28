@@ -9,9 +9,10 @@ import {
   Toast,
 } from 'react-bootstrap';
 import { useContactForm } from '../../hooks/useContactForm';
+import { useLanguage } from '../../hooks/useLanguage';
 import { useScreenDimensions } from '../../hooks/useScreenDimensions';
-import LogoGray from '../../assets/images/shared/logo-gray.svg';
 import { useState, useEffect } from 'react';
+import LogoGray from '../../assets/images/shared/logo-gray.svg';
 
 export const ContactForm = () => {
   const { values, handleInputChange, handleSubmit, validated } = useContactForm(
@@ -24,7 +25,11 @@ export const ContactForm = () => {
       isSuccessful: false,
     }
   );
-  const [submitText, setSubmitText] = useState<string>('Submit');
+  const { siteLanguage } = useLanguage();
+  const submitButtonText = siteLanguage === 'en' ? 'Submit' : 'Enviar';
+  const submittingButtonText =
+    siteLanguage === 'en' ? 'Submitting' : 'Enviando';
+  const [submitText, setSubmitText] = useState<string>(submitButtonText);
   const { name, email, message, isSending, isSuccessful, hasError } = values;
   const { screenWidth, screenHeight, isPortrait } = useScreenDimensions();
   const isTabletPortrait =
@@ -33,6 +38,14 @@ export const ContactForm = () => {
     isTabletPortrait ||
     (screenWidth > 1024 && screenWidth < 1301) ||
     (screenWidth > 1300 && screenHeight < 801);
+  const successMessage =
+    siteLanguage === 'en'
+      ? 'The email has been sent successfully. Thanks for contacting us.'
+      : 'El email ha sido enviado exitosamente. Gracias por contactarnos.';
+  const errorMessage =
+    siteLanguage === 'en'
+      ? 'An error has occurred sending the email, please try again.'
+      : 'Ha ocurrido un error enviando el email, por favor intenta nuevamente.';
 
   const getFeedbackMessage = () => {
     if (isSmallScreen) {
@@ -40,10 +53,7 @@ export const ContactForm = () => {
         <ToastContainer className="p-3" position="bottom-end">
           <Toast delay={4000} autohide bg={isSuccessful ? 'success' : 'danger'}>
             <Toast.Body>
-              {' '}
-              {isSuccessful
-                ? 'The email has been sent successfully. Thanks for contacting us.'
-                : 'An error has occurred sending the email, please try again.'}
+              {isSuccessful ? successMessage : errorMessage}
             </Toast.Body>
           </Toast>
         </ToastContainer>
@@ -52,16 +62,18 @@ export const ContactForm = () => {
 
     return (
       <Alert variant={isSuccessful ? 'success' : 'danger'}>
-        {isSuccessful
-          ? 'The email has been sent successfully. Thanks for contacting us.'
-          : 'An error has occurred sending the email, please try again.'}
+        {isSuccessful ? successMessage : errorMessage}
       </Alert>
     );
   };
 
   useEffect(() => {
-    setSubmitText(isSending ? 'Submitting' : 'Submit');
+    setSubmitText(isSending ? submittingButtonText : submitButtonText);
   }, [isSending]);
+
+  useEffect(() => {
+    setSubmitText(submitButtonText);
+  }, [siteLanguage]);
 
   return (
     <Form
@@ -79,13 +91,16 @@ export const ContactForm = () => {
           className="transition shanelle-semi-bold-text"
           disabled={isSending}
           onChange={handleInputChange}
-          placeholder="Your Name"
+          placeholder={siteLanguage === 'en' ? 'Your Name' : 'Nombre'}
           required
           type="text"
           value={name}
         />
         <Form.Control.Feedback type="invalid" tooltip={isSmallScreen}>
-          Please enter your name.
+          {siteLanguage === 'en'
+            ? 'Please enter your name'
+            : 'Por favor ingresa tu nombre'}
+          .
         </Form.Control.Feedback>
       </Form.Group>
       <Form.Group
@@ -98,13 +113,16 @@ export const ContactForm = () => {
           disabled={isSending}
           onChange={handleInputChange}
           pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-          placeholder="Your Email"
+          placeholder={siteLanguage === 'en' ? 'Your Email' : 'Email'}
           required
           type="email"
           value={email}
         />
         <Form.Control.Feedback type="invalid" tooltip={isSmallScreen}>
-          Please enter a valid email.
+          {siteLanguage === 'en'
+            ? 'Please enter a valid email'
+            : 'Por favor ingresa un email válido'}
+          .
         </Form.Control.Feedback>
       </Form.Group>
       <Form.Group
@@ -117,13 +135,16 @@ export const ContactForm = () => {
           className="transition shanelle-semi-bold-text"
           disabled={isSending}
           onChange={handleInputChange}
-          placeholder="Message"
+          placeholder={siteLanguage === 'en' ? 'Message' : 'Mensaje'}
           required
           rows={6}
           value={message}
         />
         <Form.Control.Feedback type="invalid" tooltip={isSmallScreen}>
-          Please enter your message.
+          {siteLanguage === 'en'
+            ? 'Please enter your message'
+            : 'Por favor ingresa tu mensaje'}
+          .
         </Form.Control.Feedback>
       </Form.Group>
       {(hasError || isSuccessful) && getFeedbackMessage()}
@@ -154,8 +175,12 @@ export const ContactForm = () => {
             </Col>
           </Row>
           <h2 className="shanelle-form-thanks shanelle-extra-bold-text">
-            Thank you for <br />
-            supporting our work!
+            {siteLanguage === 'en' ? 'Thank you for' : 'Gracias por'}
+            <br />
+            {siteLanguage === 'en'
+              ? 'supporting our work'
+              : 'apoyar nuestro trabajo'}
+            !
           </h2>
         </div>
       )}

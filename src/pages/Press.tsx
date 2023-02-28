@@ -2,10 +2,13 @@ import { Col, Container, Row } from 'react-bootstrap';
 import { Footer } from '../components/shared/Footer';
 import { press } from '../data/press';
 import { PressCard } from '../components/press/PressCard';
+import { useLanguage } from '../hooks/useLanguage';
 import { useScreenDimensions } from '../hooks/useScreenDimensions';
 
 export const Press = () => {
   const { screenWidth } = useScreenDimensions();
+  const { siteLanguage } = useLanguage();
+  const sectionTitle = siteLanguage === 'en' ? 'Press' : 'Prensa';
 
   return (
     <section id="press-section">
@@ -15,7 +18,9 @@ export const Press = () => {
         } p-0 animate__animated animate__fadeIn`}
       >
         {screenWidth < 768 ? (
-          <h1 className="shanelle-bold-text text-uppercase ps-5 mb-4">Press</h1>
+          <h1 className="shanelle-bold-text text-uppercase ps-3 mb-4">
+            {sectionTitle}
+          </h1>
         ) : null}
         <Row
           md={2}
@@ -31,14 +36,16 @@ export const Press = () => {
                 screenWidth > 1024
                   ? 'shanelle-rotated-text'
                   : 'position-absolute'
-              } shanelle-extra-bold-text shanelle-press-title text-uppercase`}
+              } shanelle-extra-bold-text shanelle-press-title ${
+                siteLanguage === 'es' ? 'shanelle-press-title-es' : ''
+              } text-uppercase`}
             >
-              Press
+              {sectionTitle}
             </h1>
           ) : null}
           {press.map((item) => (
             <Col
-              className={screenWidth > 767 ? 'p-3' : 'ps-4 pe-4 mb-4'}
+              className={screenWidth > 767 ? 'p-3' : 'ps-3 pe-3 mb-4'}
               key={item.id}
             >
               <PressCard {...item} className="transition scale" />

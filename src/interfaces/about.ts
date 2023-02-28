@@ -1,3 +1,4 @@
+import { LanguageOptions } from './language';
 export interface AboutPersonProps {
   isPortrait: boolean;
   person: Person;
@@ -5,15 +6,21 @@ export interface AboutPersonProps {
 }
 
 export interface Person {
-  firstParagraph: string;
+  firstParagraph: LanguageOptions;
   id: number;
   image: string;
   imageAlt: string;
   imagePhone: string;
   imdb: string;
-  secondParagraph: string;
-  thirdParagraph: string;
+  secondParagraph: LanguageOptions;
+  thirdParagraph: LanguageOptions;
   title: string;
   titleClass: string;
   titleImage: string;
+}
+
+export interface MissionVisionValues {
+  mission: LanguageOptions;
+  values: LanguageOptions;
+  vision: LanguageOptions;
 }

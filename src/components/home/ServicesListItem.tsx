@@ -2,9 +2,11 @@ import { Col, Image, Row } from 'react-bootstrap';
 import { ServicesListItemProps } from '../../interfaces/components';
 import { useScreenDimensions } from '../../hooks/useScreenDimensions';
 import Check from '../../assets/images/icons/check.svg';
+import { useLanguage } from '../../hooks/useLanguage';
 
 export const ServicesListItem = ({ description }: ServicesListItemProps) => {
   const { screenWidth, isPortrait } = useScreenDimensions();
+  const { siteLanguage } = useLanguage();
 
   return (
     <li className={`mb-${screenWidth < 768 ? '4' : 2}`}>
@@ -29,7 +31,7 @@ export const ServicesListItem = ({ description }: ServicesListItemProps) => {
           lg={11}
           className={`ps-${screenWidth > 767 && !isPortrait ? '0' : '2'}`}
         >
-          {description}
+          {description[siteLanguage as keyof typeof description]}
         </Col>
       </Row>
     </li>

@@ -1,23 +1,49 @@
 import { Navbar as NavbarBS, Container, Nav, Image } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { routes } from '../../routes/routes';
+import { useLanguage } from '../../hooks/useLanguage';
 import { useScreenDimensions } from '../../hooks/useScreenDimensions';
 import { useState } from 'react';
-import HambugerIcon from '../../assets/images/shared/hamburger-icon.svg';
+import English from '../../assets/images/shared/english.svg';
+import HamburgerIcon from '../../assets/images/shared/hamburger-icon.svg';
 import LogoWhite from '../../assets/images/shared/logo-white.svg';
+import Spanish from '../../assets/images/shared/spanish.svg';
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { screenWidth } = useScreenDimensions();
+  const { siteLanguage, handleLanguageChange } = useLanguage();
+  const navigate = useNavigate();
 
-  const handleScrollIntoView = (id: string) => {
+  function handleScrollIntoView(id: string) {
     setIsOpen(false);
     const scrollDiv = document.getElementById(id)?.offsetTop;
     window.scrollTo({
       top: scrollDiv ? scrollDiv - 100 : 0,
       behavior: 'smooth',
     });
-  };
+  }
+
+  function redirectTo(to: string) {
+    setIsOpen(false);
+    navigate(to);
+  }
+
+  function getLanguageIcon() {
+    return (
+      <div
+        className="shanelle-language-container transition scale"
+        onClick={handleLanguageChange}
+      >
+        <Image
+          src={siteLanguage === 'en' ? Spanish : English}
+          fluid
+          alt="Language"
+        />
+        <span className="ms-1">E{siteLanguage === 'en' ? 'S' : 'N'}</span>
+      </div>
+    );
+  }
 
   return (
     <>
@@ -48,12 +74,12 @@ export const Navbar = () => {
             className="ms-auto animate__animated animate__fadeInRight animate__delay-0-5s"
             navbarScroll
           >
-            {screenWidth > 767 ? (
+            {screenWidth > 1023 ? (
               routes
                 .filter((route) => route.to !== '/')
                 .map(({ path, to, name }) => (
                   <Nav.Link
-                    className="me-3 transition scale shanelle-bold-text"
+                    className="me-3 transition scale shanelle-semi-bold-text"
                     key={path}
                     to={to}
                     as={NavLink}
@@ -64,38 +90,42 @@ export const Navbar = () => {
                       })
                     }
                   >
-                    {name}
+                    {name[siteLanguage as keyof typeof name]}
                   </Nav.Link>
                 ))
             ) : (
               <div>
                 <Image
                   onClick={() => setIsOpen(!isOpen)}
-                  src={HambugerIcon}
+                  src={HamburgerIcon}
                   className="d-inline-block align-top animate__animated animate__fadeInRight animate__delay-0-5s me-3"
                   alt="Hamburger Icon"
                 />
               </div>
             )}
+            {screenWidth > 1023 && getLanguageIcon()}
           </Nav>
         </Container>
       </NavbarBS>
-      {screenWidth < 768 && isOpen ? (
+      {screenWidth < 1025 && isOpen ? (
         <div className="shanelle-mobile-menu position-fixed animate__animated animate__fadeIn p-3">
           <ul className="ps-0">
             {routes
               .filter((route) => route.to !== '/')
-              .map(({ path, id, name }) => (
+              .map(({ path, id, name, to }) => (
                 <li
-                  className="shanelle-bold-text"
+                  className="shanelle-semi-bold-text"
                   key={path}
                   onClick={() => {
-                    handleScrollIntoView(id);
+                    screenWidth < 768
+                      ? handleScrollIntoView(id)
+                      : redirectTo(to);
                   }}
                 >
-                  {name}
+                  {name[siteLanguage as keyof typeof name]}
                 </li>
               ))}
+            <li>{getLanguageIcon()}</li>
           </ul>
         </div>
       ) : null}

@@ -1,10 +1,11 @@
+import { LanguageOptions } from './language';
 export interface Catchphrase {
   id: number;
-  text: string;
+  text: LanguageOptions;
 }
 
 export interface Service {
   id: number;
-  description: string;
+  description: LanguageOptions;
   leftSide: boolean;
 }

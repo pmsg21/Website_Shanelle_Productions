@@ -1,7 +1,8 @@
+import { AboutPersonProps } from '../../interfaces/about';
 import { AboutTitle } from './AboutTitle';
 import { Col, Image, Row } from 'react-bootstrap';
+import { useLanguage } from '../../hooks/useLanguage';
 import LinkIcon from '../../assets/images/about/link.svg';
-import { AboutPersonProps } from '../../interfaces/about';
 
 export const AboutPerson = ({
   person: {
@@ -20,6 +21,8 @@ export const AboutPerson = ({
   screenWidth,
   isPortrait,
 }: AboutPersonProps) => {
+  const { siteLanguage } = useLanguage();
+
   return (
     <div
       className={`p-${
@@ -72,12 +75,16 @@ export const AboutPerson = ({
               />
             )}
 
-            <p className="mt-4">{firstParagraph}</p>
-            <p>{secondParagraph}</p>
-            <p>{thirdParagraph}</p>
+            <p className="mt-4">
+              {firstParagraph[siteLanguage as keyof typeof firstParagraph]}
+            </p>
+            <p>
+              {secondParagraph[siteLanguage as keyof typeof secondParagraph]}
+            </p>
+            <p>{thirdParagraph[siteLanguage as keyof typeof thirdParagraph]}</p>
             <p className={`${screenWidth < 768 ? 'mt-4' : ''} text-end mb-0`}>
               <a href={imdb} target="_blank" className="link transition">
-                Go to IMDb
+                {siteLanguage === 'en' ? 'Go to ' : 'Visita '}IMDb
                 <Image
                   fluid
                   alt="Link Icon"

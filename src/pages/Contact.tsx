@@ -1,11 +1,14 @@
 import { Col, Container, Image, Row } from 'react-bootstrap';
 import { ContactForm } from '../components/contact/ContactForm';
 import { Footer } from '../components/shared/Footer';
+import { useLanguage } from '../hooks/useLanguage';
 import { useScreenDimensions } from '../hooks/useScreenDimensions';
-import ContactImage from '../assets/images/contact/contact-bg-tablet.svg';
+import ContactImageEn from '../assets/images/contact/contact-bg-tablet-en.svg';
+import ContactImageEs from '../assets/images/contact/contact-bg-tablet-es.svg';
 
 export const Contact = () => {
   const { screenWidth, screenHeight, isPortrait } = useScreenDimensions();
+  const { siteLanguage } = useLanguage();
   const isTabletPortrait =
     screenWidth > 767 && screenWidth < 1025 && isPortrait;
 
@@ -14,16 +17,20 @@ export const Contact = () => {
       <div
         className={`${
           screenWidth > 1024 || isTabletPortrait
-            ? 'shanelle-contact-container'
+            ? `shanelle-contact-container shanelle-contact-container-${siteLanguage}`
             : ''
         } w-100`}
       >
-        {screenWidth > 1024 && <div className="shanelle-contact-bg"></div>}
+        {screenWidth > 1024 && (
+          <div
+            className={`shanelle-contact-bg shanelle-contact-bg-${siteLanguage}`}
+          ></div>
+        )}
         {screenWidth > 767 && screenWidth < 1025 && !isPortrait ? (
           <Image
             className="mt-0 w-100 ps-4"
             alt="Contact Image"
-            src={ContactImage}
+            src={siteLanguage === 'en' ? ContactImageEn : ContactImageEs}
           />
         ) : null}
         <Container className="p-0 mt-0 animate__animated animate__fadeIn">
@@ -46,7 +53,7 @@ export const Contact = () => {
                   ? '5'
                   : '0'
               } ${
-                screenWidth < 1025 ? 'ps-4 pe-4' : ''
+                screenWidth < 1025 ? 'ps-3 pe-3' : ''
               } shanelle-contact-form-container`}
             >
               <h1
@@ -56,16 +63,26 @@ export const Contact = () => {
                   screenWidth > 767 ? 'extra-' : ''
                 }bold-text mb-4 shanelle-contact-form-title`}
               >
-                Get in touch
+                {siteLanguage === 'en'
+                  ? 'Get in touch'
+                  : 'Comunícate con nosotros'}
               </h1>
               <p>
-                We are happy to answer any of your questions,
-                {screenWidth > 767 ? <br /> : ' '}and get to know you and your
-                project.
+                {siteLanguage === 'en'
+                  ? 'We are happy to answer any of your questions'
+                  : 'Estamos encantados de responder a cualquiera de tus preguntas'}
+                ,{screenWidth > 1024 ? <br /> : ' '}
+                {siteLanguage === 'en'
+                  ? 'and get to know you and your project'
+                  : 'y conocerte a ti y a tu proyecto'}
+                .
               </p>
               <p className="mb-4">
-                Reach out to us and we will respond as soon
-                {screenWidth < 768 ? <br /> : ' '}as we can.
+                {siteLanguage === 'en'
+                  ? 'Reach out to us and we will respond as soon'
+                  : 'Comunícate con nosotros y te responderemos tan pronto'}
+                {screenWidth < 768 ? <br /> : ' '}
+                {siteLanguage === 'en' ? 'as we can' : 'como podamos'}.
               </p>
               <ContactForm />
             </Col>
