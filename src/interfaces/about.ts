@@ -1,4 +1,6 @@
+// INTERFACES
 import { LanguageOptions } from './language';
+
 export interface AboutPersonProps {
   isPortrait: boolean;
   person: Person;

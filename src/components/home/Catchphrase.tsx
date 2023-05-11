@@ -1,15 +1,22 @@
+// REACT IMPORTS
 import { useEffect, useState } from 'react';
-import { catchphrases } from '../../data/home';
-import { Catchphrase as CatchphraseInterface } from '../../interfaces/home';
-import { useLanguage } from '../../hooks/useLanguage';
 
-export const Catchphrase = ({ classes }: { classes: string }) => {
+// DATA
+import { catchphrases } from '../../data/home';
+
+// INTERFACES
+import { Catchphrase as CatchphraseInterface } from '../../interfaces/home';
+
+// HOOKS
+import { useTranslation } from '../../hooks/useTranslation';
+
+export const Catchphrase = ({ classes }: { classes: string }): JSX.Element => {
   const [catchphrase, setCatchphrase] = useState<CatchphraseInterface>(
     catchphrases[0]
   );
-  const { siteLanguage } = useLanguage();
+  const { translate } = useTranslation();
 
-  useEffect(() => {
+  useEffect((): void => {
     setTimeout((): void => {
       if (catchphrase.id !== catchphrases[catchphrases.length - 1].id)
         setCatchphrase(catchphrases[catchphrase.id]);
@@ -21,7 +28,7 @@ export const Catchphrase = ({ classes }: { classes: string }) => {
     <p
       className={`shanelle-catchphrase shanelle-semi-bold-text animate__animated animate__fadeIn ${classes}`}
     >
-      {catchphrase.text[siteLanguage as keyof typeof catchphrase.text]}
+      {translate(catchphrase.text)}
     </p>
   );
 };

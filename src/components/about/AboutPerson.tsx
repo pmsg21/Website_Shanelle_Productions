@@ -1,8 +1,18 @@
-import { AboutPersonProps } from '../../interfaces/about';
-import { AboutTitle } from './AboutTitle';
+// REACT IMPORTS
 import { Col, Image, Row } from 'react-bootstrap';
+
+// INTERFACES
+import { AboutPersonProps } from '../../interfaces/about';
+
+// HOOKS
 import { useLanguage } from '../../hooks/useLanguage';
+import { useTranslation } from '../../hooks/useTranslation';
+
+// ASSETS
 import LinkIcon from '../../assets/images/about/link.svg';
+
+// COMPONENTS
+import { AboutTitle } from './AboutTitle';
 
 export const AboutPerson = ({
   person: {
@@ -20,8 +30,9 @@ export const AboutPerson = ({
   },
   screenWidth,
   isPortrait,
-}: AboutPersonProps) => {
+}: AboutPersonProps): JSX.Element => {
   const { siteLanguage } = useLanguage();
+  const { translate } = useTranslation();
 
   return (
     <div
@@ -75,13 +86,9 @@ export const AboutPerson = ({
               />
             )}
 
-            <p className="mt-4">
-              {firstParagraph[siteLanguage as keyof typeof firstParagraph]}
-            </p>
-            <p>
-              {secondParagraph[siteLanguage as keyof typeof secondParagraph]}
-            </p>
-            <p>{thirdParagraph[siteLanguage as keyof typeof thirdParagraph]}</p>
+            <p className="mt-4">{translate(firstParagraph)}</p>
+            <p>{translate(secondParagraph)}</p>
+            <p>{translate(thirdParagraph)}</p>
             <p className={`${screenWidth < 768 ? 'mt-4' : ''} text-end mb-0`}>
               <a href={imdb} target="_blank" className="link transition">
                 {siteLanguage === 'en' ? 'Go to ' : 'Visita '}IMDb

@@ -1,12 +1,19 @@
+// REACT IMPORTS
 import { Col, Container, Image, Row } from 'react-bootstrap';
-import { ContactForm } from '../components/contact/ContactForm';
-import { Footer } from '../components/shared/Footer';
+
+// HOOKS
 import { useLanguage } from '../hooks/useLanguage';
 import { useScreenDimensions } from '../hooks/useScreenDimensions';
+
+// ASSETS
 import ContactImageEn from '../assets/images/contact/contact-bg-tablet-en.svg';
 import ContactImageEs from '../assets/images/contact/contact-bg-tablet-es.svg';
 
-export const Contact = () => {
+// COMPONENTS
+import { ContactForm } from '../components/contact/ContactForm';
+import { Footer } from '../components/shared/Footer';
+
+export const Contact = (): JSX.Element => {
   const { screenWidth, screenHeight, isPortrait } = useScreenDimensions();
   const { siteLanguage } = useLanguage();
   const isTabletPortrait =

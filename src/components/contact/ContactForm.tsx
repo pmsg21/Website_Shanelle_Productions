@@ -1,20 +1,25 @@
+// REACT IMPORTS
+import { useState, useEffect } from 'react';
 import {
-  Button,
-  Form,
-  Row,
-  Col,
-  Image,
   Alert,
-  ToastContainer,
+  Button,
+  Col,
+  Form,
+  Image,
+  Row,
   Toast,
+  ToastContainer,
 } from 'react-bootstrap';
+
+// HOOKS
 import { useContactForm } from '../../hooks/useContactForm';
 import { useLanguage } from '../../hooks/useLanguage';
 import { useScreenDimensions } from '../../hooks/useScreenDimensions';
-import { useState, useEffect } from 'react';
+
+// ASSETS
 import LogoGray from '../../assets/images/shared/logo-gray.svg';
 
-export const ContactForm = () => {
+export const ContactForm = (): JSX.Element => {
   const { values, handleInputChange, handleSubmit, validated } = useContactForm(
     {
       email: '',
@@ -47,7 +52,7 @@ export const ContactForm = () => {
       ? 'An error has occurred sending the email, please try again.'
       : 'Ha ocurrido un error enviando el email, por favor intenta nuevamente.';
 
-  const getFeedbackMessage = () => {
+  const getFeedbackMessage = (): JSX.Element => {
     if (isSmallScreen) {
       return (
         <ToastContainer className="p-3" position="bottom-end">
@@ -67,11 +72,11 @@ export const ContactForm = () => {
     );
   };
 
-  useEffect(() => {
+  useEffect((): void => {
     setSubmitText(isSending ? submittingButtonText : submitButtonText);
   }, [isSending]);
 
-  useEffect(() => {
+  useEffect((): void => {
     setSubmitText(submitButtonText);
   }, [siteLanguage]);
 

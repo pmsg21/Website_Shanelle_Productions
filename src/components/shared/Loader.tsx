@@ -1,7 +1,10 @@
-import Image from 'react-bootstrap/Image';
+// REACT IMPORTS
+import { Image } from 'react-bootstrap';
+
+// ASSETS
 import LogoWhite from '../../assets/images/shared/logo-white.svg';
 
-export const Loader = () => {
+export const Loader = (): JSX.Element => {
   return (
     <Image
       src={LogoWhite}

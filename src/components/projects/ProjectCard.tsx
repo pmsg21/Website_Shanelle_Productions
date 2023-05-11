@@ -1,10 +1,18 @@
+// REACT IMPORTS
+import { useState } from 'react';
 import { Collapse, Image } from 'react-bootstrap';
+
+// INTERFACES
+import { LanguageOptions } from '../../interfaces/language';
 import { Project } from '../../interfaces/project';
+
+// HOOKS
 import { useLanguage } from '../../hooks/useLanguage';
 import { useScreenDimensions } from '../../hooks/useScreenDimensions';
-import { useState } from 'react';
+import { useTranslation } from '../../hooks/useTranslation';
+
+// ASSETS
 import LinkIcon from '../../assets/images/about/link.svg';
-import { LanguageOptions } from '../../interfaces/language';
 
 export const ProjectCard = ({
   alt,
@@ -13,17 +21,16 @@ export const ProjectCard = ({
   image,
   link,
   title,
-}: Project) => {
+}: Project): JSX.Element => {
   const [isOpen, setIsOpen] = useState(false);
   const { screenWidth } = useScreenDimensions();
   const { siteLanguage } = useLanguage();
+  const { translate } = useTranslation();
   description[siteLanguage as keyof typeof description] =
     screenWidth < 1025
-      ? description[siteLanguage as keyof typeof description]
-          .substring(0, 1)
-          .toLowerCase() +
-        description[siteLanguage as keyof typeof description].substring(1)
-      : description[siteLanguage as keyof typeof description];
+      ? translate(description).substring(0, 1).toLowerCase() +
+        translate(description).substring(1)
+      : translate(description);
   const moreText: LanguageOptions = {
     en: 'More',
     es: 'Más',
@@ -33,11 +40,11 @@ export const ProjectCard = ({
     es: 'Menos',
   };
 
-  const getProjectFooter = () => {
+  const getProjectFooter = (): JSX.Element => {
     return (
       <div className={screenWidth < 1025 ? 'mt-4' : ''}>
         <p className="mb-0 shanelle-extra-bold-text">
-          {emphasisText[siteLanguage as keyof typeof emphasisText]}
+          {translate(emphasisText)}
         </p>
         <p className="text-end mt-3">
           <a
@@ -68,7 +75,7 @@ export const ProjectCard = ({
                 {title}
               </p>
               <p className="mb-3 shanelle-project-description">
-                {description[siteLanguage as keyof typeof description]}
+                {translate(description)}
               </p>
               {getProjectFooter()}
             </div>
@@ -79,10 +86,8 @@ export const ProjectCard = ({
               <span className="shanelle-extra-bold-text">{title}, </span>
               <span className="shanelle-project-description">
                 {!isOpen
-                  ? `${description[
-                      siteLanguage as keyof typeof description
-                    ].substring(0, 80)}...`
-                  : description[siteLanguage as keyof typeof description]}
+                  ? `${translate(description).substring(0, 80)}...`
+                  : translate(description)}
               </span>
             </p>
             <Collapse in={isOpen}>
@@ -90,11 +95,11 @@ export const ProjectCard = ({
             </Collapse>
             <p
               className="link transition text-end shanelle-semi-bold-text"
-              onClick={() => setIsOpen(!isOpen)}
+              onClick={(): void => setIsOpen(!isOpen)}
             >
               {!isOpen
-                ? `${moreText[siteLanguage as keyof typeof moreText]}...`
-                : `...${lessText[siteLanguage as keyof typeof lessText]}`}
+                ? `${translate(moreText)}...`
+                : `...${translate(lessText)}`}
             </p>
           </div>
         )}

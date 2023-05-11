@@ -1,3 +1,4 @@
+// INTERFACES
 import { Catchphrase, Service } from '../interfaces/home';
 
 export const catchphrases: Catchphrase[] = [

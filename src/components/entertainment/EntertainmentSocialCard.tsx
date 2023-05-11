@@ -1,18 +1,24 @@
-import { Entertainment } from '../../interfaces/entertainment';
+// REACT IMPORTS
 import { Row, Col, Image } from 'react-bootstrap';
+
+// INTERFACES
+import { Entertainment } from '../../interfaces/entertainment';
+
+// HOOKS
+import { useScreenDimensions } from '../../hooks/useScreenDimensions';
+
+// ASSETS
 import Instagram from '../../assets/images/entertainment/instagram.svg';
 import Tiktok from '../../assets/images/entertainment/tiktok.svg';
-import { useScreenDimensions } from '../../hooks/useScreenDimensions';
 
 export const EntertainmentSocialCard = ({
   at,
-  className,
   description,
   image,
   imageAlt,
   instagramURL,
   tiktokUrl,
-}: Entertainment) => {
+}: Entertainment): JSX.Element => {
   const { screenWidth, isPortrait } = useScreenDimensions();
   const isTabletPortrait =
     screenWidth > 767 && screenWidth < 1025 && isPortrait;

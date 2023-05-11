@@ -1,4 +1,7 @@
+// REACT IMPORTS
 import { lazy } from 'react';
+
+// INTERFACES
 import { Route } from '../interfaces/route';
 
 const Home = lazy(() => import(/* webpackChunkName: "Home"*/ '../pages/Home'));

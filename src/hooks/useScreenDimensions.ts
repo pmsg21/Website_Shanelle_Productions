@@ -1,3 +1,4 @@
+// REACT IMPORTS
 import { useEffect, useState } from 'react';
 
 export function useScreenDimensions(): {
@@ -11,7 +12,7 @@ export function useScreenDimensions(): {
     window.innerWidth > window.innerHeight
   );
 
-  useEffect(() => {
+  useEffect((): (() => void) => {
     const handler = (event: any) => {
       setScreenWidth(event.target.innerWidth);
       setScreenHeight(event.target.innerHeight);
@@ -20,7 +21,7 @@ export function useScreenDimensions(): {
 
     window.addEventListener('resize', handler);
 
-    return () => {
+    return (): void => {
       window.removeEventListener('resize', handler);
     };
   }, []);

@@ -1,4 +1,7 @@
+// INTERFACES
 import { Person, MissionVisionValues } from '../interfaces/about';
+
+// ASSETS
 import Michelle from '../assets/images/about/michelle-lugo-headshot.png';
 import MichellePhone from '../assets/images/about/michelle-lugo-headshot-phone.png';
 import MichelleTitle from '../assets/images/about/michelle-lugo.png';
@@ -47,7 +50,7 @@ export const persons: Person[] = [
       en: `Michelle also participated in the acting summer intensive program of The American Academy of Dramatic Arts in Los Angeles, California (2015), and has minor acting credits in Venezuelan theater, TV, commercials, and radio. Michelle's fluent in Spanish, English, Italian and speaks intermediate French.`,
       es: 'Michelle también participó en el programa intensivo de verano de actuación de la American Academy of Dramatic Arts en Los Ángeles, California (2015). Participó en teatro, televisión, comerciales y radio venezolanos. Michelle habla español, inglés, italiano y francés.',
     },
-    title: 'Michelle Deniesse Lugo',
+    title: 'Michelle Deniesse',
     titleClass: 'michelle',
     titleImage: MichelleTitle,
   },

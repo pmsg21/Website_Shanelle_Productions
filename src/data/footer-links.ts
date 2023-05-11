@@ -1,3 +1,4 @@
+// ASSETS
 import Facebook from '../assets/images/icons/facebook.svg';
 import Instagram from '../assets/images/icons/instagram.svg';
 import TikTok from '../assets/images/icons/tik-tok.svg';

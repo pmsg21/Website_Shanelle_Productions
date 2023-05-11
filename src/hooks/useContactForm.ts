@@ -1,5 +1,8 @@
-import axios from 'axios';
+// REACT IMPORTS
 import { ChangeEvent, FormEvent, useState } from 'react';
+
+// THIRD PARTY IMPORTS
+import axios from 'axios';
 
 interface ContactForm {
   email: string;
@@ -10,11 +13,20 @@ interface ContactForm {
   isSuccessful: boolean;
 }
 
-export const useContactForm = (initialState: ContactForm) => {
+interface UseContactFormReturn {
+  validated: boolean;
+  values: ContactForm;
+  handleInputChange: ({ target }: ChangeEvent<HTMLInputElement>) => void;
+  handleSubmit: (event: FormEvent<HTMLFormElement>) => void;
+}
+
+export const useContactForm = (
+  initialState: ContactForm
+): UseContactFormReturn => {
   const [values, setValues] = useState<ContactForm>(initialState);
   const [validated, setValidated] = useState(false);
 
-  const reset = () => {
+  const reset = (): void => {
     setValues(initialState);
     setValidated(false);
   };
@@ -55,7 +67,7 @@ export const useContactForm = (initialState: ContactForm) => {
       },
       data: { name, email, message },
     })
-      .then(({ status, data }) => {
+      .then(({ status, data }): void => {
         if (status === 200) {
           if (data.ok) {
             setValues({
@@ -72,7 +84,7 @@ export const useContactForm = (initialState: ContactForm) => {
       });
   };
 
-  const handleFormError = (e: any) => {
+  const handleFormError = (e: any): void => {
     console.error(e);
     setValues({
       ...values,
@@ -80,7 +92,7 @@ export const useContactForm = (initialState: ContactForm) => {
       hasError: true,
     });
 
-    setTimeout(() => {
+    setTimeout((): void => {
       setValues({
         ...values,
         hasError: false,

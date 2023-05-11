@@ -1,4 +1,7 @@
+// REACT IMPORTS
 import { LazyExoticComponent } from 'react';
+
+// INTERFACES
 import { LanguageOptions } from './language';
 
 type JSXComponent = () => JSX.Element;

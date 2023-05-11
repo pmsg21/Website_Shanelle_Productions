@@ -1,11 +1,18 @@
+// REACT IMPORTS
 import { Col, Container, Row } from 'react-bootstrap';
-import { Footer } from '../components/shared/Footer';
+
+// DATA
 import { press } from '../data/press';
-import { PressCard } from '../components/press/PressCard';
+
+// HOOKS
 import { useLanguage } from '../hooks/useLanguage';
 import { useScreenDimensions } from '../hooks/useScreenDimensions';
 
-export const Press = () => {
+// COMPONENTS
+import { Footer } from '../components/shared/Footer';
+import { PressCard } from '../components/press/PressCard';
+
+export const Press = (): JSX.Element => {
   const { screenWidth } = useScreenDimensions();
   const { siteLanguage } = useLanguage();
   const sectionTitle = siteLanguage === 'en' ? 'Press' : 'Prensa';

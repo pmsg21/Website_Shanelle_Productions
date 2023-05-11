@@ -1,7 +1,10 @@
-import { Navigation } from './routes/Navigation';
+// CONTEXT
 import { LanguageContextProvider } from './context/LanguageContext';
 
-function App() {
+// COMPONENTS
+import { Navigation } from './routes/Navigation';
+
+function App(): JSX.Element {
   return (
     <LanguageContextProvider>
       <Navigation />

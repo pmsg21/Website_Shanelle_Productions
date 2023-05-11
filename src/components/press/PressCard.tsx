@@ -1,20 +1,81 @@
+// REACT IMPORTS
 import { Card } from 'react-bootstrap';
-import { Press } from '../../interfaces/press';
-import { useLanguage } from '../../hooks/useLanguage';
 
-export const PressCard = ({ image, alt, text, url, className }: Press) => {
+// THIRD PARTY IMPORTS
+import Swal from 'sweetalert2';
+
+// INTERFACES
+import { Press } from '../../interfaces/press';
+
+// HOOKS
+import { useLanguage } from '../../hooks/useLanguage';
+import { useTranslation } from '../../hooks/useTranslation';
+
+export const PressCard = ({
+  alt,
+  className,
+  hasModal = false,
+  image,
+  text,
+  url,
+  urls,
+}: Press): JSX.Element => {
   const { siteLanguage } = useLanguage();
+  const { translate } = useTranslation();
+  const readHereText =
+    siteLanguage === 'en' ? 'Read full article here' : 'Lee el Artículo Aquí';
+  const readAtText =
+    siteLanguage === 'en' ? 'Read this article at' : 'Lee este artículo en';
+
+  function handleClick(): void {
+    Swal.fire({
+      showCloseButton: true,
+      showConfirmButton: false,
+      html: `
+      <div class="shanelle-modal">
+        <p>${readAtText}:</p>
+        <ul class="list-unstyled">
+          ${
+            urls
+              ? urls
+                  .map(
+                    ({ id, title, url }): string =>
+                      `
+                    <li class="mb-${
+                      id === urls[urls.length - 1].id ? '0' : '4'
+                    }" key="${id}">
+                      <a href="${url}" class="transition scale" target="_blank">
+                        ${title}
+                      </a>
+                    </li>
+                    `
+                  )
+                  .join('')
+              : null
+          }
+        </ul>
+      </div>
+      `,
+      customClass: {
+        container: 'shanelle-modal',
+      },
+    });
+  }
 
   return (
     <Card className={`shanelle-card ${className}`}>
       <Card.Img variant="top" src={image} alt={alt} />
       <Card.Body>
-        <Card.Text>{text[siteLanguage as keyof typeof text]}</Card.Text>
-        <Card.Link href={url} target="_blank" className="link">
-          {siteLanguage === 'en'
-            ? 'Read full article here'
-            : 'Lee el Artículo Aquí'}
-        </Card.Link>
+        <Card.Text>{translate(text)}</Card.Text>
+        {!hasModal ? (
+          <Card.Link href={url} target="_blank" className="link">
+            {readHereText}
+          </Card.Link>
+        ) : (
+          <Card.Link as="span" className="link" onClick={handleClick}>
+            {readHereText}
+          </Card.Link>
+        )}
       </Card.Body>
     </Card>
   );

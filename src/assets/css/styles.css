@@ -138,10 +138,10 @@ footer a {
 
 /* HOME */
 .shanelle-background-home {
-  background-image: url('../images/home/background-home.png');
+  /* background-image: url('../images/home/background-home.png');
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; */
 }
 
 .shanelle-home-header-image {
@@ -390,12 +390,27 @@ video {
   text-align: justify;
 }
 
-.shanelle-card a {
+.shanelle-card .link {
   bottom: 5%;
+  cursor: pointer;
   font-size: 14px;
   line-height: 16px;
   position: absolute;
   right: 5%;
+}
+
+.swal2-modal {
+  background: linear-gradient(180deg, #c2157d 0%, #e8380d 100%) !important;
+}
+
+.shanelle-modal {
+  color: white;
+  font-size: 16px;
+  padding: 46px;
+}
+
+.shanelle-modal a {
+  color: white;
 }
 
 /* ENTERTAINMENT */
@@ -427,6 +442,21 @@ video {
 
 .shanelle-entertainment-container p {
   font-size: 13px;
+}
+
+.shanelle-tik-tok-gif {
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.shanelle-social-media-title {
+  align-items: center;
+  display: flex;
+}
+
+.shanelle-entertainment-main-container a {
+  color: white;
+  text-decoration: none;
 }
 
 /* CONTACT */
@@ -564,6 +594,10 @@ video {
   width: 60% !important;
 }
 
+.w-80 {
+  width: 80% !important;
+}
+
 /* RESPONSIVE STYLES */
 /* MEDIUM LAPTOPS */
 @media (min-width: 1281px) and (max-width: 1600px) {
@@ -661,6 +695,10 @@ video {
 /* TABLET & PHONE */
 @media (max-width: 1024px) {
   /* GENERAL STYLES */
+  body.swal2-shown {
+    padding-right: 0 !important;
+  }
+
   .shanelle-mobile-menu {
     background: linear-gradient(90.41deg, #e8380d 0%, #c2157d 80%);
     border-radius: 0px 0px 0px 10px;
@@ -793,7 +831,7 @@ video {
 
   /* ENTERTAINMENT */
   .shanelle-entertainment-title {
-    left: 3.5%;
+    left: 5%;
     top: 8%;
   }
 

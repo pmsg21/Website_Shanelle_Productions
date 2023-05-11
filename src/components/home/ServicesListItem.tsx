@@ -1,12 +1,21 @@
+// REACT IMPORTS
 import { Col, Image, Row } from 'react-bootstrap';
-import { ServicesListItemProps } from '../../interfaces/components';
-import { useScreenDimensions } from '../../hooks/useScreenDimensions';
-import Check from '../../assets/images/icons/check.svg';
-import { useLanguage } from '../../hooks/useLanguage';
 
-export const ServicesListItem = ({ description }: ServicesListItemProps) => {
+// INTERFACES
+import { ServicesListItemProps } from '../../interfaces/components';
+
+// HOOKS
+import { useScreenDimensions } from '../../hooks/useScreenDimensions';
+import { useTranslation } from '../../hooks/useTranslation';
+
+// ASSETS
+import Check from '../../assets/images/icons/check.svg';
+
+export const ServicesListItem = ({
+  description,
+}: ServicesListItemProps): JSX.Element => {
   const { screenWidth, isPortrait } = useScreenDimensions();
-  const { siteLanguage } = useLanguage();
+  const { translate } = useTranslation();
 
   return (
     <li className={`mb-${screenWidth < 768 ? '4' : 2}`}>
@@ -31,7 +40,7 @@ export const ServicesListItem = ({ description }: ServicesListItemProps) => {
           lg={11}
           className={`ps-${screenWidth > 767 && !isPortrait ? '0' : '2'}`}
         >
-          {description[siteLanguage as keyof typeof description]}
+          {translate(description)}
         </Col>
       </Row>
     </li>

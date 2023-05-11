@@ -1,4 +1,6 @@
+// INTERFACES
 import { LanguageOptions } from './language';
+
 export interface Project {
   alt: string;
   description: LanguageOptions;

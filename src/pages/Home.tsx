@@ -1,22 +1,45 @@
-import { Catchphrase } from '../components/home/Catchphrase';
+// REACT IMPORTS
 import { Col, Container, Image, Row } from 'react-bootstrap';
-import { Footer } from '../components/shared/Footer';
-import { ServicesList } from '../components/home/ServicesList';
+
+// HOOKS
+import { useLanguage } from '../hooks/useLanguage';
 import { useScreenDimensions } from '../hooks/useScreenDimensions';
+
+// ASSETS
 import BackgroundHome from '../assets/images/home/background-home.png';
 import BackgroundHomeTablet from '../assets/images/home/background-home-tablet.png';
+import BackgroundVideo from '../assets/images/home/background-home-video.mp4';
+import BackgroundVideoTablet from '../assets/images/home/background-home-video-tablet.mp4';
 import HomeHeader from '../assets/images/home/home-header.svg';
-import HomeHeaderTablet from '../assets/images/home/home-header-tablet.svg';
 import HomeHeaderPhone from '../assets/images/home/home-header-phone.svg';
+import HomeHeaderTablet from '../assets/images/home/home-header-tablet.svg';
 import LogoColor from '../assets/images/shared/logo-color.svg';
 import LogoColorShaping from '../assets/images/home/logo-color-shaping.svg';
-import { useLanguage } from '../hooks/useLanguage';
 
-export const Home = () => {
+// COMPONENTS
+import { Catchphrase } from '../components/home/Catchphrase';
+import { Footer } from '../components/shared/Footer';
+import { ServicesList } from '../components/home/ServicesList';
+
+export const Home = (): JSX.Element => {
   const { screenWidth, isPortrait } = useScreenDimensions();
   const { siteLanguage } = useLanguage();
   const isTabletPortrait =
     screenWidth > 767 && screenWidth < 1025 && isPortrait;
+
+  const getVideo = (): JSX.Element => (
+    <video playsInline autoPlay muted loop className="w-100">
+      <source
+        src={
+          screenWidth > 767 && screenWidth < 1025
+            ? BackgroundVideoTablet
+            : BackgroundVideo
+        }
+        type="video/mp4"
+      />
+      Your browser does not support the video tag.
+    </video>
+  );
 
   return (
     <main className="position-relative" id="home-section">
@@ -54,33 +77,27 @@ export const Home = () => {
               </div>
             </Col>
             <Col
-              className="shanelle-background-home"
+              className="shanelle-background-home ps-0 pe-0"
               xs={12}
               md={6}
               lg={6}
-            ></Col>
+            >
+              {getVideo()}
+            </Col>
           </Row>
         </Container>
       ) : null}
       {screenWidth > 767 && screenWidth < 1025 ? (
         <div>
-          <Image
-            className="mt-0 w-100 ps-5"
-            alt="Background Home Tablet"
-            src={BackgroundHomeTablet}
-          />
+          {getVideo()}
           <Container className="ps-4 pe-4">
-            <Catchphrase classes="ps-3 pe-3 mt-5" />
+            <Catchphrase classes="ps-3 pe-3 mt-0" />
           </Container>
         </div>
       ) : null}
       {screenWidth < 768 ? (
         <div>
-          <Image
-            className="mt-0 w-100"
-            alt="Background Home"
-            src={BackgroundHome}
-          />
+          {getVideo()}
           <Container className="ps-3 pe-3">
             <Image className="mt-0 w-75" alt="Logo Color" src={LogoColor} />
             <Catchphrase classes="mt-3 w-100" />

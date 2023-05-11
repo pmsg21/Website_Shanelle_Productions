@@ -1,16 +1,27 @@
-import { AboutPerson } from '../components/about/AboutPerson';
-import { AboutTitle } from '../components/about/AboutTitle';
+// REACT IMPORTS
 import { Container, Row, Col, Image } from 'react-bootstrap';
-import { Footer } from '../components/shared/Footer';
+
+// DATA
 import { missionVisionValues, persons } from '../data/about';
+
+// HOOKS
 import { useLanguage } from '../hooks/useLanguage';
 import { useScreenDimensions } from '../hooks/useScreenDimensions';
+import { useTranslation } from '../hooks/useTranslation';
+
+// ASSETS
 import LogoColor from '../assets/images/shared/logo-color.svg';
 import Shaping from '../assets/images/about/shaping-imagination-into-reality.svg';
 
-export const About = () => {
+// COMPONENTS
+import { AboutPerson } from '../components/about/AboutPerson';
+import { AboutTitle } from '../components/about/AboutTitle';
+import { Footer } from '../components/shared/Footer';
+
+export const About = (): JSX.Element => {
   const { screenWidth, isPortrait } = useScreenDimensions();
   const { siteLanguage } = useLanguage();
+  const { translate } = useTranslation();
   const { mission, vision, values } = missionVisionValues;
 
   return (
@@ -71,9 +82,9 @@ export const About = () => {
               }`}
             >
               <div className="shanelle-inner-container">
-                <p>{mission[siteLanguage as keyof typeof mission]}</p>
+                <p>{translate(mission)}</p>
                 <p className={screenWidth < 768 ? 'mb-0' : ''}>
-                  {vision[siteLanguage as keyof typeof vision]}
+                  {translate(vision)}
                 </p>
               </div>
             </div>
@@ -108,7 +119,7 @@ export const About = () => {
                 />
               ) : null}
               <div className="shanelle-inner-container">
-                <p>{values[siteLanguage as keyof typeof values]}</p>
+                <p>{translate(values)}</p>
               </div>
             </div>
           </Col>

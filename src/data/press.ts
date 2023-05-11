@@ -1,15 +1,51 @@
+// INTERFACES
 import { Press } from '../interfaces/press';
+
+// ASSETS
 import HighwayOne from '../assets/images/press/highway-1.png';
 import MadLove from '../assets/images/press/mad-love.png';
 import MadLoveSong from '../assets/images/press/mad-love-song.png';
 import OaxacaFilmfest from '../assets/images/press/oaxaca-filmfest.png';
 import OmniaAlbum from '../assets/images/press/omnia-album.png';
+import Shanelle from '../assets/images/press/shanelle.png';
 import ShanelleProductions from '../assets/images/press/shanelle-productions.png';
 import WizzardFtShanelle from '../assets/images/press/wizzard-ft-shanelle.png';
 
 export const press: Press[] = [
   {
     id: 1,
+    alt: 'Shanelle',
+    image: Shanelle,
+    text: {
+      en: `“We believe that everyone's voice deserves to be heard, and we are committed to using our skills to make that happen” said Alexandra and Michelle. “We want to work with projects that have a positive impact on society and help promote diversity, growth, and inclusion.”`,
+      es: '“Creemos que la voz de todos merece ser escuchada y estamos comprometidas a usar nuestras habilidades para que eso suceda”, dijeron Alexandra y Michelle. “Queremos trabajar con proyectos que tengan un impacto positivo en la sociedad y ayuden a promover la diversidad, el crecimiento y la e inclusión”.',
+    },
+    urls: [
+      {
+        id: 1,
+        title: 'BEZINGA',
+        url: 'https://www.benzinga.com/pressreleases/23/04/ab31670733/shanelle-productions-the-sound-of-peoples-emotions-through-audiovisual-creations',
+      },
+      {
+        id: 2,
+        title: 'DIGITAL JOURNAL',
+        url: 'https://www.digitaljournal.com/pr/news/shanelle-productions-the-sound-of-people-s-emotions-through-audiovisual-creations',
+      },
+      {
+        id: 3,
+        title: 'FOX 40',
+        url: 'https://www.wicz.com/story/48670632/shanelle-productions-the-sound-of-peoples-emotions-through-audiovisual-creations',
+      },
+      {
+        id: 4,
+        title: 'AZ CENTRAL',
+        url: 'http://finance.azcentral.com/azcentral/article/getnews-2023-4-4-shanelle-productions-the-sound-of-peoples-emotions-through-audiovisual-creations/',
+      },
+    ],
+    hasModal: true,
+  },
+  {
+    id: 2,
     alt: 'HighwayOne',
     image: HighwayOne,
     text: {
@@ -19,7 +55,7 @@ export const press: Press[] = [
     url: 'https://thedrillmag.com/exclusive-trailer-release-vintage-nye-house-party-highway-one/',
   },
   {
-    id: 2,
+    id: 3,
     alt: 'OaxacaFilmfest',
     image: OaxacaFilmfest,
     text: {
@@ -29,7 +65,7 @@ export const press: Press[] = [
     url: 'https://www.instagram.com/p/B6EonwuppAt/?igshid=NDk5N2NlZjQ=',
   },
   {
-    id: 3,
+    id: 4,
     alt: 'OmniaAlbum',
     image: OmniaAlbum,
     text: {
@@ -39,7 +75,7 @@ export const press: Press[] = [
     url: 'https://www.instagram.com/p/B1piMcXpRhm/?igshid=NDk5N2NlZjQ=',
   },
   {
-    id: 4,
+    id: 5,
     alt: 'MadLoveSong',
     image: MadLoveSong,
     text: {
@@ -49,7 +85,7 @@ export const press: Press[] = [
     url: 'https://venezuelaempresarial.com.ve/noticia.php?post=7169',
   },
   {
-    id: 5,
+    id: 6,
     alt: 'WizzardFtShanelle',
     image: WizzardFtShanelle,
     text: {
@@ -59,7 +95,7 @@ export const press: Press[] = [
     url: 'https://revistaronda.net/wizzard-mas-empalagoso-y-muere/',
   },
   {
-    id: 6,
+    id: 7,
     alt: 'MadLove',
     image: MadLove,
     text: {
@@ -69,7 +105,7 @@ export const press: Press[] = [
     url: 'https://somosnoticias.com.ve/mad-love-el-nuevo-tema-de-wizzard-feat-shanelle/',
   },
   {
-    id: 7,
+    id: 8,
     alt: 'ShanelleProductions',
     image: ShanelleProductions,
     text: {

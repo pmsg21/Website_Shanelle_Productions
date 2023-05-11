@@ -1,19 +1,30 @@
+// REACT IMPORTS
+import { useRef, MutableRefObject } from 'react';
 import { Container, Row, Col, Image } from 'react-bootstrap';
-import { Footer } from '../components/shared/Footer';
-import { ProjectCard } from '../components/projects/ProjectCard';
+
+// DATA
 import { projects, projectsAward } from '../data/projects';
+
+// HOOKS
 import { useDetectScrollTop } from '../hooks/useDetectScrollTop';
 import { useLanguage } from '../hooks/useLanguage';
-import { useRef, MutableRefObject } from 'react';
 import { useScreenDimensions } from '../hooks/useScreenDimensions';
-import { Video } from '../components/projects/Video';
+import { useTranslation } from '../hooks/useTranslation';
+
+// ASSETS
 import ShanelleYoutubeAward from '../assets/images/projects/shanelle-youtube-award.png';
 import ShanelleYoutubeAwardIcon from '../assets/images/projects/shanelle-youtube-award-icon.svg';
 import ShanelleYoutubeAwardPhone from '../assets/images/projects/shanelle-youtube-award-phone.png';
 
-export const Projects = () => {
+// COMPONENTS
+import { Footer } from '../components/shared/Footer';
+import { ProjectCard } from '../components/projects/ProjectCard';
+import { Video } from '../components/projects/Video';
+
+export const Projects = (): JSX.Element => {
   const { screenWidth } = useScreenDimensions();
   const { siteLanguage } = useLanguage();
+  const { translate } = useTranslation();
   const awardsContainerRef = useRef() as MutableRefObject<HTMLDivElement>;
   const isTopOfElement = useDetectScrollTop(awardsContainerRef);
   const sectionTitle = siteLanguage === 'en' ? 'Projects' : 'Proyectos';
@@ -137,8 +148,7 @@ export const Projects = () => {
                     : 'opacity-0'
                 } shanelle-projects-award`}
                 dangerouslySetInnerHTML={{
-                  __html:
-                    projectsAward[siteLanguage as keyof typeof projectsAward],
+                  __html: translate(projectsAward),
                 }}
               ></p>
             </Col>

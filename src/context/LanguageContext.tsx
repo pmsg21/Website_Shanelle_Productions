@@ -1,3 +1,4 @@
+// REACT IMPORTS
 import { createContext, useState } from 'react';
 
 interface LanguageContextProps {
@@ -24,7 +25,7 @@ export const LanguageContextProvider = ({
   );
 
   const handleLanguageChange = (): void => {
-    setSiteLanguage((prev) => {
+    setSiteLanguage((prev): string => {
       const currentSiteLanguage = prev === 'en' ? 'es' : 'en';
       localStorage.setItem('currentSiteLanguage', currentSiteLanguage);
       return currentSiteLanguage;

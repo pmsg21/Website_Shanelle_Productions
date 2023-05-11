@@ -1,20 +1,65 @@
+// REACT IMPORTS
 import { Container, Row, Col, Image } from 'react-bootstrap';
-import { entertainment, entertainmentParagraphs } from '../data/entertainment';
-import { EntertainmentSocialCard } from '../components/entertainment/EntertainmentSocialCard';
-import { Footer } from '../components/shared/Footer';
+
+// DATA
+import {
+  entertainment,
+  entertainmentParagraphs,
+  entertainmentSocialMediaParagraphs,
+} from '../data/entertainment';
+
+// HOOKS
 import { useLanguage } from '../hooks/useLanguage';
 import { useScreenDimensions } from '../hooks/useScreenDimensions';
+import { useTranslation } from '../hooks/useTranslation';
+
+// ASSETS
 import Shanelle from '../assets/images/entertainment/shanelle.png';
 import Spotify from '../assets/images/entertainment/spotify.svg';
+import TiktokGif from '../assets/images/entertainment/tiktok_shanelle_productions.gif';
 
-export const Entertainment = () => {
+// COMPONENTS
+import { EntertainmentSocialCard } from '../components/entertainment/EntertainmentSocialCard';
+import { EntertainmentSocialMediaCard } from '../components/entertainment/EntertainmentSocialMediaCard';
+import { Footer } from '../components/shared/Footer';
+
+export const Entertainment = (): JSX.Element => {
   const { screenWidth, isPortrait } = useScreenDimensions();
   const { siteLanguage } = useLanguage();
+  const { translate } = useTranslation();
   const sectionTitle =
     siteLanguage === 'en' ? 'Entertainment' : 'Entretenimiento';
-  const { firstParagraph, secondParagraph } = entertainmentParagraphs;
+  const { firstParagraph, secondParagraph, thirdParagraph, fourthParagraph } =
+    entertainmentParagraphs;
+  const { header, footer, socialMedia } = entertainmentSocialMediaParagraphs;
   const isTabletPortrait =
     screenWidth > 767 && screenWidth < 1025 && isPortrait;
+
+  const handleGifOnClick = (): void => {
+    window.open(
+      'https://www.tiktok.com/@shanelleprod/video/7204569044148620586?_r=1&_t=8bev2ITwRr3',
+      '_blank'
+    );
+  };
+
+  const getYoutubeVideoDimensions = (): { height: string; width: string } => {
+    let videoDimensions = {
+      height: '510',
+      width: '915',
+    };
+    if (screenWidth > 767 && screenWidth < 1025) {
+      videoDimensions = {
+        height: '382',
+        width: '676',
+      };
+    } else if (screenWidth < 768) {
+      videoDimensions = {
+        height: '180',
+        width: '322',
+      };
+    }
+    return videoDimensions;
+  };
 
   return (
     <section id="entertainment-section">
@@ -39,38 +84,82 @@ export const Entertainment = () => {
           </h1>
         )}
         <div className="shanelle-entertainment-main-container m-auto">
-          <p>{firstParagraph[siteLanguage as keyof typeof firstParagraph]}</p>
+          <p className="mt-3 mb-3">{translate(firstParagraph)}</p>
           <Row
-            md={1}
+            md={2}
             xs={1}
             lg={2}
-            className={`${
-              screenWidth < 768 ? 'w-100 ms-0 me-0' : ''
-            } g-3 position-relative`}
+            className={`w-${screenWidth > 1024 ? '75' : '100'} m-auto mt-5`}
           >
-            {entertainment.map((item) => (
-              <Col
-                className={screenWidth > 767 ? 'p-3' : 'ps-0 pe-0 mb-4'}
-                key={item.id}
+            <Col>
+              <div
+                className="animate__animated animate__fadeIn animate__delay-0-5s"
+                style={{ display: 'flex', justifyContent: 'center' }}
               >
-                <EntertainmentSocialCard
-                  {...item}
-                  className="transition scale"
+                <Image
+                  alt="Tik Tok GIF"
+                  className="shanelle-tik-tok-gif transition scale"
+                  fluid
+                  onClick={handleGifOnClick}
+                  src={TiktokGif}
                 />
-              </Col>
-            ))}
+              </div>
+            </Col>
+            <Col className={screenWidth < 768 ? 'mt-4' : ''}>
+              <p
+                className={`animate__animated animate__fadeIn animate__delay-1s ${
+                  screenWidth < 768 ? 'text-center' : ''
+                }`}
+              >
+                {translate(header)}
+              </p>
+              {socialMedia.map((item) => (
+                <EntertainmentSocialMediaCard key={item.id} {...item} />
+              ))}
+              <div
+                className={`animate__animated animate__fadeIn animate__delay-3s ${
+                  screenWidth < 768 ? 'text-center' : ''
+                }`}
+                dangerouslySetInnerHTML={{
+                  __html: translate(footer),
+                }}
+              />
+            </Col>
           </Row>
-          <p className="mt-3 mb-3">
-            {secondParagraph[siteLanguage as keyof typeof secondParagraph]}
-          </p>
+          <iframe
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+            className="mt-5 mb-5 d-block m-auto transition scale"
+            frameBorder="0"
+            src="https://www.youtube.com/embed/K2rQ57HCxMg"
+            style={{ borderRadius: '20px' }}
+            title="YouTube video player"
+            {...getYoutubeVideoDimensions()}
+          ></iframe>
+          <p className="mt-3 mb-3">{translate(secondParagraph)}</p>
+          <iframe
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+            className="mt-5 mb-5 d-block m-auto transition scale"
+            frameBorder="0"
+            src="https://www.youtube.com/embed/GiCxwaTZ4eg"
+            style={{ borderRadius: '20px' }}
+            title="YouTube video player"
+            {...getYoutubeVideoDimensions()}
+          ></iframe>
+          <p className="mt-3 mb-3">{translate(thirdParagraph)}</p>
           <Row>
             <Col
+              className="mb-4"
               xs={12}
               md={{
                 span: isTabletPortrait ? 6 : 12,
                 offset: isTabletPortrait ? 3 : undefined,
               }}
-              lg={6}
+              lg={{
+                span: 6,
+                offset: 3,
+              }}
             >
               <div
                 className={`${
@@ -108,6 +197,24 @@ export const Entertainment = () => {
                 </div>
               </div>
             </Col>
+          </Row>
+          <p>{translate(fourthParagraph)}</p>
+          <Row
+            md={1}
+            xs={1}
+            lg={2}
+            className={`${
+              screenWidth < 768 ? 'w-100 ms-0 me-0' : ''
+            } g-3 position-relative`}
+          >
+            {entertainment.map((item) => (
+              <Col
+                className={screenWidth > 767 ? 'p-3' : 'ps-0 pe-0 mb-4'}
+                key={item.id}
+              >
+                <EntertainmentSocialCard {...item} />
+              </Col>
+            ))}
           </Row>
         </div>
         {screenWidth > 767 ? (
