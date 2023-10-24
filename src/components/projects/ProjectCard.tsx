@@ -1,5 +1,5 @@
 // REACT IMPORTS
-import { useState } from 'react';
+import { ReactElement, useState } from 'react';
 import { Collapse, Image } from 'react-bootstrap';
 
 // INTERFACES
@@ -7,9 +7,7 @@ import { LanguageOptions } from '../../interfaces/language';
 import { Project } from '../../interfaces/project';
 
 // HOOKS
-import { useLanguage } from '../../hooks/useLanguage';
-import { useScreenDimensions } from '../../hooks/useScreenDimensions';
-import { useTranslation } from '../../hooks/useTranslation';
+import { useLanguage, useScreenDimensions, useTranslation } from '../../hooks';
 
 // ASSETS
 import LinkIcon from '../../assets/images/about/link.svg';
@@ -21,7 +19,7 @@ export const ProjectCard = ({
   image,
   link,
   title,
-}: Project): JSX.Element => {
+}: Project): ReactElement => {
   const [isOpen, setIsOpen] = useState(false);
   const { screenWidth } = useScreenDimensions();
   const { siteLanguage } = useLanguage();
@@ -40,7 +38,7 @@ export const ProjectCard = ({
     es: 'Menos',
   };
 
-  const getProjectFooter = (): JSX.Element => {
+  const getProjectFooter = (): ReactElement => {
     return (
       <div className={screenWidth < 1025 ? 'mt-4' : ''}>
         <p className="mb-0 shanelle-extra-bold-text">

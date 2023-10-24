@@ -1,15 +1,17 @@
 // REACT IMPORTS
-import { useRef, MutableRefObject } from 'react';
+import { useRef, MutableRefObject, ReactElement } from 'react';
 import { Container, Row, Col, Image } from 'react-bootstrap';
 
 // DATA
 import { projects, projectsAward } from '../data/projects';
 
 // HOOKS
-import { useDetectScrollTop } from '../hooks/useDetectScrollTop';
-import { useLanguage } from '../hooks/useLanguage';
-import { useScreenDimensions } from '../hooks/useScreenDimensions';
-import { useTranslation } from '../hooks/useTranslation';
+import {
+  useDetectScrollTop,
+  useLanguage,
+  useScreenDimensions,
+  useTranslation,
+} from '../hooks';
 
 // ASSETS
 import ShanelleYoutubeAward from '../assets/images/projects/shanelle-youtube-award.png';
@@ -17,11 +19,10 @@ import ShanelleYoutubeAwardIcon from '../assets/images/projects/shanelle-youtube
 import ShanelleYoutubeAwardPhone from '../assets/images/projects/shanelle-youtube-award-phone.png';
 
 // COMPONENTS
-import { Footer } from '../components/shared/Footer';
-import { ProjectCard } from '../components/projects/ProjectCard';
-import { Video } from '../components/projects/Video';
+import { Footer } from '../components/shared';
+import { ProjectCard, Video } from '../components/projects';
 
-export const Projects = (): JSX.Element => {
+export const Projects = (): ReactElement => {
   const { screenWidth } = useScreenDimensions();
   const { siteLanguage } = useLanguage();
   const { translate } = useTranslation();

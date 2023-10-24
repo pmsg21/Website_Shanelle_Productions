@@ -1,5 +1,5 @@
 // REACT IMPORTS
-import { useState } from 'react';
+import { ReactElement, useState } from 'react';
 import { Navbar as NavbarBS, Container, Nav, Image } from 'react-bootstrap';
 import { NavLink, useNavigate } from 'react-router-dom';
 
@@ -7,9 +7,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import { routes } from '../../routes/routes';
 
 // HOOKS
-import { useLanguage } from '../../hooks/useLanguage';
-import { useScreenDimensions } from '../../hooks/useScreenDimensions';
-import { useTranslation } from '../../hooks/useTranslation';
+import { useLanguage, useScreenDimensions, useTranslation } from '../../hooks';
 
 // ASSETS
 import English from '../../assets/images/shared/english.svg';
@@ -17,20 +15,17 @@ import HamburgerIcon from '../../assets/images/shared/hamburger-icon.svg';
 import LogoWhite from '../../assets/images/shared/logo-white.svg';
 import Spanish from '../../assets/images/shared/spanish.svg';
 
-export const Navbar = (): JSX.Element => {
+export const Navbar = (): ReactElement => {
   const [isOpen, setIsOpen] = useState(false);
-  const { screenWidth } = useScreenDimensions();
+  const { screenWidth, scrollIntoView } = useScreenDimensions();
   const { siteLanguage, handleLanguageChange } = useLanguage();
   const { translate } = useTranslation();
   const navigate = useNavigate();
+  const storeText = siteLanguage === 'en' ? 'Store' : 'Tienda';
 
   function handleScrollIntoView(id: string): void {
     setIsOpen(false);
-    const scrollDiv = document.getElementById(id)?.offsetTop;
-    window.scrollTo({
-      top: scrollDiv ? scrollDiv - 100 : 0,
-      behavior: 'smooth',
-    });
+    scrollIntoView(id);
   }
 
   function redirectTo(to: string): void {
@@ -38,7 +33,7 @@ export const Navbar = (): JSX.Element => {
     navigate(to);
   }
 
-  function getLanguageIcon(): JSX.Element {
+  function getLanguageIcon(): ReactElement {
     return (
       <div
         className="shanelle-language-container transition scale"
@@ -84,26 +79,35 @@ export const Navbar = (): JSX.Element => {
             navbarScroll
           >
             {screenWidth > 1023 ? (
-              routes
-                .filter((route): boolean => route.to !== '/')
-                .map(
-                  ({ path, to, name }): JSX.Element => (
-                    <Nav.Link
-                      className="me-3 transition scale shanelle-semi-bold-text"
-                      key={path}
-                      to={to}
-                      as={NavLink}
-                      onClick={(): void =>
-                        window.scrollTo({
-                          top: 0,
-                          behavior: 'smooth',
-                        })
-                      }
-                    >
-                      {translate(name)}
-                    </Nav.Link>
-                  )
-                )
+              <>
+                <a
+                  className="me-3 transition scale shanelle-semi-bold-text align-self-center nav-link"
+                  href="https://www.shanelleproductions.store"
+                  target="_blank"
+                >
+                  {storeText}
+                </a>
+                {routes
+                  .filter((route): boolean => route.to !== '/')
+                  .map(
+                    ({ path, to, name }): ReactElement => (
+                      <Nav.Link
+                        className="me-3 transition scale shanelle-semi-bold-text"
+                        key={path}
+                        to={to}
+                        as={NavLink}
+                        onClick={(): void =>
+                          window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth',
+                          })
+                        }
+                      >
+                        {translate(name)}
+                      </Nav.Link>
+                    )
+                  )}
+              </>
             ) : (
               <Image
                 onClick={(): void => setIsOpen(!isOpen)}
@@ -119,23 +123,36 @@ export const Navbar = (): JSX.Element => {
       {screenWidth < 1025 && isOpen ? (
         <div className="shanelle-mobile-menu position-fixed animate__animated animate__fadeIn p-3">
           <ul className="ps-0">
-            {routes
-              .filter((route): boolean => route.to !== '/')
-              .map(
-                ({ path, id, name, to }): JSX.Element => (
-                  <li
-                    className="shanelle-semi-bold-text"
-                    key={path}
-                    onClick={(): void => {
-                      screenWidth < 768
-                        ? handleScrollIntoView(id)
-                        : redirectTo(to);
-                    }}
+            {
+              <>
+                <li className="shanelle-semi-bold-text">
+                  <a
+                    className="nav-link"
+                    href="https://www.shanelleproductions.store"
+                    target="_blank"
                   >
-                    {translate(name)}
-                  </li>
-                )
-              )}
+                    {storeText}
+                  </a>
+                </li>
+                {routes
+                  .filter((route): boolean => route.to !== '/')
+                  .map(
+                    ({ path, id, name, to }): ReactElement => (
+                      <li
+                        className="shanelle-semi-bold-text"
+                        key={path}
+                        onClick={(): void => {
+                          screenWidth < 768
+                            ? handleScrollIntoView(id)
+                            : redirectTo(to);
+                        }}
+                      >
+                        {translate(name)}
+                      </li>
+                    )
+                  )}
+              </>
+            }
             <li>{getLanguageIcon()}</li>
           </ul>
         </div>

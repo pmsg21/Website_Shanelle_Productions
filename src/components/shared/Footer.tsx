@@ -1,4 +1,5 @@
 // REACT IMPORTS
+import { ReactElement } from 'react';
 import { Col, Image, Row } from 'react-bootstrap';
 
 // DATA
@@ -8,9 +9,9 @@ import { footerLinks } from '../../data/footer-links';
 import { FooterProps } from '../../interfaces/components';
 
 // HOOKS
-import { useScreenDimensions } from '../../hooks/useScreenDimensions';
+import { useScreenDimensions } from '../../hooks';
 
-export const Footer = ({ className }: FooterProps): JSX.Element => {
+export const Footer = ({ className }: FooterProps): ReactElement => {
   const { screenWidth } = useScreenDimensions();
 
   return (
@@ -41,7 +42,7 @@ export const Footer = ({ className }: FooterProps): JSX.Element => {
         <Row>
           <Col xs={12} className="d-flex justify-content-center mb-3">
             {footerLinks.map(
-              ({ alt, img, url }, index): JSX.Element => (
+              ({ alt, img, url }, index): ReactElement => (
                 <a
                   key={alt}
                   href={url}

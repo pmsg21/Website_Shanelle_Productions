@@ -12,7 +12,7 @@ export interface ServicesListItemProps {
 }
 
 export interface AboutTitleProps {
-  classes?: string;
+  className?: string;
   title: string;
 }
 

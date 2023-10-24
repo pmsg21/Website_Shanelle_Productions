@@ -1,13 +1,13 @@
 // REACT IMPORTS
-import { LazyExoticComponent } from 'react';
+import { LazyExoticComponent, ReactElement } from 'react';
 
 // INTERFACES
 import { LanguageOptions } from './language';
 
-type JSXComponent = () => JSX.Element;
+type ReactComponent = () => ReactElement;
 
 export interface Route {
-  Component: LazyExoticComponent<JSXComponent> | JSXComponent;
+  Component: LazyExoticComponent<ReactComponent> | ReactComponent;
   id: string;
   name: LanguageOptions;
   path: string;

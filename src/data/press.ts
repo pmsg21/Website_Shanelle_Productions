@@ -18,7 +18,7 @@ export const press: Press[] = [
     image: Shanelle,
     text: {
       en: `“We believe that everyone's voice deserves to be heard, and we are committed to using our skills to make that happen” said Alexandra and Michelle. “We want to work with projects that have a positive impact on society and help promote diversity, growth, and inclusion.”`,
-      es: '“Creemos que la voz de todos merece ser escuchada y estamos comprometidas a usar nuestras habilidades para que eso suceda”, dijeron Alexandra y Michelle. “Queremos trabajar con proyectos que tengan un impacto positivo en la sociedad y ayuden a promover la diversidad, el crecimiento y la e inclusión”.',
+      es: '“Creemos que la voz de todos merece ser escuchada y estamos comprometidas a usar nuestras habilidades para que eso suceda”, dijeron Alexandra y Michelle. “Queremos trabajar con proyectos que tengan un impacto positivo en la sociedad y ayuden a promover la diversidad, el crecimiento y la inclusión”.',
     },
     urls: [
       {
@@ -62,7 +62,7 @@ export const press: Press[] = [
       en: '“Shanelle arrives at international film festivals. Memorama a short film by Daniel Larios, where Alexandra & Michelle are involved in the sound editing, is quite a sensation at many film festivals.”',
       es: '“Shanelle llega a los festivales internacionales de cine. Memorama, un cortometraje de Daniel Larios, donde Alexandra y Michelle están involucradas en la edición de sonido, es toda una sensación en muchos festivales de cine”.',
     },
-    url: 'https://www.instagram.com/p/B6EonwuppAt/?igshid=NDk5N2NlZjQ=',
+    url: 'https://cactus24.com.ve/2019/12/14/shanelle-de-sello-venezolano-llega-a-festivales-de-cines-internacionales/',
   },
   {
     id: 4,
@@ -72,7 +72,7 @@ export const press: Press[] = [
       en: '“Shanelle, ready to conquer the world with Omnia, their new experimental album. Their college graduation with honors closes a time in which awards and recognitions were not oblivious to them. Several months ago they decided to explore new horizons to exploit their talent.”',
       es: '“Shanelle, listas para conquistar el mundo con Omnia, su nuevo álbum experimental. Su graduación universitaria con honores cierra una época en la que los premios y reconocimientos no les fueron ajenos. Hace varios meses decidieron explorar nuevos horizontes para explotar su talento”.',
     },
-    url: 'https://www.instagram.com/p/B1piMcXpRhm/?igshid=NDk5N2NlZjQ=',
+    url: 'https://cactus24.com.ve/2019/08/26/shanelle-el-duo-musical-venezolano-dispuesto-a-conquistar-el-mundo-con-omnia-su-nuevo-album-experimental/',
   },
   {
     id: 5,

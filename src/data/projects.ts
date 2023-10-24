@@ -16,8 +16,8 @@ export const projects: Project[] = [
   {
     alt: 'BeforeTheWorldSetOnFire',
     description: {
-      en: 'A feature film by Jaclyn Bethany. An unidentifiable virus breaks out at a college, forcing professor Anya Davis to conduct her seminar online. After a tragedy happens in the class, a battle of ethics begins between Anya and the institution.',
-      es: 'Un largometraje de Jaclyn Bethany. Un virus no identificable irrumpe en una universidad y obliga a la profesora Anya Davis a realizar su seminario en línea. Luego de que ocurre una tragedia en la clase, comienza una batalla de ética entre Anya y la institución.',
+      en: 'A feature film by Jaclyn Bethany.  Premiered in competition at the New Orleans Film Festival in 2023. An unidentifiable virus breaks out at a college, forcing professor Anya Davis to conduct her seminar online. After a tragedy happens in the class, a battle of ethics begins between Anya and the institution.',
+      es: 'Un largometraje de Jaclyn Bethany. Estrenada en competencia en el Festival de Cine de Nueva Orleans en 2023. Un virus no identificable irrumpe en una universidad y obliga a la profesora Anya Davis a realizar su seminario en línea. Luego de que ocurre una tragedia en la clase, comienza una batalla de ética entre Anya y la institución.',
     },
     emphasisText: {
       en: 'Sound Designers and Sound Mixers: Alexandra Alvarez Pilonieta & Michelle Deniesse Lugo.',
@@ -31,8 +31,8 @@ export const projects: Project[] = [
   {
     alt: 'Angelica',
     description: {
-      en: 'A short film by Victor Velasco. Angelica, a frustrated Latina, meets a charismatic driver during a ride and both fall for each other. When they arrive at her destination, they ask themselves if the feeling they have is worth chasing.',
-      es: 'Un cortometraje de Víctor Velasco. Angélica, una latina frustrada, conoce a un carismático conductor durante un viaje y ambos se enamoran. Cuando llegan a su destino, se preguntan si vale la pena perseguir el sentimiento que tienen.',
+      en: 'A short film by Victor Velasco. Selected at various film festivals such as the Philadelphia Latino Film Festival, Hola Mexico Film Festival in Los Angeles, and the Oscar-qualifying LA Shorts International Film Festival. Angelica, a frustrated Latina, meets a charismatic driver during a ride and both fall for each other. When they arrive at her destination, they ask themselves if the feeling they have is worth chasing.',
+      es: 'Un cortometraje de Víctor Velasco. Seleccionado en varios festivales de cine como el Festival de Cine Latino de Filadelfia, el Festival de Cine Hola México en Los Ángeles, y el Festival Internacional de Cine LA Shorts, calificador de los premios Oscar. Angélica, una latina frustrada, conoce a un carismático conductor durante un viaje y ambos se enamoran. Cuando llegan a su destino, se preguntan si vale la pena perseguir el sentimiento que tienen.',
     },
     emphasisText: {
       en: 'Sound Designers and Sound Mixers: Alexandra Alvarez Pilonieta & Michelle Deniesse Lugo.',

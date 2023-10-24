@@ -19,12 +19,6 @@ import Youtube from '../assets/images/entertainment/youtube.svg';
 export const entertainment: Entertainment[] = [
   {
     at: '@astrosaaurus',
-    description: `
-      <p class='mb-1 mt-4'>M&S she/her/hers</p>
-      <Image fluid alt='Pin Emoji' src=${PinEmoji} class="d-inline-block m-auto" />
-      <Image fluid alt='USA Emoji' src=${USAEmoji} class="d-inline-block m-auto" />
-      <p class='mb-3 mt-1'>Mentally on the day that we shot one of these videos</p>
-      `,
     id: 1,
     image: Astrosaaurus,
     imageAlt: 'Astrosaaurus',
@@ -33,12 +27,6 @@ export const entertainment: Entertainment[] = [
   },
   {
     at: '@hearyoulater',
-    description: `
-      <p class='mb-1'>Hear you later, alligator<Image fluid alt='Hand Emoji' src=${HandEmoji} class="d-inline-block m-auto" /></p>
-      <p class='mb-1'><Image fluid alt='Pin Emoji' src=${PinEmoji} class="d-inline-block m-auto" /> Come travel across the USA with us!</p>
-      <p class='mb-1'><Image fluid alt='Black Heart Emoji' src=${BlackHeartEmoji} class="d-inline-block m-auto" /> Wives, Sound Designers & Audiovisual Producers</p>
-      <p class='mb-1'>by @shanelleprod</p>
-      `,
     id: 2,
     image: HearYouLater,
     imageAlt: 'HearYouLater',
@@ -76,14 +64,14 @@ export const entertainmentSocialMediaParagraphs: EntertainmentSocialMediaParagra
       {
         animationDelay: 'animate__delay-1-5s',
         followers: {
-          en: '+ 34K followers',
-          es: '+ 34K seguidores',
+          en: '+ 39K followers',
+          es: '+ 39K seguidores',
         },
         icon: TikTok,
         id: 1,
         likesAndViews: {
-          en: '+ 700K likes',
-          es: '+ 700K me gusta',
+          en: '+ 910K likes',
+          es: '+ 910K me gusta',
         },
         link: 'https://www.tiktok.com/@shanelleprod',
         title: 'Tiktok',
@@ -91,14 +79,14 @@ export const entertainmentSocialMediaParagraphs: EntertainmentSocialMediaParagra
       {
         animationDelay: 'animate__delay-2s',
         followers: {
-          en: '+ 8K followers',
-          es: '+ 8K seguidores',
+          en: '+ 19K followers',
+          es: '+ 19K seguidores',
         },
         icon: Youtube,
         id: 2,
         likesAndViews: {
-          en: '+ 650K views',
-          es: '+ 650K vistas',
+          en: '+ 3MM views',
+          es: '+ 3MM vistas',
         },
         link: 'https://www.youtube.com/channel/UCV2U3zcCVmNSpYkoe7hBQcQ',
         title: 'Youtube',
@@ -106,14 +94,14 @@ export const entertainmentSocialMediaParagraphs: EntertainmentSocialMediaParagra
       {
         animationDelay: 'animate__delay-2-5s',
         followers: {
-          en: '+ 8K followers',
-          es: '+ 8K seguidores',
+          en: '+ 18K followers',
+          es: '+ 18K seguidores',
         },
         icon: Instagram,
         id: 3,
         likesAndViews: {
-          en: '+ 86K likes',
-          es: '+ 86K me gusta',
+          en: '+ 270K likes',
+          es: '+ 270K me gusta',
         },
         link: 'https://www.instagram.com/shanelleprod/',
         title: 'Instagram',

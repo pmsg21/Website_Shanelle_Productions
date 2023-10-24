@@ -1,11 +1,14 @@
+// REACT IMPORTS
+import { ReactElement } from 'react';
+
 // HOOKS
-import { useScreenDimensions } from '../../hooks/useScreenDimensions';
+import { useScreenDimensions } from '../../hooks';
 
 // ASSETS
 import ProjectsVideo from '../../assets/images/projects/shanelle-productions-logo-reveal-landscape.mp4';
 import ProjectsVideoPoster from '../../assets/images/projects/shanelle-productions-logo-reveal-landscape-poster.png';
 
-export const Video = (): JSX.Element => {
+export const Video = (): ReactElement => {
   const { screenWidth } = useScreenDimensions();
 
   return (

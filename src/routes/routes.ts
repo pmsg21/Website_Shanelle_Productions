@@ -6,20 +6,24 @@ import { Route } from '../interfaces/route';
 
 const Home = lazy(() => import(/* webpackChunkName: "Home"*/ '../pages/Home'));
 
-const Projects = lazy(
-  () => import(/* webpackChunkName: "Projects"*/ '../pages/Projects')
-);
-
 const About = lazy(
   () => import(/* webpackChunkName: "About"*/ '../pages/About')
 );
 
-const Press = lazy(
-  () => import(/* webpackChunkName: "Press"*/ '../pages/Press')
+const Projects = lazy(
+  () => import(/* webpackChunkName: "Projects"*/ '../pages/Projects')
 );
 
 const Entertainment = lazy(
   () => import(/* webpackChunkName: "Entertainment"*/ '../pages/Entertainment')
+);
+
+const Services = lazy(
+  () => import(/* webpackChunkName: "Services"*/ '../pages/Services')
+);
+
+const Press = lazy(
+  () => import(/* webpackChunkName: "Press"*/ '../pages/Press')
 );
 
 const Contact = lazy(
@@ -38,16 +42,6 @@ export const routes: Route[] = [
     to: '/',
   },
   {
-    Component: Projects,
-    id: 'projects-section',
-    name: {
-      en: 'Projects',
-      es: 'Proyectos',
-    },
-    path: 'projects',
-    to: '/projects',
-  },
-  {
     Component: About,
     id: 'about-section',
     name: {
@@ -58,14 +52,14 @@ export const routes: Route[] = [
     to: '/about',
   },
   {
-    Component: Press,
-    id: 'press-section',
+    Component: Projects,
+    id: 'projects-section',
     name: {
-      en: 'Press',
-      es: 'Prensa',
+      en: 'Projects',
+      es: 'Proyectos',
     },
-    path: 'press',
-    to: '/press',
+    path: 'projects',
+    to: '/projects',
   },
   {
     Component: Entertainment,
@@ -76,6 +70,26 @@ export const routes: Route[] = [
     },
     path: 'entertainment',
     to: '/entertainment',
+  },
+  {
+    Component: Services,
+    id: 'services-section',
+    name: {
+      en: 'Services',
+      es: 'Servicios',
+    },
+    path: 'services',
+    to: '/services',
+  },
+  {
+    Component: Press,
+    id: 'press-section',
+    name: {
+      en: 'Press',
+      es: 'Prensa',
+    },
+    path: 'press',
+    to: '/press',
   },
   {
     Component: Contact,

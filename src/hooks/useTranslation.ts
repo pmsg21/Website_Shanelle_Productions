@@ -2,7 +2,7 @@
 import { LanguageOptions } from '../interfaces/language';
 
 // HOOKS
-import { useLanguage } from './useLanguage';
+import { useLanguage } from '.';
 
 export function useTranslation(): {
   translate: (value: LanguageOptions) => string;

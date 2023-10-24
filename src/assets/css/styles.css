@@ -137,11 +137,14 @@ footer a {
 }
 
 /* HOME */
-.shanelle-background-home {
-  /* background-image: url('../images/home/background-home.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover; */
+.shanelle-home-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 90vh;
+  object-fit: cover;
+  z-index: -1;
 }
 
 .shanelle-home-header-image {
@@ -150,6 +153,36 @@ footer a {
   margin-right: auto;
   right: 0;
   z-index: 1;
+}
+
+.home-buttons-flex-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 75vh;
+}
+
+.home-buttons-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 3.75rem;
+  margin-top: auto;
+}
+
+.home-buttons {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  color: #c2157d;
+  outline: none;
+  text-transform: uppercase;
+}
+
+.home-buttons:active,
+.home-buttons:focus,
+.home-buttons:hover {
+  background-color: #c2157d;
+  color: #fff;
 }
 
 .shanelle-catchphrase {
@@ -324,7 +357,7 @@ video {
 }
 
 .shanelle-about-us-container h1 {
-  color: #473245;
+  color: #fff;
 }
 
 .shanelle-about-us-container .shanelle-name {
@@ -349,18 +382,39 @@ video {
   text-align: justify;
 }
 
-.black-line {
+.shanelle-creator-container::after {
+  border-color: #10060f;
+  border-style: solid;
+  border-width: 0 0 10px 10px;
+  bottom: -1px;
+  content: '';
+  height: 100%;
+  left: -1px;
+  position: absolute;
+  width: 80%;
+}
+
+.shanelle-creator-container h1 {
   background: #10060f;
-  bottom: 0;
   left: 0;
+  top: -6%;
 }
 
-.vertical-line {
-  width: 6px;
+.shanelle-creator-container .row {
+  z-index: 1;
 }
 
-.horizontal-line {
-  height: 6px;
+.shanelle-creator-container .shanelle-creator-details {
+  position: absolute;
+  bottom: -60%;
+}
+
+.shanelle-creator-container .shana {
+  left: 10%;
+}
+
+.shanelle-creator-container .michelle {
+  right: 10%;
 }
 
 /* PRESS */
@@ -457,6 +511,13 @@ video {
 .shanelle-entertainment-main-container a {
   color: white;
   text-decoration: none;
+}
+
+.shanelle-entertainment-card-description-container {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* CONTACT */
@@ -566,6 +627,10 @@ video {
   float: right;
 }
 
+.text-justify {
+  text-align: justify;
+}
+
 /* TRANSITION STYLES */
 .transition {
   -moz-transition: all 0.5s ease;
@@ -599,6 +664,15 @@ video {
 }
 
 /* RESPONSIVE STYLES */
+/* BIG SCREENS */
+@media (min-width: 2000px) {
+  /* ENTERTAINMENT */
+  .shanelle-entertainment-title {
+    left: 24%;
+    top: 36%;
+  }
+}
+
 /* MEDIUM LAPTOPS */
 @media (min-width: 1281px) and (max-width: 1600px) {
   /* ENTERTAINMENT */
@@ -640,10 +714,6 @@ video {
   }
 
   /* HOME */
-  .shanelle-background-home {
-    background-position: top;
-    background-size: 110%;
-  }
 
   .shanelle-service-container {
     margin-top: -30px;
@@ -719,6 +789,18 @@ video {
   .shanelle-language-container {
     justify-content: left;
   }
+
+  /* ABOUT US */
+  .shanelle-creator-container .shanelle-creator-details {
+    bottom: 0;
+    left: 0;
+    position: initial;
+    right: 0;
+  }
+
+  .shanelle-creator-container::after {
+    content: none;
+  }
 }
 
 /* TABLET */
@@ -740,6 +822,11 @@ video {
 
   /* SHANELLE STYLES */
   /* HOME */
+  .home-buttons-container {
+    gap: 1.5rem;
+    padding: 0 3rem;
+  }
+
   .shanelle-catchphrase {
     font-size: 18px;
     width: 100%;
@@ -977,6 +1064,25 @@ video {
 
   /* SHANELLE STYLES */
   /* HOME */
+  .shanelle-home-video {
+    position: initial;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .home-buttons-flex-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin-top: 1.25rem;
+  }
+
+  .home-buttons-container {
+    gap: 1rem;
+  }
+
   .shanelle-catchphrase {
     font-size: 15px;
   }

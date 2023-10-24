@@ -1,18 +1,17 @@
 // REACT IMPORTS
-import { Suspense } from 'react';
+import { ReactElement, Suspense } from 'react';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 
 // ROUTES
 import { routes } from './routes';
 
 // HOOKS
-import { useScreenDimensions } from '../hooks/useScreenDimensions';
+import { useScreenDimensions } from '../hooks';
 
 // COMPONENTS
-import { Loader } from '../components/shared/Loader';
-import { Navbar } from '../components/shared/Navbar';
+import { Loader, Navbar } from '../components/shared';
 
-export const Navigation = (): JSX.Element => {
+export const Navigation = (): ReactElement => {
   const { screenWidth } = useScreenDimensions();
 
   return (
@@ -21,15 +20,17 @@ export const Navigation = (): JSX.Element => {
       {screenWidth > 767 ? (
         <Suspense fallback={<Loader />}>
           <Routes>
-            {routes.map(({ path, Component }) => (
-              <Route key={path} path={path} element={<Component />} />
-            ))}
+            {routes.map(
+              ({ path, Component }): ReactElement => (
+                <Route key={path} path={path} element={<Component />} />
+              )
+            )}
             <Route path="/*" element={<Navigate to={routes[0].to} replace />} />
           </Routes>
         </Suspense>
       ) : (
         routes.map(
-          ({ path, Component }): JSX.Element => <Component key={path} />
+          ({ path, Component }): ReactElement => <Component key={path} />
         )
       )}
     </BrowserRouter>

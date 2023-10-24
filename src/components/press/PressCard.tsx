@@ -1,4 +1,5 @@
 // REACT IMPORTS
+import { ReactElement } from 'react';
 import { Card } from 'react-bootstrap';
 
 // THIRD PARTY IMPORTS
@@ -8,8 +9,7 @@ import Swal from 'sweetalert2';
 import { Press } from '../../interfaces/press';
 
 // HOOKS
-import { useLanguage } from '../../hooks/useLanguage';
-import { useTranslation } from '../../hooks/useTranslation';
+import { useLanguage, useTranslation } from '../../hooks';
 
 export const PressCard = ({
   alt,
@@ -19,7 +19,7 @@ export const PressCard = ({
   text,
   url,
   urls,
-}: Press): JSX.Element => {
+}: Press): ReactElement => {
   const { siteLanguage } = useLanguage();
   const { translate } = useTranslation();
   const readHereText =

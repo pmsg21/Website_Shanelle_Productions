@@ -1,19 +1,19 @@
 // REACT IMPORTS
+import { ReactElement } from 'react';
 import { Col, Container, Image, Row } from 'react-bootstrap';
 
 // HOOKS
-import { useLanguage } from '../hooks/useLanguage';
-import { useScreenDimensions } from '../hooks/useScreenDimensions';
+import { useLanguage, useScreenDimensions } from '../hooks';
 
 // ASSETS
 import ContactImageEn from '../assets/images/contact/contact-bg-tablet-en.svg';
 import ContactImageEs from '../assets/images/contact/contact-bg-tablet-es.svg';
 
 // COMPONENTS
-import { ContactForm } from '../components/contact/ContactForm';
-import { Footer } from '../components/shared/Footer';
+import { ContactForm } from '../components/contact';
+import { Footer } from '../components/shared';
 
-export const Contact = (): JSX.Element => {
+export const Contact = (): ReactElement => {
   const { screenWidth, screenHeight, isPortrait } = useScreenDimensions();
   const { siteLanguage } = useLanguage();
   const isTabletPortrait =
@@ -72,12 +72,12 @@ export const Contact = (): JSX.Element => {
               >
                 {siteLanguage === 'en'
                   ? 'Get in touch'
-                  : 'Comunícate con nosotros'}
+                  : 'Comunícate con nosotras'}
               </h1>
               <p>
                 {siteLanguage === 'en'
                   ? 'We are happy to answer any of your questions'
-                  : 'Estamos encantados de responder a cualquiera de tus preguntas'}
+                  : 'Estamos encantadas de responder a cualquiera de tus preguntas'}
                 ,{screenWidth > 1024 ? <br /> : ' '}
                 {siteLanguage === 'en'
                   ? 'and get to know you and your project'
@@ -87,7 +87,7 @@ export const Contact = (): JSX.Element => {
               <p className="mb-4">
                 {siteLanguage === 'en'
                   ? 'Reach out to us and we will respond as soon'
-                  : 'Comunícate con nosotros y te responderemos tan pronto'}
+                  : 'Comunícate con nosotras y te responderemos tan pronto'}
                 {screenWidth < 768 ? <br /> : ' '}
                 {siteLanguage === 'en' ? 'as we can' : 'como podamos'}.
               </p>

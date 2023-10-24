@@ -1,13 +1,13 @@
 // REACT IMPORTS
-import { createContext, useState } from 'react';
+import { ReactElement, createContext, useState } from 'react';
 
 interface LanguageContextProps {
   siteLanguage: string;
-  handleLanguageChange: () => void;
+  handleLanguageChange(): void;
 }
 
 interface LanguageContextProviderProps {
-  children: JSX.Element;
+  children: ReactElement;
 }
 
 const currentSiteLanguage = localStorage.getItem('currentSiteLanguage');

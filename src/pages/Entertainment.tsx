@@ -1,4 +1,5 @@
 // REACT IMPORTS
+import { ReactElement } from 'react';
 import { Container, Row, Col, Image } from 'react-bootstrap';
 
 // DATA
@@ -9,9 +10,7 @@ import {
 } from '../data/entertainment';
 
 // HOOKS
-import { useLanguage } from '../hooks/useLanguage';
-import { useScreenDimensions } from '../hooks/useScreenDimensions';
-import { useTranslation } from '../hooks/useTranslation';
+import { useLanguage, useScreenDimensions, useTranslation } from '../hooks';
 
 // ASSETS
 import Shanelle from '../assets/images/entertainment/shanelle.png';
@@ -19,11 +18,13 @@ import Spotify from '../assets/images/entertainment/spotify.svg';
 import TiktokGif from '../assets/images/entertainment/tiktok_shanelle_productions.gif';
 
 // COMPONENTS
-import { EntertainmentSocialCard } from '../components/entertainment/EntertainmentSocialCard';
-import { EntertainmentSocialMediaCard } from '../components/entertainment/EntertainmentSocialMediaCard';
-import { Footer } from '../components/shared/Footer';
+import {
+  EntertainmentSocialCard,
+  EntertainmentSocialMediaCard,
+} from '../components/entertainment';
+import { Footer } from '../components/shared';
 
-export const Entertainment = (): JSX.Element => {
+export const Entertainment = (): ReactElement => {
   const { screenWidth, isPortrait } = useScreenDimensions();
   const { siteLanguage } = useLanguage();
   const { translate } = useTranslation();
@@ -79,7 +80,7 @@ export const Entertainment = (): JSX.Element => {
             {sectionTitle}
           </h1>
         ) : (
-          <h1 className="shanelle-bold-text text-uppercase ps-3 mb-4">
+          <h1 className="shanelle-bold-text text-uppercase ps-3 mb-4 mt-4">
             {sectionTitle}
           </h1>
         )}
@@ -131,7 +132,7 @@ export const Entertainment = (): JSX.Element => {
             allowFullScreen
             className="mt-5 mb-5 d-block m-auto transition scale"
             frameBorder="0"
-            src="https://www.youtube.com/embed/K2rQ57HCxMg"
+            src="https://www.youtube.com/embed/pB0PnCSarLw"
             style={{ borderRadius: '20px' }}
             title="YouTube video player"
             {...getYoutubeVideoDimensions()}
@@ -160,6 +161,7 @@ export const Entertainment = (): JSX.Element => {
                 span: 6,
                 offset: 3,
               }}
+              {...(screenWidth > 1023 && { style: { width: '45%' } })}
             >
               <div
                 className={`${
@@ -178,9 +180,8 @@ export const Entertainment = (): JSX.Element => {
                         src={Shanelle}
                       />
                     </Col>
-                    <Col>
-                      <h4>Shanelle</h4>
-                      <p>Female Sound Producers & Filmmakers.</p>
+                    <Col className="shanelle-entertainment-card-description-container">
+                      <h3>Shanelle</h3>
                       <a
                         href="https://open.spotify.com/artist/6lEBoYxyvA8S64R5PBJW69?si=73Vqn_TYTsu5w6Q_O2lP5g"
                         target="_blank"
@@ -205,10 +206,13 @@ export const Entertainment = (): JSX.Element => {
             lg={2}
             className={`${
               screenWidth < 768 ? 'w-100 ms-0 me-0' : ''
-            } g-3 position-relative`}
+            } g-3 position-relative ${
+              screenWidth > 1023 && 'justify-content-center'
+            }`}
           >
             {entertainment.map((item) => (
               <Col
+                {...(screenWidth > 1023 && { style: { width: '45%' } })}
                 className={screenWidth > 767 ? 'p-3' : 'ps-0 pe-0 mb-4'}
                 key={item.id}
               >

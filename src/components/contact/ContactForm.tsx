@@ -1,5 +1,5 @@
 // REACT IMPORTS
-import { useState, useEffect } from 'react';
+import { useState, useEffect, ReactElement } from 'react';
 import {
   Alert,
   Button,
@@ -12,14 +12,12 @@ import {
 } from 'react-bootstrap';
 
 // HOOKS
-import { useContactForm } from '../../hooks/useContactForm';
-import { useLanguage } from '../../hooks/useLanguage';
-import { useScreenDimensions } from '../../hooks/useScreenDimensions';
+import { useContactForm, useLanguage, useScreenDimensions } from '../../hooks';
 
 // ASSETS
 import LogoGray from '../../assets/images/shared/logo-gray.svg';
 
-export const ContactForm = (): JSX.Element => {
+export const ContactForm = (): ReactElement => {
   const { values, handleInputChange, handleSubmit, validated } = useContactForm(
     {
       email: '',
@@ -52,7 +50,7 @@ export const ContactForm = (): JSX.Element => {
       ? 'An error has occurred sending the email, please try again.'
       : 'Ha ocurrido un error enviando el email, por favor intenta nuevamente.';
 
-  const getFeedbackMessage = (): JSX.Element => {
+  const getFeedbackMessage = (): ReactElement => {
     if (isSmallScreen) {
       return (
         <ToastContainer className="p-3" position="bottom-end">

@@ -3,7 +3,6 @@ import { LanguageOptions } from './language';
 
 export interface Entertainment {
   at: string;
-  description: string;
   id: number;
   image: string;
   imageAlt: string;

@@ -1,12 +1,12 @@
 // REACT IMPORTS
+import { ReactElement } from 'react';
 import { Image } from 'react-bootstrap';
 
 // INTERFACES
 import { SocialMedia } from '../../interfaces/entertainment';
 
 // HOOKS
-import { useScreenDimensions } from '../../hooks/useScreenDimensions';
-import { useTranslation } from '../../hooks/useTranslation';
+import { useScreenDimensions, useTranslation } from '../../hooks';
 
 export const EntertainmentSocialMediaCard = ({
   animationDelay,
@@ -15,7 +15,7 @@ export const EntertainmentSocialMediaCard = ({
   likesAndViews,
   link,
   title,
-}: SocialMedia): JSX.Element => {
+}: SocialMedia): ReactElement => {
   const { screenWidth } = useScreenDimensions();
   const { translate } = useTranslation();
 
