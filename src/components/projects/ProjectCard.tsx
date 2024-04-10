@@ -49,6 +49,7 @@ export const ProjectCard = ({
             href={link}
             target="_blank"
             className="link transition shanelle-semi-bold-text"
+            rel="noopener noreferrer"
           >
             {siteLanguage === 'en' ? 'Go to ' : 'Visita '}IMDb
             <Image fluid alt="Link Icon" src={LinkIcon} className="ms-2 mb-1" />

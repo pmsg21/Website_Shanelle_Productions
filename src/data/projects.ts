@@ -91,8 +91,8 @@ export const projects: Project[] = [
   {
     alt: 'AsOfYet',
     description: {
-      en: 'A feature film by Taylor Garron and Chanel James. Winner of the Nora Eprhon Award at Tribeca Film Festival, and Nominated for Best Feature Film at Denver International Film Festival.',
-      es: 'Un largometraje de Taylor Garron y Chanel James. Ganador del Premio Nora Eprhon en el Festival de Cine de Tribeca y Nominado a Mejor Película en el Festival Internacional de Cine de Denver.',
+      en: 'A feature film by Taylor Garron and Chanel James. Winner of the Nora Ephron Award at Tribeca Film Festival, and Nominated for Best Feature Film at Denver International Film Festival.',
+      es: 'Un largometraje de Taylor Garron y Chanel James. Ganador del Premio Nora Ephron en el Festival de Cine de Tribeca y Nominado a Mejor Película en el Festival Internacional de Cine de Denver.',
     },
     emphasisText: {
       en: 'Dialogue Editors: Alexandra Alvarez Pilonieta & Michelle Deniesse Lugo.',
@@ -135,9 +135,9 @@ export const projects: Project[] = [
   },
 ];
 
-const novaRiseInvest = `<a class="shanelle-projects-award-link transition" href="https://www.youtube.com/c/NOVARISEINVEST" target="_blank">Novarise Invest</a>`;
-const novaRiseLatino = `<a class="shanelle-projects-award-link transition" href="https://www.youtube.com/c/NOVARISELATINO" target="_blank">Novarise Latino </a>`;
-const novaRiseDigital = `<a class="shanelle-projects-award-link transition" href="https://www.youtube.com/c/NOVARISEDIGITAL" target="_blank">Novarise Digital </a>`;
+const novaRiseInvest = `<a class="shanelle-projects-award-link transition" href="https://www.youtube.com/c/NOVARISEINVEST" target="_blank" rel="noopener noreferrer">Novarise Invest</a>`;
+const novaRiseLatino = `<a class="shanelle-projects-award-link transition" href="https://www.youtube.com/c/NOVARISELATINO" target="_blank" rel="noopener noreferrer">Novarise Latino </a>`;
+const novaRiseDigital = `<a class="shanelle-projects-award-link transition" href="https://www.youtube.com/c/NOVARISEDIGITAL" target="_blank" rel="noopener noreferrer">Novarise Digital </a>`;
 
 export const projectsAward: LanguageOptions = {
   en: `As social media content post-producers, Michelle and Alexandra have worked on several projects, highlighting their work for the YouTube channels ${novaRiseInvest}, ${novaRiseLatino}, and ${novaRiseDigital}. In 2020, Michelle and Alexandra received a YouTube Creator Award for their work on Novarise Latino. Currently, they are the Creative Directors of Novarise, a renowned financial education company.`,

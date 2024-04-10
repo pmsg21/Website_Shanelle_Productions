@@ -124,7 +124,7 @@ export const About = (): ReactElement => {
           <AboutCreators />
           <Carousel
             className={`animate__animated animate__fadeIn animate__delay-1-5s mt-${
-              isDesktop ? '8' : '0'
+              isDesktop ? '16' : '0'
             }`}
             indicators={false}
             interval={3000}

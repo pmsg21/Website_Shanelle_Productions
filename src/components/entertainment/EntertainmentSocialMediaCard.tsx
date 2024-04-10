@@ -16,13 +16,17 @@ export const EntertainmentSocialMediaCard = ({
   link,
   title,
 }: SocialMedia): ReactElement => {
-  const { screenWidth } = useScreenDimensions();
+  const { screenWidth, screenHeight } = useScreenDimensions();
   const { translate } = useTranslation();
 
   return (
     <div
       className={`shanelle-container mb-3 w-${
-        screenWidth > 1024 ? '75' : '80'
+        screenWidth > 1300 && screenHeight > 800
+          ? '60'
+          : screenWidth > 1024
+          ? '65'
+          : '75'
       } ${
         screenWidth < 768 ? 'd-block m-auto' : ''
       } animate__animated animate__fadeIn ${animationDelay}`}
@@ -30,9 +34,9 @@ export const EntertainmentSocialMediaCard = ({
       <div className="shanelle-inner-container p-2">
         <ul className="list-unstyled">
           <li>
-            <h3 className="text-uppercase shanelle-extra-bold-text shanelle-social-media-title">
+            <h4 className="text-uppercase shanelle-extra-bold-text shanelle-social-media-title mb-1">
               <span>
-                <a href={link} target="_blank">
+                <a href={link} target="_blank" rel="noopener noreferrer">
                   <Image
                     fluid
                     alt={title}
@@ -42,17 +46,17 @@ export const EntertainmentSocialMediaCard = ({
                   {title}
                 </a>
               </span>
-            </h3>
+            </h4>
           </li>
           <li>
-            <h4 className="shanelle-extra-bold-text ps-2">
+            <h5 className="shanelle-extra-bold-text ps-2 mb-1">
               {translate(followers)}
-            </h4>
+            </h5>
           </li>
           <li>
-            <h4 className="shanelle-extra-bold-text ps-2">
+            <h5 className="shanelle-extra-bold-text ps-2 mb-1">
               {translate(likesAndViews)}
-            </h4>
+            </h5>
           </li>
         </ul>
       </div>

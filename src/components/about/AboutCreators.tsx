@@ -13,11 +13,23 @@ import DreamTeamSeparator from '../../assets/images/about/dream-team-separator.s
 import LinkIcon from '../../assets/images/about/link.svg';
 import Michelle from '../../assets/images/about/michelle-lugo-headshot.png';
 import Shana from '../../assets/images/about/shana-pilonieta-headshot.png';
+import AesMember from '../../assets/images/about/aes-member.png';
 
 export const AboutCreators = (): ReactElement => {
   const { siteLanguage } = useLanguage();
   const { isDesktop, isPhone } = useScreenDimensions();
   const creatorsText = siteLanguage === 'en' ? 'Creators' : 'Creadoras';
+
+  const getAesMemberImage = () => (
+    <Image
+      fluid
+      alt="AES Member"
+      src={AesMember}
+      className={`scale transition d-block m-auto ${
+        isPhone ? 'w-40 mb-4' : 'w-65'
+      }`}
+    />
+  );
 
   return (
     <div
@@ -83,6 +95,7 @@ export const AboutCreators = (): ReactElement => {
                   href="https://www.imdb.com/name/nm10097060/?ref_=nv_sr_srsg_0"
                   target="_blank"
                   className="link transition"
+                  rel="noopener noreferrer"
                 >
                   {siteLanguage === 'en' ? 'Go to ' : 'Visita '}IMDb
                   <Image
@@ -93,6 +106,7 @@ export const AboutCreators = (): ReactElement => {
                   />
                 </a>
               </p>
+              {getAesMemberImage()}
             </div>
           </Col>
           <Col md={6} xs={12} lg={6}>
@@ -120,6 +134,7 @@ export const AboutCreators = (): ReactElement => {
                   href="https://www.imdb.com/name/nm10097059/?ref_=nv_sr_srsg_0"
                   target="_blank"
                   className="link transition"
+                  rel="noopener noreferrer"
                 >
                   {siteLanguage === 'en' ? 'Go to ' : 'Visita '}IMDb
                   <Image
@@ -130,6 +145,7 @@ export const AboutCreators = (): ReactElement => {
                   />
                 </a>
               </p>
+              {getAesMemberImage()}
             </div>
           </Col>
         </Row>

@@ -14,8 +14,6 @@ import Tiktok from '../../assets/images/entertainment/tiktok.svg';
 
 export const EntertainmentSocialCard = ({
   at,
-  image,
-  imageAlt,
   instagramURL,
   tiktokUrl,
 }: Entertainment): ReactElement => {
@@ -29,22 +27,14 @@ export const EntertainmentSocialCard = ({
         screenWidth > 767 && screenWidth < 1025 && !isTabletPortrait
           ? 'w-75 m-auto'
           : ''
-      } shanelle-container shanelle-entertainment-container`}
+      } shanelle-container shanelle-entertainment-bottom-container`}
     >
-      <div className="shanelle-inner-container p-2 pt-3">
+      <div className="shanelle-inner-container p-2 pt-3 d-flex justify-content-center">
         <Row>
-          <Col>
-            <Image
-              fluid
-              alt={imageAlt}
-              src={image}
-              className="d-block m-auto transition scale"
-            />
-          </Col>
           <Col className="shanelle-entertainment-card-description-container">
             <h3>{at}</h3>
             <div>
-              <a href={instagramURL} target="_blank">
+              <a href={instagramURL} target="_blank" rel="noopener noreferrer">
                 <Image
                   alt="Instragam"
                   className="transition scale-1-2"
@@ -52,7 +42,7 @@ export const EntertainmentSocialCard = ({
                   src={Instagram}
                 />
               </a>
-              <a href={tiktokUrl} target="_blank">
+              <a href={tiktokUrl} target="_blank" rel="noopener noreferrer">
                 <Image
                   alt="Tiktok"
                   className="transition scale-1-2"

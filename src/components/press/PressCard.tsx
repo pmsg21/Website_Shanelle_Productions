@@ -44,7 +44,7 @@ export const PressCard = ({
                     <li class="mb-${
                       id === urls[urls.length - 1].id ? '0' : '4'
                     }" key="${id}">
-                      <a href="${url}" class="transition scale" target="_blank">
+                      <a href="${url}" class="transition scale" target="_blank" rel="noopener noreferrer">
                         ${title}
                       </a>
                     </li>
@@ -68,7 +68,12 @@ export const PressCard = ({
       <Card.Body>
         <Card.Text>{translate(text)}</Card.Text>
         {!hasModal ? (
-          <Card.Link href={url} target="_blank" className="link">
+          <Card.Link
+            href={url}
+            target="_blank"
+            className="link"
+            rel="noopener noreferrer"
+          >
             {readHereText}
           </Card.Link>
         ) : (

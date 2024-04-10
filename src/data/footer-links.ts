@@ -15,7 +15,7 @@ export const footerLinks: FooterLink[] = [
   {
     alt: 'Instragram',
     img: Instagram,
-    url: 'https://www.instagram.com/shanelleprod/',
+    url: 'https://www.instagram.com/shanelleprod',
   },
   {
     alt: 'Facebook',

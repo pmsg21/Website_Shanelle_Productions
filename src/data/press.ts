@@ -33,13 +33,8 @@ export const press: Press[] = [
       },
       {
         id: 3,
-        title: 'FOX 40',
-        url: 'https://www.wicz.com/story/48670632/shanelle-productions-the-sound-of-peoples-emotions-through-audiovisual-creations',
-      },
-      {
-        id: 4,
-        title: 'AZ CENTRAL',
-        url: 'http://finance.azcentral.com/azcentral/article/getnews-2023-4-4-shanelle-productions-the-sound-of-peoples-emotions-through-audiovisual-creations/',
+        title: 'THE CHRONICLE JOURNAL',
+        url: 'https://markets.chroniclejournal.com/chroniclejournal/article/getnews-2023-4-4-shanelle-productions-the-sound-of-peoples-emotions-through-audiovisual-creations/',
       },
     ],
     hasModal: true,

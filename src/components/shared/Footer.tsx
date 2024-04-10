@@ -32,6 +32,7 @@ export const Footer = ({ className }: FooterProps): ReactElement => {
                 className={`me-${
                   index + 1 !== footerLinks.length ? '3' : '2'
                 } transition scale-1-2 brightness-200`}
+                rel="noopener noreferrer"
               >
                 <Image alt={alt} src={img} />
               </a>
@@ -50,6 +51,7 @@ export const Footer = ({ className }: FooterProps): ReactElement => {
                   className={`me-${
                     index + 1 !== footerLinks.length ? '3' : '2'
                   } transition scale-1-2 brightness-200`}
+                  rel="noopener noreferrer"
                 >
                   <Image alt={alt} src={img} />
                 </a>

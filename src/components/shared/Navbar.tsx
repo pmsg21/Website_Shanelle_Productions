@@ -84,6 +84,7 @@ export const Navbar = (): ReactElement => {
                   className="me-3 transition scale shanelle-semi-bold-text align-self-center nav-link"
                   href="https://www.shanelleproductions.store"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   {storeText}
                 </a>
@@ -130,6 +131,7 @@ export const Navbar = (): ReactElement => {
                     className="nav-link"
                     href="https://www.shanelleproductions.store"
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
                     {storeText}
                   </a>

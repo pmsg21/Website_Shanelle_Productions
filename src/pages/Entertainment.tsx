@@ -15,7 +15,7 @@ import { useLanguage, useScreenDimensions, useTranslation } from '../hooks';
 // ASSETS
 import Shanelle from '../assets/images/entertainment/shanelle.png';
 import Spotify from '../assets/images/entertainment/spotify.svg';
-import TiktokGif from '../assets/images/entertainment/tiktok_shanelle_productions.gif';
+import TikTokGif from '../assets/images/entertainment/tiktok_shanelle_productions.gif';
 
 // COMPONENTS
 import {
@@ -39,7 +39,8 @@ export const Entertainment = (): ReactElement => {
   const handleGifOnClick = (): void => {
     window.open(
       'https://www.tiktok.com/@shanelleprod/video/7204569044148620586?_r=1&_t=8bev2ITwRr3',
-      '_blank'
+      '_blank',
+      'noopener, noreferrer'
     );
   };
 
@@ -92,17 +93,14 @@ export const Entertainment = (): ReactElement => {
             lg={2}
             className={`w-${screenWidth > 1024 ? '75' : '100'} m-auto mt-5`}
           >
-            <Col>
-              <div
-                className="animate__animated animate__fadeIn animate__delay-0-5s"
-                style={{ display: 'flex', justifyContent: 'center' }}
-              >
+            <Col className="d-flex justify-content-center align-items-center">
+              <div className="animate__animated animate__fadeIn animate__delay-0-5s">
                 <Image
                   alt="Tik Tok GIF"
                   className="shanelle-tik-tok-gif transition scale"
                   fluid
                   onClick={handleGifOnClick}
-                  src={TiktokGif}
+                  src={TikTokGif}
                 />
               </div>
             </Col>
@@ -117,16 +115,15 @@ export const Entertainment = (): ReactElement => {
               {socialMedia.map((item) => (
                 <EntertainmentSocialMediaCard key={item.id} {...item} />
               ))}
-              <div
-                className={`animate__animated animate__fadeIn animate__delay-3s ${
-                  screenWidth < 768 ? 'text-center' : ''
-                }`}
-                dangerouslySetInnerHTML={{
-                  __html: translate(footer),
-                }}
-              />
             </Col>
           </Row>
+          <p
+            className={`w-${
+              screenWidth > 1024 ? '90' : '100'
+            } animate__animated animate__fadeIn animate__delay-3-5s text-center p-0 mb-0 fs-6`}
+          >
+            {translate(footer)}
+          </p>
           <iframe
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
@@ -161,7 +158,6 @@ export const Entertainment = (): ReactElement => {
                 span: 6,
                 offset: 3,
               }}
-              {...(screenWidth > 1023 && { style: { width: '45%' } })}
             >
               <div
                 className={`${
@@ -185,6 +181,7 @@ export const Entertainment = (): ReactElement => {
                       <a
                         href="https://open.spotify.com/artist/6lEBoYxyvA8S64R5PBJW69?si=73Vqn_TYTsu5w6Q_O2lP5g"
                         target="_blank"
+                        rel="noopener noreferrer"
                       >
                         <Image
                           alt="Spotify"
@@ -203,7 +200,7 @@ export const Entertainment = (): ReactElement => {
           <Row
             md={1}
             xs={1}
-            lg={2}
+            lg={3}
             className={`${
               screenWidth < 768 ? 'w-100 ms-0 me-0' : ''
             } g-3 position-relative ${
@@ -212,7 +209,7 @@ export const Entertainment = (): ReactElement => {
           >
             {entertainment.map((item) => (
               <Col
-                {...(screenWidth > 1023 && { style: { width: '45%' } })}
+                {...(screenWidth > 1023 && { style: { width: '30%' } })}
                 className={screenWidth > 767 ? 'p-3' : 'ps-0 pe-0 mb-4'}
                 key={item.id}
               >

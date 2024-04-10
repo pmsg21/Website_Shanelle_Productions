@@ -7,13 +7,10 @@ import {
 
 // ASSETS
 import Astrosaaurus from '../assets/images/entertainment/astrosaaurus.png';
-import BlackHeartEmoji from '../assets/images/entertainment/black_heart_emoji.png';
-import HandEmoji from '../assets/images/entertainment/hand_emoji.png';
+import Facebook from '../assets/images/entertainment/facebook.svg';
 import HearYouLater from '../assets/images/entertainment/hearyoulater.png';
 import Instagram from '../assets/images/entertainment/instagram.svg';
-import PinEmoji from '../assets/images/entertainment/pin_emoji.png';
 import TikTok from '../assets/images/entertainment/tiktok.svg';
-import USAEmoji from '../assets/images/entertainment/usa_flag_emoji.png';
 import Youtube from '../assets/images/entertainment/youtube.svg';
 
 export const entertainment: Entertainment[] = [
@@ -64,14 +61,14 @@ export const entertainmentSocialMediaParagraphs: EntertainmentSocialMediaParagra
       {
         animationDelay: 'animate__delay-1-5s',
         followers: {
-          en: '+ 39K followers',
-          es: '+ 39K seguidores',
+          en: '+ 50K followers',
+          es: '+ 50K seguidores',
         },
         icon: TikTok,
         id: 1,
         likesAndViews: {
-          en: '+ 910K likes',
-          es: '+ 910K me gusta',
+          en: '+ 1.2MM likes',
+          es: '+ 1.2MM me gusta',
         },
         link: 'https://www.tiktok.com/@shanelleprod',
         title: 'Tiktok',
@@ -79,14 +76,14 @@ export const entertainmentSocialMediaParagraphs: EntertainmentSocialMediaParagra
       {
         animationDelay: 'animate__delay-2s',
         followers: {
-          en: '+ 19K followers',
-          es: '+ 19K seguidores',
+          en: '+ 27K followers',
+          es: '+ 27K seguidores',
         },
         icon: Youtube,
         id: 2,
         likesAndViews: {
-          en: '+ 3MM views',
-          es: '+ 3MM vistas',
+          en: '+ 4.9MM views',
+          es: '+ 4.9MM vistas',
         },
         link: 'https://www.youtube.com/channel/UCV2U3zcCVmNSpYkoe7hBQcQ',
         title: 'Youtube',
@@ -94,21 +91,36 @@ export const entertainmentSocialMediaParagraphs: EntertainmentSocialMediaParagra
       {
         animationDelay: 'animate__delay-2-5s',
         followers: {
-          en: '+ 18K followers',
-          es: '+ 18K seguidores',
+          en: '+ 26K followers',
+          es: '+ 26K seguidores',
         },
         icon: Instagram,
         id: 3,
         likesAndViews: {
-          en: '+ 270K likes',
-          es: '+ 270K me gusta',
+          en: '+ 457K likes',
+          es: '+ 457K me gusta',
         },
-        link: 'https://www.instagram.com/shanelleprod/',
+        link: 'https://www.instagram.com/shanelleprod',
         title: 'Instagram',
+      },
+      {
+        animationDelay: 'animate__delay-3s',
+        followers: {
+          en: '+ 10K followers',
+          es: '+ 10K seguidores',
+        },
+        icon: Facebook,
+        id: 4,
+        likesAndViews: {
+          en: '+ 157K likes',
+          es: '+ 157K me gusta',
+        },
+        link: 'https://www.facebook.com/shanelleprod',
+        title: 'Facebook',
       },
     ],
     footer: {
-      en: 'All of our work is made with LOVE.<br />Follow us in all of our social media to see more.',
-      es: 'Todo nuestro trabajo está hecho con AMOR.<br />Síguenos en nuestras redes sociales para más contenido.',
+      en: 'All of our work is made with LOVE. Follow us in all of our social media to see more.',
+      es: 'Todo nuestro trabajo está hecho con AMOR. Síguenos en nuestras redes sociales para más contenido.',
     },
   };
