@@ -22,10 +22,8 @@ export const EntertainmentSocialMediaCard = ({
   return (
     <div
       className={`shanelle-container mb-3 w-${
-        screenWidth > 1300 && screenHeight > 800
+        (screenWidth > 1300 && screenHeight > 800) || screenWidth > 1024
           ? '60'
-          : screenWidth > 1024
-          ? '65'
           : '75'
       } ${
         screenWidth < 768 ? 'd-block m-auto' : ''

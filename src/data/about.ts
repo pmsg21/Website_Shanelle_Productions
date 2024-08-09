@@ -2,8 +2,10 @@
 import { MissionVisionValues, AboutTeamMembers } from '../interfaces/about';
 
 // ASSETS
+import Andres from '../assets/images/about/andres.png';
 import Chloe from '../assets/images/about/chloe.png';
 import Enzo from '../assets/images/about/enzo.png';
+import Ermarina from '../assets/images/about/ermarina.png';
 import Nestor from '../assets/images/about/nestor.png';
 import Oriana from '../assets/images/about/oriana.png';
 import Pablo from '../assets/images/about/pablo.png';
@@ -38,19 +40,35 @@ export const aboutTeamMembers: AboutTeamMembers = {
       },
     },
     {
-      name: 'Nestor Caro',
-      pic: Nestor,
-      role: {
-        en: 'Sound Producer and Composer',
-        es: 'Productor de Sonido y Musicalizador',
-      },
-    },
-    {
       name: 'Pablo Sierra',
       pic: Pablo,
       role: {
         en: 'Web Developer',
         es: 'Desarrollador Web',
+      },
+    },
+    {
+      name: 'Andrés Henry',
+      pic: Andres,
+      role: {
+        en: 'Director of Photography, Cameraman, Gaffer',
+        es: 'Productor de Sonido y Musicalizador',
+      },
+    },
+    {
+      name: 'Ermarina Tortolero',
+      pic: Ermarina,
+      role: {
+        en: 'Accountant',
+        es: 'Contadora',
+      },
+    },
+    {
+      name: 'Nestor Caro',
+      pic: Nestor,
+      role: {
+        en: 'Sound Producer and Composer',
+        es: 'Productor de Sonido y Musicalizador',
       },
     },
     {

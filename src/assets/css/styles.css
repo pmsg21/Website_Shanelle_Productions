@@ -142,7 +142,7 @@ footer a {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 90vh;
+  height: 92.5vh;
   object-fit: cover;
   z-index: -1;
 }
@@ -279,7 +279,8 @@ video {
 
 .shanelle-projects-award-icon {
   place-self: center;
-  right: 0;
+  left: 0;
+  top: 38px;
 }
 
 .shanelle-award-background {
@@ -287,7 +288,7 @@ video {
     rgba(194, 21, 125, 0.3) 0%,
     rgba(232, 56, 13, 0.3) 100%
   );
-  height: 382px;
+  height: 290px;
   place-self: center;
   position: absolute;
   z-index: -1;
@@ -784,6 +785,11 @@ video {
   .shanelle-entertainment-title-es {
     top: 63.5% !important;
   }
+
+  /* PRESS */
+  .shanelle-card p {
+    font-size: 12px;
+  }
 }
 
 /* TABLET & PHONE */
@@ -844,6 +850,11 @@ video {
     bottom: 3%;
   }
 
+  .scale:hover {
+    transform: none;
+    filter: none;
+  }
+
   /* SHANELLE STYLES */
   /* HOME */
   .home-buttons-container {
@@ -882,6 +893,10 @@ video {
     top: -3% !important;
   }
 
+  .shanelle-again-project-description {
+    font-size: 15px;
+  }
+
   #projects-section .shanelle-container {
     background: none;
   }
@@ -893,11 +908,12 @@ video {
 
   .shanelle-projects-award-icon {
     right: 0%;
-    top: 10%;
+    top: 25%;
   }
 
   .shanelle-award-background {
-    height: 600px;
+    height: 300px;
+    bottom: -5%;
   }
 
   /* ABOUTS US */
@@ -1001,12 +1017,11 @@ video {
   }
 
   .shanelle-projects-award-icon {
-    width: 10%;
+    top: 30%;
   }
 
   .shanelle-projects-award-text-container p {
-    padding: 0 !important;
-    padding-right: 25% !important;
+    padding: 10% !important;
     margin-left: 1rem;
   }
 
@@ -1164,7 +1179,7 @@ video {
 
   /* PRESS */
   .shanelle-card {
-    height: 380px;
+    height: 405px;
   }
 
   /* ENTERTAINMENT */

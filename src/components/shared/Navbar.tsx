@@ -33,11 +33,16 @@ export const Navbar = (): ReactElement => {
     navigate(to);
   }
 
+  function handleLanguageClick(): void {
+    setIsOpen(false);
+    handleLanguageChange();
+  }
+
   function getLanguageIcon(): ReactElement {
     return (
       <div
         className="shanelle-language-container transition scale"
-        onClick={handleLanguageChange}
+        onClick={handleLanguageClick}
       >
         <Image
           src={siteLanguage === 'en' ? Spanish : English}

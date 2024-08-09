@@ -34,8 +34,12 @@ export const entertainment: Entertainment[] = [
 
 export const entertainmentParagraphs: EntertainmentParagraphs = {
   firstParagraph: {
-    en: `In our social media, we've shown some of our abilities by dubbing (fandubbing) shorts and reels of our favorite TV series and people have loved it. We are creating a community of people that share our interests and like and follow our work. Most of series we've chosen don't have a Spanish dubbing and we saw a great opportunity to promote our work and to give the fans of the series a glimpse of what their favorite characters would sound like in their own language.`,
-    es: 'En nuestras redes sociales, hemos mostrado algunas de nuestras habilidades doblando shorts y reels (fandubs) de nuestras series de TV favoritas y a la gente le ha encantado. Estamos creando una comunidad de personas que comparten nuestros intereses y les gusta y siguen nuestro trabajo. La mayoría de las series que hemos elegido no poseen doblaje al español así que vimos una gran oportunidad para promocionar nuestro trabajo y darle la oportunidad a los fans de escuchar a sus personajes favoritos en su propio idioma.',
+    en: 'We started our social media by showing some of our dubbing skills in shorts and reels (fandubs) of our favorite TV series (that didn’t have a Spanish dub), promoting our work, and allowing fans to hear their favorite characters in their own language. This is how we built a community of people who share our interests and like and follow our work.',
+    es: 'Comenzamos nuestras redes sociales mostrando algunas de nuestras habilidades doblando shorts y reels (fandubs) de nuestras series de TV favoritas que no tenían doblaje al español, promocionando nuestro trabajo y dándole la oportunidad a los fans de escuchar a sus personajes favoritos en su propio idioma. Así creamos una comunidad de personas que comparten nuestros intereses y les gusta y siguen nuestro trabajo.',
+  },
+  firstSubParagraph: {
+    en: 'Recently, we created our original series Again The Series (Tú Otra Vez), a production that we carried out 80% by ourselves, check out Again The Series:',
+    es: 'Finalmente creamos nuestra propia serie original Again The Series (Tú Otra Vez), una producción que llevamos a cabo nosotras solas en un 80%, conoce Again The Series',
   },
   secondParagraph: {
     en: 'In addition to the shorts and reels we have also made some music videos. These accompass our habilities with dubbing, singing, sound post production, video filming and editing.',
@@ -61,14 +65,14 @@ export const entertainmentSocialMediaParagraphs: EntertainmentSocialMediaParagra
       {
         animationDelay: 'animate__delay-1-5s',
         followers: {
-          en: '+ 50K followers',
-          es: '+ 50K seguidores',
+          en: '+ 85K followers',
+          es: '+ 85K seguidores',
         },
         icon: TikTok,
         id: 1,
         likesAndViews: {
-          en: '+ 1.2MM likes',
-          es: '+ 1.2MM me gusta',
+          en: '+ 2.2MM likes',
+          es: '+ 2.2MM me gusta',
         },
         link: 'https://www.tiktok.com/@shanelleprod',
         title: 'Tiktok',
@@ -76,14 +80,14 @@ export const entertainmentSocialMediaParagraphs: EntertainmentSocialMediaParagra
       {
         animationDelay: 'animate__delay-2s',
         followers: {
-          en: '+ 27K followers',
-          es: '+ 27K seguidores',
+          en: '+ 45K followers',
+          es: '+ 45K seguidores',
         },
         icon: Youtube,
         id: 2,
         likesAndViews: {
-          en: '+ 4.9MM views',
-          es: '+ 4.9MM vistas',
+          en: '+ 8MM views',
+          es: '+ 8MM vistas',
         },
         link: 'https://www.youtube.com/channel/UCV2U3zcCVmNSpYkoe7hBQcQ',
         title: 'Youtube',
@@ -91,14 +95,14 @@ export const entertainmentSocialMediaParagraphs: EntertainmentSocialMediaParagra
       {
         animationDelay: 'animate__delay-2-5s',
         followers: {
-          en: '+ 26K followers',
-          es: '+ 26K seguidores',
+          en: '+ 36K followers',
+          es: '+ 36K seguidores',
         },
         icon: Instagram,
         id: 3,
         likesAndViews: {
-          en: '+ 457K likes',
-          es: '+ 457K me gusta',
+          en: '+ 719K likes',
+          es: '+ 719K me gusta',
         },
         link: 'https://www.instagram.com/shanelleprod',
         title: 'Instagram',
@@ -106,14 +110,14 @@ export const entertainmentSocialMediaParagraphs: EntertainmentSocialMediaParagra
       {
         animationDelay: 'animate__delay-3s',
         followers: {
-          en: '+ 10K followers',
-          es: '+ 10K seguidores',
+          en: '+ 26K followers',
+          es: '+ 26K seguidores',
         },
         icon: Facebook,
         id: 4,
         likesAndViews: {
-          en: '+ 157K likes',
-          es: '+ 157K me gusta',
+          en: '+ 210K likes',
+          es: '+ 210K me gusta',
         },
         link: 'https://www.facebook.com/shanelleprod',
         title: 'Facebook',

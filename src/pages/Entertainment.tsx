@@ -25,20 +25,25 @@ import {
 import { Footer } from '../components/shared';
 
 export const Entertainment = (): ReactElement => {
-  const { screenWidth, isPortrait } = useScreenDimensions();
+  const { screenWidth, isPortrait, isPhone } = useScreenDimensions();
   const { siteLanguage } = useLanguage();
   const { translate } = useTranslation();
   const sectionTitle =
     siteLanguage === 'en' ? 'Entertainment' : 'Entretenimiento';
-  const { firstParagraph, secondParagraph, thirdParagraph, fourthParagraph } =
-    entertainmentParagraphs;
+  const {
+    firstParagraph,
+    firstSubParagraph,
+    fourthParagraph,
+    secondParagraph,
+    thirdParagraph,
+  } = entertainmentParagraphs;
   const { header, footer, socialMedia } = entertainmentSocialMediaParagraphs;
   const isTabletPortrait =
     screenWidth > 767 && screenWidth < 1025 && isPortrait;
 
   const handleGifOnClick = (): void => {
     window.open(
-      'https://www.tiktok.com/@shanelleprod/video/7204569044148620586?_r=1&_t=8bev2ITwRr3',
+      'https://www.tiktok.com/@shanelleprod/video/7388336811539434795?_r=1&_t=8ohZtbiCTFB',
       '_blank',
       'noopener, noreferrer'
     );
@@ -54,12 +59,13 @@ export const Entertainment = (): ReactElement => {
         height: '382',
         width: '676',
       };
-    } else if (screenWidth < 768) {
+    } else if (isPhone) {
       videoDimensions = {
         height: '180',
         width: '322',
       };
     }
+
     return videoDimensions;
   };
 
@@ -67,7 +73,7 @@ export const Entertainment = (): ReactElement => {
     <section id="entertainment-section">
       <Container
         className={`mt-${
-          screenWidth < 768 ? '0' : '6'
+          isPhone ? '0' : '6'
         } p-0 animate__animated animate__fadeIn`}
       >
         {screenWidth > 767 ? (
@@ -86,7 +92,8 @@ export const Entertainment = (): ReactElement => {
           </h1>
         )}
         <div className="shanelle-entertainment-main-container m-auto">
-          <p className="mt-3 mb-3">{translate(firstParagraph)}</p>
+          <p className="my-3">{translate(firstParagraph)}</p>
+          <p className="mb-3">{translate(firstSubParagraph)}</p>
           <Row
             md={2}
             xs={1}
@@ -104,10 +111,10 @@ export const Entertainment = (): ReactElement => {
                 />
               </div>
             </Col>
-            <Col className={screenWidth < 768 ? 'mt-4' : ''}>
+            <Col className={isPhone ? 'mt-4' : ''}>
               <p
                 className={`animate__animated animate__fadeIn animate__delay-1s ${
-                  screenWidth < 768 ? 'text-center' : ''
+                  isPhone ? 'text-center' : ''
                 }`}
               >
                 {translate(header)}
@@ -129,23 +136,23 @@ export const Entertainment = (): ReactElement => {
             allowFullScreen
             className="mt-5 mb-5 d-block m-auto transition scale"
             frameBorder="0"
-            src="https://www.youtube.com/embed/pB0PnCSarLw"
+            src="https://www.youtube.com/embed/8dW5qkfo52I?si=b6y2izBXtaETX3ze"
             style={{ borderRadius: '20px' }}
             title="YouTube video player"
             {...getYoutubeVideoDimensions()}
           ></iframe>
-          <p className="mt-3 mb-3">{translate(secondParagraph)}</p>
+          <p className="my-3">{translate(secondParagraph)}</p>
           <iframe
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
             className="mt-5 mb-5 d-block m-auto transition scale"
             frameBorder="0"
-            src="https://www.youtube.com/embed/GiCxwaTZ4eg"
+            src="https://www.youtube.com/embed/FpMPikyzNP8?si=jHbAeb1uIvJKOFqw"
             style={{ borderRadius: '20px' }}
             title="YouTube video player"
             {...getYoutubeVideoDimensions()}
           ></iframe>
-          <p className="mt-3 mb-3">{translate(thirdParagraph)}</p>
+          <p className="my-3">{translate(thirdParagraph)}</p>
           <Row>
             <Col
               className="mb-4"
@@ -202,7 +209,7 @@ export const Entertainment = (): ReactElement => {
             xs={1}
             lg={3}
             className={`${
-              screenWidth < 768 ? 'w-100 ms-0 me-0' : ''
+              isPhone ? 'w-100 ms-0 me-0' : ''
             } g-3 position-relative ${
               screenWidth > 1023 && 'justify-content-center'
             }`}

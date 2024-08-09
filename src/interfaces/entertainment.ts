@@ -12,6 +12,7 @@ export interface Entertainment {
 
 export interface EntertainmentParagraphs {
   firstParagraph: LanguageOptions;
+  firstSubParagraph: LanguageOptions;
   fourthParagraph: LanguageOptions;
   secondParagraph: LanguageOptions;
   thirdParagraph: LanguageOptions;

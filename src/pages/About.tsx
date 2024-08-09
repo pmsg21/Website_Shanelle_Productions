@@ -9,14 +9,9 @@ import { missionVisionValues, aboutTeamMembers } from '../data/about';
 import { useLanguage, useScreenDimensions, useTranslation } from '../hooks';
 
 // ASSETS
+import AboutUsVideo from '../assets/images/about/about-us.mp4';
 import DreamTeamSeparator from '../assets/images/about/dream-team-separator.svg';
 import LogoColor from '../assets/images/shared/logo-color.svg';
-import MichelleShana1 from '../assets/images/about/michelle-shana-1.png';
-import MichelleShana2 from '../assets/images/about/michelle-shana-2.png';
-import MichelleShana3 from '../assets/images/about/michelle-shana-3.png';
-import MichelleShana1Phone from '../assets/images/about/michelle-shana-1-phone.png';
-import MichelleShana2Phone from '../assets/images/about/michelle-shana-2-phone.png';
-import MichelleShana3Phone from '../assets/images/about/michelle-shana-3-phone.png';
 import Shaping from '../assets/images/about/shaping-imagination-into-reality.svg';
 
 // COMPONENTS
@@ -24,7 +19,8 @@ import { AboutCreators, AboutTeamMember } from '../components/about';
 import { AnimatedHeading, Footer } from '../components/shared';
 
 export const About = (): ReactElement => {
-  const { isPortrait, isTablet, isPhone, isDesktop } = useScreenDimensions();
+  const { isPortrait, isTablet, isPhone, isDesktop, screenWidth } =
+    useScreenDimensions();
   const { siteLanguage } = useLanguage();
   const { translate } = useTranslation();
   const { mission, vision, values } = missionVisionValues;
@@ -122,40 +118,18 @@ export const About = (): ReactElement => {
         </Row>
         <Container className={`${isDesktop ? 'w-80' : ''}`}>
           <AboutCreators />
-          <Carousel
-            className={`animate__animated animate__fadeIn animate__delay-1-5s mt-${
-              isDesktop ? '16' : '0'
-            }`}
-            indicators={false}
-            interval={3000}
-            touch
-            variant="dark"
+          <video
+            autoPlay
+            className={`w-100 ${
+              isPhone || isTablet ? 'mt-3 mb-4 rounded-0 px-0' : 'mt-16 mb-5'
+            } d-block m-auto animate__animated animate__fadeIn animate__delay-1-5s`}
+            loop
+            muted
+            playsInline
           >
-            <Carousel.Item>
-              <Image
-                className="d-block m-auto"
-                alt="Michelle & Shana"
-                fluid
-                src={isPhone ? MichelleShana1Phone : MichelleShana1}
-              />
-            </Carousel.Item>
-            <Carousel.Item>
-              <Image
-                className="d-block m-auto"
-                alt="Michelle & Shana"
-                fluid
-                src={isPhone ? MichelleShana2Phone : MichelleShana2}
-              />
-            </Carousel.Item>
-            <Carousel.Item>
-              <Image
-                className="d-block m-auto"
-                alt="Michelle & Shana"
-                fluid
-                src={isPhone ? MichelleShana3Phone : MichelleShana3}
-              />
-            </Carousel.Item>
-          </Carousel>
+            <source src={AboutUsVideo} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
           <p className="mt-5 mb-5 text-justify animate__animated animate__fadeIn animate__delay-2s">
             {translate(michelleShana)}
           </p>
@@ -185,8 +159,8 @@ export const About = (): ReactElement => {
               {teamMembers.map((member, index) => (
                 <Col
                   key={`team-member-${index}`}
-                  lg={{ span: 4, offset: index === 3 ? 2 : 0 }}
-                  md={{ span: 6, offset: index === 2 ? 3 : 0 }}
+                  lg={{ span: 4, offset: index === 3 || index === 5 ? 2 : 0 }}
+                  md={{ span: 6, offset: index === 4 ? 3 : 0 }}
                   xs={12}
                 >
                   <AboutTeamMember {...member} role={translate(member.role)} />

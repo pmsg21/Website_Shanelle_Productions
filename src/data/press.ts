@@ -10,10 +10,74 @@ import OmniaAlbum from '../assets/images/press/omnia-album.png';
 import Shanelle from '../assets/images/press/shanelle.png';
 import ShanelleProductions from '../assets/images/press/shanelle-productions.png';
 import WizzardFtShanelle from '../assets/images/press/wizzard-ft-shanelle.png';
+import AudioEngineeringSociety from '../assets/images/press/audio-engineering-society.png';
+import AudiovisualTalent from '../assets/images/press/audiovisual-talent.png';
 
 export const press: Press[] = [
   {
     id: 1,
+    alt: 'AudiovisualTalent',
+    image: AudiovisualTalent,
+    text: {
+      en: "The social media of Shana Pilonieta and Michelle Deniesse, founders of Shanelle Productions, showcase their talent as content creators. Through their voice and acting skills, they've won over millions and received multiple nominations and awards at international festivals.",
+      es: 'Las plataformas digitales de Shana Pilonieta y Michelle Deniesse, fundadoras de Shanelle Productions, muestran su talento como creadoras de contenido; con sus habilidades vocales y de actuación, han conquistado a millones de personas y recibido múltiples nominaciones y premios en festivales internacionales.',
+    },
+    urls: [
+      {
+        id: 1,
+        title: 'NOTICIAS VENEVISIÓN',
+        url: 'https://noticiasvenevision.com/noticias/entretenimiento/shana-pilonieta-y-michelle-deniesse-fronteras-con-su-talento-audiovisual',
+      },
+      {
+        id: 2,
+        title: 'NOTI-AMÉRICA',
+        url: 'https://noti-america.com/site/venezuela/2024/05/03/shana-pilonieta-y-michelle-deniesse-rompen-fronteras-con-su-talento-audiovisual/',
+      },
+      {
+        id: 3,
+        title: 'ENTÉRATE 24',
+        url: 'https://enterate24.com/shana-pilonieta-y-michelle-deniesse-rompen-fronteras-con-su-talento-audiovisual/',
+      },
+      {
+        id: 4,
+        title: 'NOTITARDE',
+        url: 'https://www.notitarde.com.ve/espectaculos/48675/shana-pilonieta-y-michelle-deniesse-rompen-fronteras-con-su-talento-audiovisual',
+      },
+      {
+        id: 5,
+        title: 'CARACAS NEWS 24',
+        url: 'https://caracasnews24.com/shana-pilonieta-y-michelle-deniesse-rompen-fronteras-con-su-talento-audiovisual/',
+      },
+      {
+        id: 6,
+        title: 'EL PERIODIQUITO',
+        url: 'https://elperiodiquito.com/mas/escenario/163290/shana-pilonieta-y-michelle-deniesse-rompen-fronteras-con-su-talento-audiovisual/',
+      },
+      {
+        id: 7,
+        title: 'EL ARAGÜEÑO',
+        url: 'https://elaragueno.com.ve/shana-pilonieta-y-michelle-deniesse-rompen-fronteras-con-su-talento-audiovisual/',
+      },
+      {
+        id: 8,
+        title: 'COLOMBIA MUSIC INC',
+        url: 'https://www.colombiamusicinc.com/shana-pilonieta-y-michelle-deniesse-rompen-fronteras-con-su-talento-audiovisual/',
+      },
+    ],
+    hasModal: true,
+  },
+  {
+    id: 2,
+    alt: 'AudioEngineeringSociety',
+    image: AudioEngineeringSociety,
+    text: {
+      en: 'Michelle Deniesse and Shana Pilonieta, two formidable voices in sound production and dubbing, were recently appointed as voting members of the Audio Engineering Society (AES), a global network of audio professionals and winner of the Technical GRAMMY Award.',
+      es: 'Michelle Deniesse y Shana Pilonieta, dos voces formidables en la producción de sonido y doblaje, fueron recientemente nombradas como miembros votantes de la Audio Engineering Society (AES), una red global de profesionales del audio y ganadora del premio GRAMMY Técnico.',
+    },
+    url: 'https://cactus24.com.ve/2024/04/30/productoras-de-sonido-wenezolanas-elegidas-como-miembros-votantes-de-la-audio-engineering-society/',
+  },
+  {
+    id: 3,
     alt: 'Shanelle',
     image: Shanelle,
     text: {
@@ -40,7 +104,7 @@ export const press: Press[] = [
     hasModal: true,
   },
   {
-    id: 2,
+    id: 4,
     alt: 'HighwayOne',
     image: HighwayOne,
     text: {
@@ -50,7 +114,7 @@ export const press: Press[] = [
     url: 'https://thedrillmag.com/exclusive-trailer-release-vintage-nye-house-party-highway-one/',
   },
   {
-    id: 3,
+    id: 5,
     alt: 'OaxacaFilmfest',
     image: OaxacaFilmfest,
     text: {
@@ -60,7 +124,7 @@ export const press: Press[] = [
     url: 'https://cactus24.com.ve/2019/12/14/shanelle-de-sello-venezolano-llega-a-festivales-de-cines-internacionales/',
   },
   {
-    id: 4,
+    id: 6,
     alt: 'OmniaAlbum',
     image: OmniaAlbum,
     text: {
@@ -70,7 +134,7 @@ export const press: Press[] = [
     url: 'https://cactus24.com.ve/2019/08/26/shanelle-el-duo-musical-venezolano-dispuesto-a-conquistar-el-mundo-con-omnia-su-nuevo-album-experimental/',
   },
   {
-    id: 5,
+    id: 7,
     alt: 'MadLoveSong',
     image: MadLoveSong,
     text: {
@@ -80,7 +144,7 @@ export const press: Press[] = [
     url: 'https://venezuelaempresarial.com.ve/noticia.php?post=7169',
   },
   {
-    id: 6,
+    id: 8,
     alt: 'WizzardFtShanelle',
     image: WizzardFtShanelle,
     text: {
@@ -90,7 +154,7 @@ export const press: Press[] = [
     url: 'https://revistaronda.net/wizzard-mas-empalagoso-y-muere/',
   },
   {
-    id: 7,
+    id: 9,
     alt: 'MadLove',
     image: MadLove,
     text: {
@@ -100,7 +164,7 @@ export const press: Press[] = [
     url: 'https://somosnoticias.com.ve/mad-love-el-nuevo-tema-de-wizzard-feat-shanelle/',
   },
   {
-    id: 8,
+    id: 10,
     alt: 'ShanelleProductions',
     image: ShanelleProductions,
     text: {
