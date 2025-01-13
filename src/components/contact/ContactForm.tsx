@@ -1,5 +1,5 @@
 // REACT IMPORTS
-import { useState, useEffect, ReactElement } from 'react';
+import { useState, useEffect, ReactElement } from "react";
 import {
   Alert,
   Button,
@@ -9,52 +9,58 @@ import {
   Row,
   Toast,
   ToastContainer,
-} from 'react-bootstrap';
+} from "react-bootstrap";
 
 // HOOKS
-import { useContactForm, useLanguage, useScreenDimensions } from '../../hooks';
+import { useContactForm, useLanguage, useScreenDimensions } from "../../hooks";
 
 // ASSETS
-import LogoGray from '../../assets/images/shared/logo-gray.svg';
+import LogoGray from "../../assets/images/shared/logo-gray.svg";
 
 export const ContactForm = (): ReactElement => {
   const { values, handleInputChange, handleSubmit, validated } = useContactForm(
     {
-      email: '',
+      email: "",
       hasError: false,
-      message: '',
-      name: '',
+      message: "",
+      name: "",
       isSending: false,
       isSuccessful: false,
     }
   );
   const { siteLanguage } = useLanguage();
-  const submitButtonText = siteLanguage === 'en' ? 'Submit' : 'Enviar';
+  const submitButtonText = siteLanguage === "en" ? "Submit" : "Enviar";
   const submittingButtonText =
-    siteLanguage === 'en' ? 'Submitting' : 'Enviando';
+    siteLanguage === "en" ? "Submitting" : "Enviando";
   const [submitText, setSubmitText] = useState<string>(submitButtonText);
   const { name, email, message, isSending, isSuccessful, hasError } = values;
-  const { screenWidth, screenHeight, isPortrait } = useScreenDimensions();
-  const isTabletPortrait =
-    screenWidth > 767 && screenWidth < 1025 && isPortrait;
+  const {
+    screenWidth,
+    screenHeight,
+    isPortrait,
+    isTablet,
+    isDesktop,
+    isPhone,
+  } = useScreenDimensions();
+  const isTabletPortrait = isTablet && isPortrait;
   const isSmallScreen =
     isTabletPortrait ||
-    (screenWidth > 1024 && screenWidth < 1301) ||
-    (screenWidth > 1300 && screenHeight < 801);
+    (isDesktop && screenWidth < 1301) ||
+    (isDesktop && screenHeight < 801);
   const successMessage =
-    siteLanguage === 'en'
-      ? 'The email has been sent successfully. Thanks for contacting us.'
-      : 'El email ha sido enviado exitosamente. Gracias por contactarnos.';
+    siteLanguage === "en"
+      ? "The email has been sent successfully. Thanks for contacting us."
+      : "El email ha sido enviado exitosamente. Gracias por contactarnos.";
   const errorMessage =
-    siteLanguage === 'en'
-      ? 'An error has occurred sending the email, please try again.'
-      : 'Ha ocurrido un error enviando el email, por favor intenta nuevamente.';
+    siteLanguage === "en"
+      ? "An error has occurred sending the email, please try again."
+      : "Ha ocurrido un error enviando el email, por favor intenta nuevamente.";
 
   const getFeedbackMessage = (): ReactElement => {
     if (isSmallScreen) {
       return (
         <ToastContainer className="p-3" position="bottom-end">
-          <Toast delay={4000} autohide bg={isSuccessful ? 'success' : 'danger'}>
+          <Toast delay={4000} autohide bg={isSuccessful ? "success" : "danger"}>
             <Toast.Body>
               {isSuccessful ? successMessage : errorMessage}
             </Toast.Body>
@@ -64,7 +70,7 @@ export const ContactForm = (): ReactElement => {
     }
 
     return (
-      <Alert variant={isSuccessful ? 'success' : 'danger'}>
+      <Alert variant={isSuccessful ? "success" : "danger"}>
         {isSuccessful ? successMessage : errorMessage}
       </Alert>
     );
@@ -86,7 +92,7 @@ export const ContactForm = (): ReactElement => {
       onSubmit={handleSubmit}
     >
       <Form.Group
-        className={`mb-4 ${isSmallScreen ? 'position-relative' : ''}`}
+        className={`mb-4 ${isSmallScreen ? "position-relative" : ""}`}
         controlId="name"
       >
         <Form.Control
@@ -94,20 +100,20 @@ export const ContactForm = (): ReactElement => {
           className="transition shanelle-semi-bold-text"
           disabled={isSending}
           onChange={handleInputChange}
-          placeholder={siteLanguage === 'en' ? 'Your Name' : 'Nombre'}
+          placeholder={siteLanguage === "en" ? "Your Name" : "Nombre"}
           required
           type="text"
           value={name}
         />
         <Form.Control.Feedback type="invalid" tooltip={isSmallScreen}>
-          {siteLanguage === 'en'
-            ? 'Please enter your name'
-            : 'Por favor ingresa tu nombre'}
+          {siteLanguage === "en"
+            ? "Please enter your name"
+            : "Por favor ingresa tu nombre"}
           .
         </Form.Control.Feedback>
       </Form.Group>
       <Form.Group
-        className={`mb-4 ${isSmallScreen ? 'position-relative' : ''}`}
+        className={`mb-4 ${isSmallScreen ? "position-relative" : ""}`}
         controlId="email"
       >
         <Form.Control
@@ -116,20 +122,20 @@ export const ContactForm = (): ReactElement => {
           disabled={isSending}
           onChange={handleInputChange}
           pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-          placeholder={siteLanguage === 'en' ? 'Your Email' : 'Email'}
+          placeholder={siteLanguage === "en" ? "Your Email" : "Email"}
           required
           type="email"
           value={email}
         />
         <Form.Control.Feedback type="invalid" tooltip={isSmallScreen}>
-          {siteLanguage === 'en'
-            ? 'Please enter a valid email'
-            : 'Por favor ingresa un email válido'}
+          {siteLanguage === "en"
+            ? "Please enter a valid email"
+            : "Por favor ingresa un email válido"}
           .
         </Form.Control.Feedback>
       </Form.Group>
       <Form.Group
-        className={`mb-4 ${isSmallScreen ? 'position-relative' : ''}`}
+        className={`mb-4 ${isSmallScreen ? "position-relative" : ""}`}
         controlId="message"
       >
         <Form.Control
@@ -138,23 +144,23 @@ export const ContactForm = (): ReactElement => {
           className="transition shanelle-semi-bold-text"
           disabled={isSending}
           onChange={handleInputChange}
-          placeholder={siteLanguage === 'en' ? 'Message' : 'Mensaje'}
+          placeholder={siteLanguage === "en" ? "Message" : "Mensaje"}
           required
           rows={6}
           value={message}
         />
         <Form.Control.Feedback type="invalid" tooltip={isSmallScreen}>
-          {siteLanguage === 'en'
-            ? 'Please enter your message'
-            : 'Por favor ingresa tu mensaje'}
+          {siteLanguage === "en"
+            ? "Please enter your message"
+            : "Por favor ingresa tu mensaje"}
           .
         </Form.Control.Feedback>
       </Form.Group>
       {(hasError || isSuccessful) && getFeedbackMessage()}
-      {screenWidth > 767 ? (
+      {!isPhone ? (
         <Button
           className={`w-${
-            isSending && isTabletPortrait ? '50' : '25'
+            isSending && isTabletPortrait ? "50" : "25"
           } float-right transition scale shanelle-bold-text`}
           disabled={isSending}
           type="submit"
@@ -178,11 +184,11 @@ export const ContactForm = (): ReactElement => {
             </Col>
           </Row>
           <h2 className="shanelle-form-thanks shanelle-extra-bold-text">
-            {siteLanguage === 'en' ? 'Thank you for' : 'Gracias por'}
+            {siteLanguage === "en" ? "Thank you for" : "Gracias por"}
             <br />
-            {siteLanguage === 'en'
-              ? 'supporting our work'
-              : 'apoyar nuestro trabajo'}
+            {siteLanguage === "en"
+              ? "supporting our work"
+              : "apoyar nuestro trabajo"}
             !
           </h2>
         </div>

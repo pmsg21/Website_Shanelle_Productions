@@ -1,23 +1,23 @@
 // REACT IMPORTS
-import { ReactElement, Suspense } from 'react';
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { ReactElement, Suspense } from "react";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 
 // ROUTES
-import { routes } from './routes';
+import { routes } from "./routes";
 
 // HOOKS
-import { useScreenDimensions } from '../hooks';
+import { useScreenDimensions } from "../hooks";
 
 // COMPONENTS
-import { Loader, Navbar } from '../components/shared';
+import { Loader, Navbar } from "../components/shared";
 
 export const Navigation = (): ReactElement => {
-  const { screenWidth } = useScreenDimensions();
+  const { isPhone } = useScreenDimensions();
 
   return (
     <BrowserRouter>
       <Navbar />
-      {screenWidth > 767 ? (
+      {!isPhone ? (
         <Suspense fallback={<Loader />}>
           <Routes>
             {routes.map(

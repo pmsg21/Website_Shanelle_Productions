@@ -1,26 +1,26 @@
 /* FONTS */
 @font-face {
-  font-family: 'OpenSans-Regular';
-  src: local('OpenSans-Regular'),
-    url(../fonts/OpenSans-Regular.ttf) format('truetype');
+  font-family: "OpenSans-Regular";
+  src: local("OpenSans-Regular"),
+    url(../fonts/OpenSans-Regular.ttf) format("truetype");
 }
 
 @font-face {
-  font-family: 'OpenSans-SemiBold';
-  src: local('OpenSans-SemiBold'),
-    url(../fonts/OpenSans-SemiBold.ttf) format('truetype');
+  font-family: "OpenSans-SemiBold";
+  src: local("OpenSans-SemiBold"),
+    url(../fonts/OpenSans-SemiBold.ttf) format("truetype");
 }
 
 @font-face {
-  font-family: 'OpenSans-Bold';
-  src: local('OpenSans-Bold'),
-    url(../fonts/OpenSans-Bold.ttf) format('truetype');
+  font-family: "OpenSans-Bold";
+  src: local("OpenSans-Bold"),
+    url(../fonts/OpenSans-Bold.ttf) format("truetype");
 }
 
 @font-face {
-  font-family: 'OpenSans-ExtraBold';
-  src: local('OpenSans-ExtraBold'),
-    url(../fonts/OpenSans-ExtraBold.ttf) format('truetype');
+  font-family: "OpenSans-ExtraBold";
+  src: local("OpenSans-ExtraBold"),
+    url(../fonts/OpenSans-ExtraBold.ttf) format("truetype");
 }
 
 /* GENERAL STYLES */
@@ -39,6 +39,8 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 65px;
+  overscroll-behavior: none;
 }
 
 body {
@@ -46,6 +48,9 @@ body {
   color: #ffffff;
   font-family: OpenSans-Regular;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 footer span {
@@ -70,6 +75,9 @@ footer a {
 
 .shanelle-header {
   background: linear-gradient(269.58deg, #c2157d 25.33%, #e8380d 82.24%);
+  background-attachment: fixed;
+  will-change: transform;
+  transform: translateZ(0);
   font-size: 16px;
   font-weight: 700;
   height: 65px;
@@ -166,7 +174,7 @@ footer a {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 1.75rem;
+  gap: 1rem;
   margin-top: auto;
 }
 
@@ -221,6 +229,55 @@ footer a {
   list-style: none;
 }
 
+.organizations-track-container {
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0) 0%,
+    rgb(0, 0, 0) 12.5%,
+    rgb(0, 0, 0) 87.5%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.organizations-track {
+  display: flex;
+  position: relative;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5rem;
+  width: 200%;
+}
+
+.organizations-track-left {
+  left: 0;
+  animation: slideToTheLeft 25s linear infinite alternate;
+}
+
+@keyframes slideToTheLeft {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -50%;
+  }
+}
+
+.organizations-track-right {
+  left: -100%;
+  justify-content: flex-end;
+  animation: slideToTheRight 25s linear infinite alternate;
+}
+
+@keyframes slideToTheRight {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: -50%;
+  }
+}
+
 /* PROJECTS */
 video {
   border-radius: 10px;
@@ -233,11 +290,6 @@ video {
 
 .shanelle-projects-title {
   left: -1.5%;
-  top: 10%;
-}
-
-.shanelle-projects-title-es {
-  top: 13% !important;
 }
 
 .shanelle-project-overlay {
@@ -326,7 +378,7 @@ video {
 .shanelle-values-container::after {
   border-color: #10060f;
   border-style: solid;
-  content: '';
+  content: "";
   position: absolute;
   width: 25%;
 }
@@ -388,7 +440,7 @@ video {
   border-style: solid;
   border-width: 0 0 10px 10px;
   bottom: -1px;
-  content: '';
+  content: "";
   height: 100%;
   left: -1px;
   position: absolute;
@@ -421,11 +473,11 @@ video {
 /* PRESS */
 .shanelle-press-title {
   left: -1.5%;
-  top: 9%;
+  top: 8.5%;
 }
 
 .shanelle-press-title-es {
-  top: 12.5% !important;
+  top: 10% !important;
 }
 
 .shanelle-card {
@@ -470,12 +522,12 @@ video {
 
 /* ENTERTAINMENT */
 .shanelle-entertainment-title {
-  left: 13%;
-  top: 48%;
+  left: 10%;
+  top: 50%;
 }
 
 .shanelle-entertainment-title-es {
-  top: 52.5%;
+  top: 42%;
 }
 
 .shanelle-entertainment-main-container {
@@ -625,7 +677,7 @@ video {
 }
 
 .link {
-  color: #d962a6;
+  color: #d962a6 !important;
   text-decoration: none;
 }
 
@@ -655,6 +707,7 @@ video {
 .scale:hover {
   transform: scale(1.05);
   filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.4));
+  will-change: transform;
 }
 
 .scale-1-2:hover {
@@ -666,6 +719,10 @@ video {
   -ms-filter: brightness(200%);
   -webkit-filter: brightness(200%);
   filter: brightness(200%);
+}
+
+.w-35 {
+  width: 35% !important;
 }
 
 .w-40 {
@@ -688,6 +745,10 @@ video {
   width: 90% !important;
 }
 
+.w-100vw {
+  width: 100vw !important;
+}
+
 /* RESPONSIVE STYLES */
 /* BIG SCREENS */
 @media (min-width: 2000px) {
@@ -695,6 +756,10 @@ video {
   .shanelle-entertainment-title {
     left: 24%;
     top: 36%;
+  }
+
+  .shanelle-entertainment-title-es {
+    top: 30% !important;
   }
 }
 
@@ -753,14 +818,9 @@ video {
     margin-right: 10%;
   }
 
-  .shanelle-projects-award-icon {
-    width: 9%;
-  }
-
   /* PROJECTS */
   .shanelle-projects-title {
     left: -1.5%;
-    top: 12%;
   }
 
   .shanelle-projects-title-es {
@@ -783,7 +843,7 @@ video {
   }
 
   .shanelle-entertainment-title-es {
-    top: 63.5% !important;
+    top: 50% !important;
   }
 
   /* PRESS */
@@ -858,7 +918,6 @@ video {
   /* SHANELLE STYLES */
   /* HOME */
   .home-buttons-container {
-    gap: 1.5rem;
     padding: 0 3rem;
   }
 
@@ -897,7 +956,7 @@ video {
     font-size: 15px;
   }
 
-  #projects-section .shanelle-container {
+  #film-section .shanelle-container {
     background: none;
   }
 
@@ -949,7 +1008,7 @@ video {
   .shanelle-press-title,
   .shanelle-press-title-es {
     left: 3%;
-    top: -3% !important;
+    top: -2% !important;
   }
 
   .shanelle-card {
@@ -964,6 +1023,25 @@ video {
 
   .shanelle-entertainment-main-container {
     width: 100%;
+  }
+
+  /* SERVICES */
+  @keyframes slideToTheLeft {
+    0% {
+      left: 0;
+    }
+    100% {
+      left: -100%;
+    }
+  }
+
+  @keyframes slideToTheRight {
+    0% {
+      left: -100%;
+    }
+    100% {
+      left: 0;
+    }
   }
 }
 
@@ -1025,7 +1103,7 @@ video {
     margin-left: 1rem;
   }
 
-  #projects-section footer {
+  #film-section footer {
     margin-top: 4rem !important;
     margin-bottom: 2rem !important;
   }
@@ -1119,10 +1197,6 @@ video {
     margin-top: 1.25rem;
   }
 
-  .home-buttons-container {
-    gap: 1rem;
-  }
-
   .shanelle-catchphrase {
     font-size: 15px;
   }
@@ -1137,6 +1211,28 @@ video {
 
   .check-icon {
     margin-left: -5px;
+  }
+
+  .organizations-track {
+    gap: 2rem;
+  }
+
+  @keyframes slideToTheLeft {
+    0% {
+      left: 0;
+    }
+    100% {
+      left: -185%;
+    }
+  }
+
+  @keyframes slideToTheRight {
+    0% {
+      left: -100%;
+    }
+    100% {
+      left: 85%;
+    }
   }
 
   /* PROJECTS */

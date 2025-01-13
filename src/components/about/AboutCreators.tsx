@@ -1,24 +1,24 @@
 // REACT IMPORTS
-import { ReactElement } from 'react';
-import { Col, Image, Row } from 'react-bootstrap';
+import { ReactElement } from "react";
+import { Col, Image, Row } from "react-bootstrap";
 
 // HOOKS
-import { useLanguage, useScreenDimensions } from '../../hooks';
+import { useLanguage, useScreenDimensions } from "../../hooks";
 
 // COMPONENTS
-import { AnimatedHeading } from '../shared';
+import { AnimatedHeading } from "../shared";
 
 // ASSETS
-import DreamTeamSeparator from '../../assets/images/about/dream-team-separator.svg';
-import LinkIcon from '../../assets/images/about/link.svg';
-import Michelle from '../../assets/images/about/michelle-lugo-headshot.png';
-import Shana from '../../assets/images/about/shana-pilonieta-headshot.png';
-import AesMember from '../../assets/images/about/aes-member.png';
+import Separator from "../../assets/images/shared/separator.svg";
+import LinkIcon from "../../assets/images/about/link.svg";
+import Michelle from "../../assets/images/about/michelle-lugo-headshot.png";
+import Shana from "../../assets/images/about/shana-pilonieta-headshot.png";
+import AesMember from "../../assets/images/about/aes-member.png";
 
 export const AboutCreators = (): ReactElement => {
   const { siteLanguage } = useLanguage();
   const { isDesktop, isPhone } = useScreenDimensions();
-  const creatorsText = siteLanguage === 'en' ? 'Creators' : 'Creadoras';
+  const creatorsText = siteLanguage === "en" ? "Creators" : "Creadoras";
 
   const getAesMemberImage = () => (
     <Image
@@ -26,7 +26,7 @@ export const AboutCreators = (): ReactElement => {
       alt="AES Member"
       src={AesMember}
       className={`scale transition d-block m-auto ${
-        isPhone ? 'w-40 mb-4' : 'w-65'
+        isPhone ? "w-40 mb-4" : "w-65"
       }`}
     />
   );
@@ -34,25 +34,25 @@ export const AboutCreators = (): ReactElement => {
   return (
     <div
       className={`${
-        isDesktop ? 'shanelle-container' : ''
+        isDesktop ? "shanelle-container" : ""
       } position-relative mb-${
-        isPhone ? '2' : '5'
+        isPhone ? "2" : "5"
       } animate__animated animate__fadeIn animate__delay-1s`}
     >
       <div
         className={`${
-          isDesktop ? 'shanelle-inner-container p-5' : 'p-0'
+          isDesktop ? "shanelle-inner-container p-5" : "p-0"
         } shanelle-creator-container`}
       >
         {isDesktop ? (
           <AnimatedHeading
-            className={'position-absolute ps-3 pe-3'}
+            className={"position-absolute ps-3 pe-3"}
             Heading="h1"
             text={creatorsText}
           />
         ) : (
           <div
-            className={`d-flex align-items-center mb-${isPhone ? '3' : '5'}`}
+            className={`d-flex align-items-center mb-${isPhone ? "3" : "5"}`}
           >
             <AnimatedHeading
               className="me-4"
@@ -61,10 +61,10 @@ export const AboutCreators = (): ReactElement => {
             />
             {!isPhone && (
               <Image
-                alt="Dream team separator"
+                alt="Separator"
                 className="flex-grow-1 w-50"
                 fluid
-                src={DreamTeamSeparator}
+                src={Separator}
               />
             )}
           </div>
@@ -76,7 +76,7 @@ export const AboutCreators = (): ReactElement => {
               alt="Shana"
               src={Shana}
               className={`scale transition d-block m-auto ${
-                isPhone ? 'w-60' : ''
+                isPhone ? "w-60" : ""
               }`}
             />
             <div className="shanelle-creator-details shana">
@@ -87,7 +87,7 @@ export const AboutCreators = (): ReactElement => {
               />
               <p className="text-center mb-0">Alexandra Alvarez Pilonieta</p>
               <p className="text-center">
-                {siteLanguage === 'en' ? 'Co-Founder of ' : 'Co-fundadora de '}
+                {siteLanguage === "en" ? "Co-Founder of " : "Co-fundadora de "}
                 Shanelle Productions
               </p>
               <p className="text-center">
@@ -97,7 +97,7 @@ export const AboutCreators = (): ReactElement => {
                   className="link transition"
                   rel="noopener noreferrer"
                 >
-                  {siteLanguage === 'en' ? 'Go to ' : 'Visita '}IMDb
+                  {siteLanguage === "en" ? "Go to " : "Visita "}IMDb
                   <Image
                     fluid
                     alt="Link Icon"
@@ -115,7 +115,7 @@ export const AboutCreators = (): ReactElement => {
               alt="Michelle"
               src={Michelle}
               className={`scale transition d-block m-auto ${
-                isPhone ? 'w-60' : ''
+                isPhone ? "w-60" : ""
               }`}
             />
             <div className="shanelle-creator-details michelle">
@@ -126,7 +126,7 @@ export const AboutCreators = (): ReactElement => {
               />
               <p className="text-center mb-0">Michelle Deniesse</p>
               <p className="text-center">
-                {siteLanguage === 'en' ? 'Co-Founder of ' : 'Co-fundadora de '}
+                {siteLanguage === "en" ? "Co-Founder of " : "Co-fundadora de "}
                 Shanelle Productions
               </p>
               <p className="text-center">
@@ -136,7 +136,7 @@ export const AboutCreators = (): ReactElement => {
                   className="link transition"
                   rel="noopener noreferrer"
                 >
-                  {siteLanguage === 'en' ? 'Go to ' : 'Visita '}IMDb
+                  {siteLanguage === "en" ? "Go to " : "Visita "}IMDb
                   <Image
                     fluid
                     alt="Link Icon"

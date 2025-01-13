@@ -1,104 +1,102 @@
 // REACT IMPORTS
-import { lazy } from 'react';
+import { lazy } from "react";
 
 // INTERFACES
-import { Route } from '../interfaces/route';
+import { Route } from "../interfaces/route";
 
-const Home = lazy(() => import(/* webpackChunkName: "Home"*/ '../pages/Home'));
+const Home = lazy(() => import(/* webpackChunkName: "Home"*/ "../pages/Home"));
 
 const About = lazy(
-  () => import(/* webpackChunkName: "About"*/ '../pages/About')
+  () => import(/* webpackChunkName: "About"*/ "../pages/About")
 );
 
-const Projects = lazy(
-  () => import(/* webpackChunkName: "Projects"*/ '../pages/Projects')
-);
+const Film = lazy(() => import(/* webpackChunkName: "Film"*/ "../pages/Film"));
 
-const Entertainment = lazy(
-  () => import(/* webpackChunkName: "Entertainment"*/ '../pages/Entertainment')
+const OurOriginals = lazy(
+  () => import(/* webpackChunkName: "OurOriginals"*/ "../pages/OurOriginals")
 );
 
 const Services = lazy(
-  () => import(/* webpackChunkName: "Services"*/ '../pages/Services')
+  () => import(/* webpackChunkName: "Services"*/ "../pages/Services")
 );
 
 const Press = lazy(
-  () => import(/* webpackChunkName: "Press"*/ '../pages/Press')
+  () => import(/* webpackChunkName: "Press"*/ "../pages/Press")
 );
 
 const Contact = lazy(
-  () => import(/* webpackChunkName: "Contact"*/ '../pages/Contact')
+  () => import(/* webpackChunkName: "Contact"*/ "../pages/Contact")
 );
 
 export const routes: Route[] = [
   {
     Component: Home,
-    id: 'home-section',
+    id: "home-section",
     name: {
-      en: 'Home',
-      es: 'Inicio',
+      en: "Home",
+      es: "Inicio",
     },
-    path: '',
-    to: '/',
+    path: "",
+    to: "/",
+  },
+  {
+    Component: OurOriginals,
+    id: "our-originals-section",
+    name: {
+      en: "Our Originals",
+      es: "Lo Nuestro",
+    },
+    path: "our-originals",
+    to: "/our-originals",
   },
   {
     Component: About,
-    id: 'about-section',
+    id: "about-section",
     name: {
-      en: 'About Us',
-      es: 'Conócenos',
+      en: "About Us",
+      es: "Conócenos",
     },
-    path: 'about',
-    to: '/about',
+    path: "about",
+    to: "/about",
   },
   {
-    Component: Projects,
-    id: 'projects-section',
+    Component: Film,
+    id: "film-section",
     name: {
-      en: 'Projects',
-      es: 'Proyectos',
+      en: "Film",
+      es: "Cine",
     },
-    path: 'projects',
-    to: '/projects',
-  },
-  {
-    Component: Entertainment,
-    id: 'entertainment-section',
-    name: {
-      en: 'Entertainment',
-      es: 'Entretenimiento',
-    },
-    path: 'entertainment',
-    to: '/entertainment',
+    path: "film",
+    to: "/film",
   },
   {
     Component: Services,
-    id: 'services-section',
+    id: "services-section",
     name: {
-      en: 'Services',
-      es: 'Servicios',
+      en: "Services",
+      es: "Servicios",
     },
-    path: 'services',
-    to: '/services',
+    path: "services",
+    to: "/services",
   },
   {
     Component: Press,
-    id: 'press-section',
+    id: "press-section",
     name: {
-      en: 'Press',
-      es: 'Prensa',
+      en: "Press",
+      es: "Prensa",
     },
-    path: 'press',
-    to: '/press',
+    path: "press",
+    to: "/press",
   },
   {
     Component: Contact,
-    id: 'contact-section',
+    id: "contact-section",
     name: {
-      en: 'Contact',
-      es: 'Contacto',
+      en: "Contact",
+      es: "Contacto",
     },
-    path: 'contact',
-    to: '/contact',
+    path: "contact",
+    to: "/contact",
   },
 ];

@@ -1,9 +1,9 @@
 // REACT IMPORTS
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 type UseScreenDimensions = {
   /**
-   * Verifies that the screen width is greater than 1024px
+   * Verifies that the screen width is greater than 1023px
    */
   isDesktop: boolean;
   /**
@@ -48,10 +48,10 @@ export function useScreenDimensions(): UseScreenDimensions {
       setIsPortrait(event.target.innerWidth > event.target.innerHeight);
     };
 
-    window.addEventListener('resize', handler);
+    window.addEventListener("resize", handler);
 
     return (): void => {
-      window.removeEventListener('resize', handler);
+      window.removeEventListener("resize", handler);
     };
   }, []);
 
@@ -59,11 +59,11 @@ export function useScreenDimensions(): UseScreenDimensions {
     const scrollDiv = document.getElementById(id)?.offsetTop;
     window.scrollTo({
       top: scrollDiv ? scrollDiv - 100 : 0,
-      behavior: 'smooth',
+      behavior: "smooth",
     });
   }
 
-  const isDesktop = screenWidth > 1024;
+  const isDesktop = screenWidth > 1023;
   const isPhone = screenWidth < 768;
   const isTablet = screenWidth > 767 && screenWidth < 1025;
 

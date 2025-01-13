@@ -1,30 +1,30 @@
 // REACT IMPORTS
-import { ReactElement } from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+import { ReactElement } from "react";
+import { Col, Container, Row } from "react-bootstrap";
 
 // DATA
-import { press } from '../data/press';
+import { press } from "../data/press";
 
 // HOOKS
-import { useLanguage, useScreenDimensions } from '../hooks';
+import { useLanguage, useScreenDimensions } from "../hooks";
 
 // COMPONENTS
-import { Footer } from '../components/shared';
-import { PressCard } from '../components/press';
+import { Footer } from "../components/shared";
+import { PressCard } from "../components/press";
 
 export const Press = (): ReactElement => {
-  const { screenWidth } = useScreenDimensions();
+  const { screenWidth, isDesktop, isPhone } = useScreenDimensions();
   const { siteLanguage } = useLanguage();
-  const sectionTitle = siteLanguage === 'en' ? 'Press' : 'Prensa';
+  const sectionTitle = siteLanguage === "en" ? "Press" : "Prensa";
 
   return (
     <section id="press-section">
       <Container
         className={`mt-${
-          screenWidth < 768 ? '0' : '6'
+          isPhone ? "0" : "6"
         } p-0 animate__animated animate__fadeIn`}
       >
-        {screenWidth < 768 ? (
+        {isPhone ? (
           <h1 className="shanelle-bold-text text-uppercase ps-3 mb-4">
             {sectionTitle}
           </h1>
@@ -34,35 +34,30 @@ export const Press = (): ReactElement => {
           xs={1}
           lg={3}
           className={`${
-            screenWidth < 768 ? 'w-100 ms-0 me-0' : ''
+            isPhone ? "w-100 ms-0 me-0" : ""
           } g-3 position-relative`}
         >
-          {screenWidth > 767 ? (
+          {!isPhone ? (
             <h1
               className={`${
-                screenWidth > 1024
-                  ? 'shanelle-rotated-text'
-                  : 'position-absolute'
+                isDesktop ? "shanelle-rotated-text" : "position-absolute"
               } shanelle-extra-bold-text shanelle-press-title ${
-                siteLanguage === 'es' ? 'shanelle-press-title-es' : ''
+                siteLanguage === "es" ? "shanelle-press-title-es" : ""
               } text-uppercase`}
             >
               {sectionTitle}
             </h1>
           ) : null}
           {press.map((item) => (
-            <Col
-              className={screenWidth > 767 ? 'p-3' : 'ps-3 pe-3 mb-4'}
-              key={item.id}
-            >
+            <Col className={!isPhone ? "p-3" : "ps-3 pe-3 mb-4"} key={item.id}>
               <PressCard {...item} className="transition scale" />
             </Col>
           ))}
         </Row>
-        {screenWidth > 767 ? (
+        {!isPhone ? (
           <Footer
             className={`mt-5 mb-${
-              screenWidth < 1025 ? '5' : '4'
+              screenWidth < 1025 ? "5" : "4"
             } animate__animated animate__fadeIn animate__delay-0-5s`}
           />
         ) : null}

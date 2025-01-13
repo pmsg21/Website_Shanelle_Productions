@@ -1,27 +1,28 @@
 // REACT IMPORTS
-import { ReactElement, useState } from 'react';
-import { Navbar as NavbarBS, Container, Nav, Image } from 'react-bootstrap';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { ReactElement, useState } from "react";
+import { Navbar as NavbarBS, Container, Nav, Image } from "react-bootstrap";
+import { NavLink, useNavigate } from "react-router-dom";
 
 // ROUTES
-import { routes } from '../../routes/routes';
+import { routes } from "../../routes/routes";
 
 // HOOKS
-import { useLanguage, useScreenDimensions, useTranslation } from '../../hooks';
+import { useLanguage, useScreenDimensions, useTranslation } from "../../hooks";
 
 // ASSETS
-import English from '../../assets/images/shared/english.svg';
-import HamburgerIcon from '../../assets/images/shared/hamburger-icon.svg';
-import LogoWhite from '../../assets/images/shared/logo-white.svg';
-import Spanish from '../../assets/images/shared/spanish.svg';
+import English from "../../assets/images/shared/english.svg";
+import HamburgerIcon from "../../assets/images/shared/hamburger-icon.svg";
+import LogoWhite from "../../assets/images/shared/logo-white.svg";
+import Spanish from "../../assets/images/shared/spanish.svg";
 
 export const Navbar = (): ReactElement => {
   const [isOpen, setIsOpen] = useState(false);
-  const { screenWidth, scrollIntoView } = useScreenDimensions();
+  const { screenWidth, scrollIntoView, isPhone, isDesktop } =
+    useScreenDimensions();
   const { siteLanguage, handleLanguageChange } = useLanguage();
   const { translate } = useTranslation();
   const navigate = useNavigate();
-  const storeText = siteLanguage === 'en' ? 'Store' : 'Tienda';
+  const storeText = siteLanguage === "en" ? "Store" : "Tienda";
 
   function handleScrollIntoView(id: string): void {
     setIsOpen(false);
@@ -45,11 +46,11 @@ export const Navbar = (): ReactElement => {
         onClick={handleLanguageClick}
       >
         <Image
-          src={siteLanguage === 'en' ? Spanish : English}
+          src={siteLanguage === "en" ? Spanish : English}
           fluid
           alt="Language"
         />
-        <span className="ms-1">E{siteLanguage === 'en' ? 'S' : 'N'}</span>
+        <span className="ms-1">E{siteLanguage === "en" ? "S" : "N"}</span>
       </div>
     );
   }
@@ -68,13 +69,13 @@ export const Navbar = (): ReactElement => {
             as={NavLink}
             className="scale transition"
             onClick={() => {
-              if (screenWidth < 768) handleScrollIntoView('home-section');
+              if (isPhone) handleScrollIntoView("home-section");
             }}
           >
             <Image
               src={LogoWhite}
               className={`d-inline-block align-top animate__animated animate__fadeIn animate__delay-0-5s ${
-                screenWidth < 768 ? 'ms-3' : ''
+                isPhone ? "ms-3" : ""
               }`}
               alt="Shanelle Productions Logo White"
             />
@@ -83,7 +84,7 @@ export const Navbar = (): ReactElement => {
             className="ms-auto animate__animated animate__fadeIn animate__delay-0-5s"
             navbarScroll
           >
-            {screenWidth > 1023 ? (
+            {isDesktop ? (
               <>
                 <a
                   className="me-3 transition scale shanelle-semi-bold-text align-self-center nav-link"
@@ -94,7 +95,7 @@ export const Navbar = (): ReactElement => {
                   {storeText}
                 </a>
                 {routes
-                  .filter((route): boolean => route.to !== '/')
+                  .filter((route): boolean => route.to !== "/")
                   .map(
                     ({ path, to, name }): ReactElement => (
                       <Nav.Link
@@ -105,7 +106,7 @@ export const Navbar = (): ReactElement => {
                         onClick={(): void =>
                           window.scrollTo({
                             top: 0,
-                            behavior: 'smooth',
+                            behavior: "smooth",
                           })
                         }
                       >
@@ -122,7 +123,7 @@ export const Navbar = (): ReactElement => {
                 alt="Hamburger Icon"
               />
             )}
-            {screenWidth > 1023 && getLanguageIcon()}
+            {isDesktop && getLanguageIcon()}
           </Nav>
         </Container>
       </NavbarBS>
@@ -142,16 +143,14 @@ export const Navbar = (): ReactElement => {
                   </a>
                 </li>
                 {routes
-                  .filter((route): boolean => route.to !== '/')
+                  .filter((route): boolean => route.to !== "/")
                   .map(
                     ({ path, id, name, to }): ReactElement => (
                       <li
                         className="shanelle-semi-bold-text"
                         key={path}
                         onClick={(): void => {
-                          screenWidth < 768
-                            ? handleScrollIntoView(id)
-                            : redirectTo(to);
+                          isPhone ? handleScrollIntoView(id) : redirectTo(to);
                         }}
                       >
                         {translate(name)}
