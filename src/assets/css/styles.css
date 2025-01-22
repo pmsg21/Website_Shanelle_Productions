@@ -767,12 +767,12 @@ video {
 @media (min-width: 1281px) and (max-width: 1600px) {
   /* ENTERTAINMENT */
   .shanelle-entertainment-title {
-    left: 5%;
-    top: 67%;
+    left: 7%;
+    top: 60%;
   }
 
   .shanelle-entertainment-title-es {
-    top: 72.5%;
+    top: 50%;
   }
 }
 /* SMALL LAPTOPS */

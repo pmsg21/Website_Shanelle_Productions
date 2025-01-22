@@ -18,6 +18,7 @@ import ElixirLogo from "../assets/images/our-originals/elixir-logo.svg";
 import AgainBanner from "../assets/images/our-originals/again-banner.png";
 import AgainLogo from "../assets/images/our-originals/again-logo.svg";
 import AgainAward from "../assets/images/our-originals/again-award.svg";
+import ElixirAward from "../assets/images/our-originals/elixir-award.svg";
 
 export const ourOriginals: OurOriginals[] = [
   {
@@ -40,8 +41,11 @@ export const ourOriginals: OurOriginals[] = [
 
 export const ourOriginalSeries: OurOriginalSeries[] = [
   {
-    awardImage: "",
-    awardText: null,
+    awardImage: ElixirAward,
+    awardText: {
+      en: "Winner of the Best Episodic Television Award at the Bangkok Movie Awards in Bangkok, Thailand.",
+      es: "Ganadora del Premio a la Mejor Serie Episódica en los Bangkok Movie Awards en Bangkok, Tailandia.",
+    },
     banner: ElixirBanner,
     bannerAlt: "Elixir: After Time - Banner",
     credits: {
@@ -52,7 +56,7 @@ export const ourOriginalSeries: OurOriginalSeries[] = [
       en: "Elixir: After Time is a captivating mystery sapphic series in Latin American Spanish, filmed in the scenic landscapes of Tennessee. This fully independent production was created entirely by the two of us, with every step—from pre-production to post-production—handled in-house. The series delves into themes of past lives, reincarnation, and magic, weaving a rich narrative that explores the mystical and mysterious. During filming, we brought in one additional key member, our talented cameraman and director of photography, to help bring our vision to life.",
       es: "Elixir: After Time es una cautivadora serie sáfica de misterio en español latinoamericano, filmada en los pintorescos paisajes de Tennessee. Esta producción completamente independiente fue creada íntegramente por nosotras dos, gestionando cada paso, desde la preproducción hasta la postproducción, de manera interna. La serie aborda temas como vidas pasadas, reencarnación y magia, tejiendo una rica narrativa que explora lo místico y lo misterioso. Durante el rodaje, incorporamos a un miembro clave adicional: nuestro talentoso camarógrafo y director de fotografía, quien nos ayudó a dar vida a nuestra visión.",
     },
-    hasAward: false,
+    hasAward: true,
     id: 1,
     imdbLink:
       "https://www.imdb.com/es/title/tt34215865/?ref_=nv_sr_srsg_3_tt_8_nm_0_in_0_q_elixir",
