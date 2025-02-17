@@ -2,22 +2,50 @@
 import { Press } from "../interfaces/press";
 
 // ASSETS
+import AgainElixirSeries from "../assets/images/press/again-elixir-series.png";
+import AgainTheSeries from "../assets/images/press/again-the-series.png";
+import AudioEngineeringSociety from "../assets/images/press/audio-engineering-society.png";
+import AudiovisualTalent from "../assets/images/press/audiovisual-talent.png";
 import HighwayOne from "../assets/images/press/highway-1.png";
 import MadLove from "../assets/images/press/mad-love.png";
 import MadLoveSong from "../assets/images/press/mad-love-song.png";
 import OaxacaFilmfest from "../assets/images/press/oaxaca-filmfest.png";
 import OmniaAlbum from "../assets/images/press/omnia-album.png";
+import QaWithActresses from "../assets/images/press/qa-with-actresses.png";
 import Shanelle from "../assets/images/press/shanelle.png";
 import ShanelleProductions from "../assets/images/press/shanelle-productions.png";
 import WizzardFtShanelle from "../assets/images/press/wizzard-ft-shanelle.png";
-import AudioEngineeringSociety from "../assets/images/press/audio-engineering-society.png";
-import AudiovisualTalent from "../assets/images/press/audiovisual-talent.png";
-import QaWithActresses from "../assets/images/press/qa-with-actresses.png";
-import AgainTheSeries from "../assets/images/press/again-the-series.png";
 
 export const press: Press[] = [
   {
     id: 1,
+    alt: "AgainElixirSeries",
+    image: AgainElixirSeries,
+    text: {
+      en: `Michelle and Alexandra, talented producers, sound designers, and Venezuelan creators, have conquered the international scene with their web series "Again The Series (You Again)" and "Elixir: After Time," productions that have been recognized and awarded at prestigious film festivals.`,
+      es: "Michelle y Alexandra, talentosas productoras, diseñadoras de sonido y creadoras venezolanas, han conquistado el panorama internacional con sus series web «Again The Series (Tú Otra Vez)» y «Elixir: After Time», producciones que han sido reconocidas y premiadas en destacados festivales de cine.",
+    },
+    urls: [
+      {
+        id: 1,
+        title: "A RUMBEAR",
+        url: "https://arumbear.com/ve/archivos/44427",
+      },
+      {
+        id: 2,
+        title: "NOTICIAS VENEVISION",
+        url: "https://noticiasvenevision.com/noticias/entretenimiento/productoras-y-actrices-venezolanas-triunfan-en-festivales-de-cine-internacionales-con-sus-series",
+      },
+      {
+        id: 3,
+        title: "QUE TAL ESPECTÁCULOS",
+        url: "https://quetalespectaculos.wordpress.com/2025/02/04/productoras-y-actrices-venezolanas-triunfan-en-festivales-de-cine-internacionales-con-sus-series-originales/",
+      },
+    ],
+    hasModal: true,
+  },
+  {
+    id: 2,
     alt: "QaWithActresses",
     image: QaWithActresses,
     text: {
@@ -27,7 +55,7 @@ export const press: Press[] = [
     url: "https://lgbt-daily.com/f/qa-with-actresses-michelle-deniesse-shana-pilonieta",
   },
   {
-    id: 2,
+    id: 3,
     alt: "AgainTheSeries",
     image: AgainTheSeries,
     text: {
@@ -54,7 +82,7 @@ export const press: Press[] = [
     hasModal: true,
   },
   {
-    id: 3,
+    id: 4,
     alt: "AudiovisualTalent",
     image: AudiovisualTalent,
     text: {
@@ -106,7 +134,7 @@ export const press: Press[] = [
     hasModal: true,
   },
   {
-    id: 4,
+    id: 5,
     alt: "AudioEngineeringSociety",
     image: AudioEngineeringSociety,
     text: {
@@ -116,7 +144,7 @@ export const press: Press[] = [
     url: "https://cactus24.com.ve/2024/04/30/productoras-de-sonido-wenezolanas-elegidas-como-miembros-votantes-de-la-audio-engineering-society/",
   },
   {
-    id: 5,
+    id: 6,
     alt: "Shanelle",
     image: Shanelle,
     text: {
@@ -143,7 +171,7 @@ export const press: Press[] = [
     hasModal: true,
   },
   {
-    id: 6,
+    id: 7,
     alt: "HighwayOne",
     image: HighwayOne,
     text: {
@@ -153,7 +181,7 @@ export const press: Press[] = [
     url: "https://thedrillmag.com/exclusive-trailer-release-vintage-nye-house-party-highway-one/",
   },
   {
-    id: 7,
+    id: 8,
     alt: "OaxacaFilmfest",
     image: OaxacaFilmfest,
     text: {
@@ -163,7 +191,7 @@ export const press: Press[] = [
     url: "https://cactus24.com.ve/2019/12/14/shanelle-de-sello-venezolano-llega-a-festivales-de-cines-internacionales/",
   },
   {
-    id: 8,
+    id: 9,
     alt: "OmniaAlbum",
     image: OmniaAlbum,
     text: {
@@ -173,7 +201,7 @@ export const press: Press[] = [
     url: "https://cactus24.com.ve/2019/08/26/shanelle-el-duo-musical-venezolano-dispuesto-a-conquistar-el-mundo-con-omnia-su-nuevo-album-experimental/",
   },
   {
-    id: 9,
+    id: 10,
     alt: "MadLoveSong",
     image: MadLoveSong,
     text: {
@@ -183,7 +211,7 @@ export const press: Press[] = [
     url: "https://venezuelaempresarial.com.ve/noticia.php?post=7169",
   },
   {
-    id: 10,
+    id: 11,
     alt: "WizzardFtShanelle",
     image: WizzardFtShanelle,
     text: {
@@ -193,7 +221,7 @@ export const press: Press[] = [
     url: "https://revistaronda.net/wizzard-mas-empalagoso-y-muere/",
   },
   {
-    id: 11,
+    id: 12,
     alt: "MadLove",
     image: MadLove,
     text: {
@@ -203,7 +231,7 @@ export const press: Press[] = [
     url: "https://somosnoticias.com.ve/mad-love-el-nuevo-tema-de-wizzard-feat-shanelle/",
   },
   {
-    id: 12,
+    id: 13,
     alt: "ShanelleProductions",
     image: ShanelleProductions,
     text: {

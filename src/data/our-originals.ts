@@ -64,7 +64,7 @@ export const ourOriginalSeries: OurOriginalSeries[] = [
     logoAlt: "Elixir: After Time - Logo",
     trailerLink:
       "https://www.youtube.com/embed/b-HUg02nleE?si=azOBH5XJeS46CUA2",
-    views: "2.4MM",
+    views: "3MM",
     watchLink:
       "https://www.youtube.com/playlist?list=PL-NkjSbA8EyHNSYsJSe5tfbeTSFY6wzl4",
   },
@@ -91,7 +91,7 @@ export const ourOriginalSeries: OurOriginalSeries[] = [
     logoAlt: "Again The Series - Logo",
     trailerLink:
       "https://www.youtube.com/embed/gJe__OJysHA?si=T76pYu4banQclQr-",
-    views: "3.2MM",
+    views: "4.6MM",
     watchLink:
       "https://www.youtube.com/playlist?list=PL-NkjSbA8EyGC95d-3Fig6ULjNpHfohVO",
   },
@@ -122,14 +122,14 @@ export const ourOriginalsSocialMediaParagraphs: OurOriginalsSocialMediaParagraph
       {
         animationDelay: "animate__delay-1-5s",
         followers: {
-          en: "+ 108K followers",
-          es: "+ 108K seguidores",
+          en: "+ 109K followers",
+          es: "+ 109K seguidores",
         },
         icon: TikTok,
         id: 1,
         likesAndViews: {
-          en: "+ 2.8MM likes",
-          es: "+ 2.8MM me gusta",
+          en: "+ 2.9MM likes",
+          es: "+ 2.9MM me gusta",
         },
         link: "https://www.tiktok.com/@shanelleprod",
         title: "Tiktok",
@@ -137,14 +137,14 @@ export const ourOriginalsSocialMediaParagraphs: OurOriginalsSocialMediaParagraph
       {
         animationDelay: "animate__delay-2s",
         followers: {
-          en: "+ 95K followers",
-          es: "+ 95K seguidores",
+          en: "+ 97K followers",
+          es: "+ 97K seguidores",
         },
         icon: Youtube,
         id: 2,
         likesAndViews: {
-          en: "+ 17MM views",
-          es: "+ 17MM vistas",
+          en: "+ 18MM views",
+          es: "+ 18MM vistas",
         },
         link: "https://www.youtube.com/channel/UCV2U3zcCVmNSpYkoe7hBQcQ",
         title: "Youtube",
@@ -158,8 +158,8 @@ export const ourOriginalsSocialMediaParagraphs: OurOriginalsSocialMediaParagraph
         icon: Instagram,
         id: 3,
         likesAndViews: {
-          en: "+ 840K likes",
-          es: "+ 840K me gusta",
+          en: "+ 860K likes",
+          es: "+ 860K me gusta",
         },
         link: "https://www.instagram.com/shanelleprod",
         title: "Instagram",
@@ -167,14 +167,14 @@ export const ourOriginalsSocialMediaParagraphs: OurOriginalsSocialMediaParagraph
       {
         animationDelay: "animate__delay-3s",
         followers: {
-          en: "+ 36K followers",
-          es: "+ 36K seguidores",
+          en: "+ 37K followers",
+          es: "+ 37K seguidores",
         },
         icon: Facebook,
         id: 4,
         likesAndViews: {
-          en: "+ 295K likes",
-          es: "+ 295K me gusta",
+          en: "+ 310K likes",
+          es: "+ 310K me gusta",
         },
         link: "https://www.facebook.com/shanelleprod",
         title: "Facebook",
