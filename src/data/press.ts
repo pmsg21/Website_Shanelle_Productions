@@ -7,18 +7,114 @@ import AgainTheSeries from "../assets/images/press/again-the-series.png";
 import AudioEngineeringSociety from "../assets/images/press/audio-engineering-society.png";
 import AudiovisualTalent from "../assets/images/press/audiovisual-talent.png";
 import HighwayOne from "../assets/images/press/highway-1.png";
+import IndependentCinema from "../assets/images/press/independent-cinema.png";
+import LatinaCreators from "../assets/images/press/latina-creators.png";
 import MadLove from "../assets/images/press/mad-love.png";
 import MadLoveSong from "../assets/images/press/mad-love-song.png";
+import MarriedCreators from "../assets/images/press/married-creators.png";
+import MichelleInterview from "../assets/images/press/michelle-interview.png";
 import OaxacaFilmfest from "../assets/images/press/oaxaca-filmfest.png";
 import OmniaAlbum from "../assets/images/press/omnia-album.png";
 import QaWithActresses from "../assets/images/press/qa-with-actresses.png";
 import Shanelle from "../assets/images/press/shanelle.png";
 import ShanelleProductions from "../assets/images/press/shanelle-productions.png";
+import VenezuelanCreators from "../assets/images/press/venezuelan-creators.png";
 import WizzardFtShanelle from "../assets/images/press/wizzard-ft-shanelle.png";
 
 export const press: Press[] = [
   {
-    id: 1,
+    id: "MarriedCreators",
+    alt: "MarriedCreators",
+    image: MarriedCreators,
+    text: {
+      en: "These married female creators reached 2 million views with one pilot episode. Top 12 Questions with Michelle and Shana, creators of Shanelle Productions and series Elixir: After Time.",
+      es: "Esta pareja de creadoras alcanzó los 2 millones de visualizaciones con un episodio piloto. Las 12 preguntas más frecuentes con Michelle y Shana, creadoras de Shanelle Productions y la serie Elixir: After Time.",
+    },
+    url: "https://www.krakenfilmfest.com/interviews/michandshana",
+  },
+  {
+    id: "IndependentCinema",
+    alt: "IndependentCinema",
+    image: IndependentCinema,
+    text: {
+      en: "In the competitive world of American independent cinema, two Venezuelan artists are leaving an indelible mark through their talent in sound design: Michelle and Alexandra “Shana”, creators, producers, and sound designers whose work has resonated in the film industry and at prestigious festivals around the world.",
+      es: "En el competitivo cine independiente estadounidense, las venezolanas Michelle Deniesse Lugo y Alexandra “Shana” Álvarez Pilonieta destacan como creadoras, productoras y diseñadoras de sonido, con una obra que ha resonado en la industria y en prestigiosos festivales internacionales.",
+    },
+    urls: [
+      {
+        id: 1,
+        title: "INTERVEZ",
+        url: "https://intervez.com/artistas-venezolanas-brillan-en-el-hollywood-independiente-el-sonido-que-conquista-festivales-internacionales/",
+      },
+      {
+        id: 2,
+        title: "VIDA Y ARTE",
+        url: "https://www.vidayarte.com/artes/artistas-venezolanas-brillan-en-el-cine-de-hollywood",
+      },
+      {
+        id: 3,
+        title: "QUE TAL ESPECTÁCULOS",
+        url: "https://quetalespectaculos.wordpress.com/2025/08/14/artistas-venezolanas-brillan-en-el-hollywood-independiente-el-sonido-que-conquista-festivales-internacionales/",
+      },
+    ],
+    hasModal: true,
+  },
+  {
+    id: "VenezuelanCreators",
+    alt: "VenezuelanCreators",
+    image: VenezuelanCreators,
+    text: {
+      en: "Venezuelan creators Michelle Deniesse Lugo and Alexandra “Shana” Álvarez Pilonieta earned YouTube’s prestigious Silver Creator Award in May 2025 after their channel, Shanelle Productions Official, surpassed 100,000 subscribers—adding to the global success of their original productions.",
+      es: "Las venezolanas Michelle Deniesse Lugo y Alexandra “Shana” Álvarez Pilonieta recibieron en mayo de 2025 el prestigioso YouTube Silver Creator Award tras superar los 100,000 suscriptores en su canal Shanelle Productions Official, sumando este logro al éxito internacional de sus dos producciones originales.",
+    },
+    urls: [
+      {
+        id: 1,
+        title: "INTERVEZ",
+        url: "https://intervez.com/michelle-deniesse-y-shana-pilonieta-reciben-el-youtube-creator-award-por-100000-suscriptores/",
+      },
+      {
+        id: 2,
+        title: "QUE TAL ESPECTÁCULOS",
+        url: "https://quetalespectaculos.wordpress.com/2025/08/26/michelle-deniesse-y-shana-pilonieta-reciben-el-youtube-creator-award-por-100000-suscriptores/",
+      },
+    ],
+    hasModal: true,
+  },
+  {
+    id: "LatinaCreators",
+    alt: "LatinaCreators",
+    image: LatinaCreators,
+    text: {
+      en: `Latina creators Michelle Deniesse Lugo and Alexandra “Shana” Álvarez Pilonieta have emerged as leading voices in Spanish-language independent film, with over 20 million YouTube views, numerous awards, and official selections at prestigious international festivals recognizing their innovative work.`,
+      es: "Con más de 20 millones de visualizaciones en YouTube y numerosos premios y selecciones en prestigiosos festivales internacionales, las venezolanas Michelle Deniesse Lugo y Alexandra “Shana” Álvarez Pilonieta se han consolidado como dos de las voces más innovadoras del audiovisual independiente en español.",
+    },
+    urls: [
+      {
+        id: 1,
+        title: "QUE TAL ESPECTÁCULOS",
+        url: "https://quetalespectaculos.wordpress.com/2025/08/26/creadoras-latinas-que-conquistan-la-escena-audiovisual-internacional/",
+      },
+      {
+        id: 2,
+        title: "CIUDAD MCY",
+        url: "https://ciudadmcy.info.ve/creadoras-latinas-conquistan-la-escena-audiovisual-internacional",
+      },
+    ],
+    hasModal: true,
+  },
+  {
+    id: "MichelleInterview",
+    alt: "MichelleInterview",
+    image: MichelleInterview,
+    text: {
+      en: "Interviewing actress and producer Michelle Deniesse",
+      es: "Entrevista a la actriz y productora Michelle Deniesse",
+    },
+    url: "https://adreamcalledcinema.blogspot.com/2025/05/interviewing-actress-and-producer.html?m=1",
+  },
+  {
+    id: "AgainElixirSeries",
     alt: "AgainElixirSeries",
     image: AgainElixirSeries,
     text: {
@@ -45,7 +141,7 @@ export const press: Press[] = [
     hasModal: true,
   },
   {
-    id: 2,
+    id: "QaWithActresses",
     alt: "QaWithActresses",
     image: QaWithActresses,
     text: {
@@ -55,7 +151,7 @@ export const press: Press[] = [
     url: "https://lgbt-daily.com/f/qa-with-actresses-michelle-deniesse-shana-pilonieta",
   },
   {
-    id: 3,
+    id: "AgainTheSeries",
     alt: "AgainTheSeries",
     image: AgainTheSeries,
     text: {
@@ -82,7 +178,7 @@ export const press: Press[] = [
     hasModal: true,
   },
   {
-    id: 4,
+    id: "AudiovisualTalent",
     alt: "AudiovisualTalent",
     image: AudiovisualTalent,
     text: {
@@ -134,7 +230,7 @@ export const press: Press[] = [
     hasModal: true,
   },
   {
-    id: 5,
+    id: "AudioEngineeringSociety",
     alt: "AudioEngineeringSociety",
     image: AudioEngineeringSociety,
     text: {
@@ -144,7 +240,7 @@ export const press: Press[] = [
     url: "https://cactus24.com.ve/2024/04/30/productoras-de-sonido-wenezolanas-elegidas-como-miembros-votantes-de-la-audio-engineering-society/",
   },
   {
-    id: 6,
+    id: "Shanelle",
     alt: "Shanelle",
     image: Shanelle,
     text: {
@@ -171,7 +267,7 @@ export const press: Press[] = [
     hasModal: true,
   },
   {
-    id: 7,
+    id: "HighwayOne",
     alt: "HighwayOne",
     image: HighwayOne,
     text: {
@@ -181,7 +277,7 @@ export const press: Press[] = [
     url: "https://thedrillmag.com/exclusive-trailer-release-vintage-nye-house-party-highway-one/",
   },
   {
-    id: 8,
+    id: "OaxacaFilmfest",
     alt: "OaxacaFilmfest",
     image: OaxacaFilmfest,
     text: {
@@ -191,7 +287,7 @@ export const press: Press[] = [
     url: "https://cactus24.com.ve/2019/12/14/shanelle-de-sello-venezolano-llega-a-festivales-de-cines-internacionales/",
   },
   {
-    id: 9,
+    id: "OmniaAlbum",
     alt: "OmniaAlbum",
     image: OmniaAlbum,
     text: {
@@ -201,7 +297,7 @@ export const press: Press[] = [
     url: "https://cactus24.com.ve/2019/08/26/shanelle-el-duo-musical-venezolano-dispuesto-a-conquistar-el-mundo-con-omnia-su-nuevo-album-experimental/",
   },
   {
-    id: 10,
+    id: "MadLoveSong",
     alt: "MadLoveSong",
     image: MadLoveSong,
     text: {
@@ -211,7 +307,7 @@ export const press: Press[] = [
     url: "https://venezuelaempresarial.com.ve/noticia.php?post=7169",
   },
   {
-    id: 11,
+    id: "WizzardFtShanelle",
     alt: "WizzardFtShanelle",
     image: WizzardFtShanelle,
     text: {
@@ -221,7 +317,7 @@ export const press: Press[] = [
     url: "https://revistaronda.net/wizzard-mas-empalagoso-y-muere/",
   },
   {
-    id: 12,
+    id: "MadLove",
     alt: "MadLove",
     image: MadLove,
     text: {
@@ -231,7 +327,7 @@ export const press: Press[] = [
     url: "https://somosnoticias.com.ve/mad-love-el-nuevo-tema-de-wizzard-feat-shanelle/",
   },
   {
-    id: 13,
+    id: "ShanelleProductions",
     alt: "ShanelleProductions",
     image: ShanelleProductions,
     text: {

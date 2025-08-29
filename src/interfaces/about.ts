@@ -1,5 +1,5 @@
 // INTERFACES
-import { LanguageOptions } from './language';
+import { LanguageOptions } from "./language";
 
 export interface MissionVisionValues {
   mission: LanguageOptions;
@@ -20,6 +20,11 @@ interface TeamMembers {
 }
 
 export interface AboutTeamMembers {
-  michelleShana: LanguageOptions;
+  michelle: LanguageOptions;
+  shana: LanguageOptions;
   teamMembers: TeamMembers[];
+}
+
+export interface AboutCreatorReadMoreProps {
+  text: string;
 }

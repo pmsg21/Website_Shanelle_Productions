@@ -1,5 +1,5 @@
 // REACT IMPORTS
-import { ReactElement } from "react";
+import { MutableRefObject, ReactElement, useRef } from "react";
 import { Container, Row, Col, Image } from "react-bootstrap";
 
 // DATA
@@ -11,12 +11,19 @@ import {
 } from "../data/our-originals";
 
 // HOOKS
-import { useLanguage, useScreenDimensions, useTranslation } from "../hooks";
+import {
+  useDetectScrollTop,
+  useLanguage,
+  useScreenDimensions,
+  useTranslation,
+} from "../hooks";
 
 // ASSETS
 import Separator from "../assets/images/shared/separator.svg";
 import Shanelle from "../assets/images/our-originals/shanelle.png";
 import Spotify from "../assets/images/our-originals/spotify.svg";
+import ShanelleYoutubeAwardIcon from "../assets/images/film/shanelle-youtube-award-icon.svg";
+import YoutubePlaque from "../assets/images/our-originals/youtube-plaque.webm";
 
 // COMPONENTS
 import {
@@ -43,8 +50,11 @@ export const OurOriginals = (): ReactElement => {
     socialMediaDescription,
     socialMediaFooter,
     socialMedia,
+    socialMediaYoutubePlaque,
   } = ourOriginalsSocialMediaParagraphs;
   const isTabletPortrait = isTablet && isPortrait;
+  const awardsContainerRef = useRef() as MutableRefObject<HTMLDivElement>;
+  const isTopOfElement = useDetectScrollTop(awardsContainerRef);
 
   const getYoutubeVideoDimensions = (): { height: string; width: string } => {
     let videoDimensions = {
@@ -65,6 +75,21 @@ export const OurOriginals = (): ReactElement => {
 
     return videoDimensions;
   };
+
+  const renderAwardImage = () => (
+    <Image
+      fluid
+      alt="Shanelle Youtube Award Icon"
+      src={ShanelleYoutubeAwardIcon}
+      className={`position-absolute shanelle-projects-award-icon ${
+        isPhone
+          ? "opacity-1"
+          : isTopOfElement
+          ? "animate__animated animate__fadeInRight opacity-1 animate__delay-0-5s"
+          : "opacity-0"
+      }`}
+    />
+  );
 
   return (
     <section id="our-originals-section">
@@ -97,6 +122,74 @@ export const OurOriginals = (): ReactElement => {
               youtubeVideoDimensions={getYoutubeVideoDimensions()}
             />
           ))}
+          <div
+            className={`position-relative d-flex justify-content-center ${
+              isTablet ? "mt-2 mb-5" : isPhone ? "mt-0 mb-4" : "my-5"
+            }`}
+            ref={awardsContainerRef}
+          >
+            <div
+              className={`w-100dvw shanelle-award-background ${
+                isPhone
+                  ? "opacity-1"
+                  : isTopOfElement
+                  ? "animate__animated animate__fadeIn opacity-1 animate__delay-0-5s"
+                  : "opacity-0"
+              }`}
+            />
+
+            <Container className={`${isPhone ? "p-0" : ""}`}>
+              <Row
+                md={2}
+                xs={1}
+                lg={2}
+                className={`${isPhone ? "w-100 ms-0 me-0" : ""} g-3`}
+              >
+                <Col
+                  className={`${
+                    isPhone
+                      ? "opacity-1 ps-0 pe-0"
+                      : isTopOfElement
+                      ? "animate__animated animate__fadeInLeft opacity-1 animate__delay-0-5s"
+                      : "opacity-0"
+                  }`}
+                >
+                  <div
+                    className="d-flex justify-content-center"
+                    style={isPhone ? { backgroundColor: "#10060f" } : {}}
+                  >
+                    <video
+                      playsInline
+                      autoPlay
+                      muted
+                      loop
+                      style={{ width: isPhone ? "100%" : "280px" }}
+                      className="scale transition"
+                    >
+                      <source src={YoutubePlaque} type="video/webm" />
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                </Col>
+                <Col className="shanelle-projects-award-text-container d-flex position-relative">
+                  {!isPhone && renderAwardImage()}
+                  <p
+                    className={`${!isPhone ? "p-5 ps-0" : "p-4 mb-0"} ${
+                      isPhone
+                        ? "opacity-1"
+                        : isTopOfElement
+                        ? "animate__animated animate__fadeInRight opacity-1 animate__delay-0-5s"
+                        : "opacity-0"
+                    } shanelle-projects-award ${
+                      isTablet ? "align-self-end py-0 px-2" : ""
+                    }`}
+                  >
+                    {translate(socialMediaYoutubePlaque)}
+                  </p>
+                </Col>
+              </Row>
+            </Container>
+          </div>
           <p
             className={`animate__animated animate__fadeIn animate__delay-1s ${
               isPhone ? "text-center" : `ps-${isTablet ? "0" : "5"}`

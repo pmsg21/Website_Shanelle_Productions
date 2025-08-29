@@ -1,5 +1,5 @@
 // INTERFACES
-import { LanguageOptions } from './language';
+import { LanguageOptions } from "./language";
 
 interface PressMultipleUrls {
   id: number;
@@ -11,7 +11,7 @@ export interface Press {
   alt: string;
   className?: string;
   hasModal?: boolean;
-  id: number;
+  id: string;
   image: string;
   text: LanguageOptions;
   url?: string;

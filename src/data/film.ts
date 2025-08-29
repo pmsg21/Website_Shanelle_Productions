@@ -11,8 +11,56 @@ import Memorama from "../assets/images/film/memorama.png";
 import Ruby from "../assets/images/film/ruby.png";
 import Superstar from "../assets/images/film/superstar.png";
 import TheFallingWorld from "../assets/images/film/the-falling-world.png";
+import InTransit from "../assets/images/film/in-transit.png";
+import GiveMeAWildfire from "../assets/images/film/give-me-a-wildfire.png";
+import Delusion from "../assets/images/film/delusion.png";
 
 export const films: Film[] = [
+  {
+    alt: "InTransit",
+    description: {
+      en: "A feature film by Jaclyn Bethany. When a complacent young bartender living in small-town Maine agrees to model for a existentially floundering painter on an artist's retreat, both women must confront their preconceptions of what makes a good life. Selected in official competition at the Edinburgh International Film Festival 2025 and the Deauville American Film Festival 2025, two of the most prestigious international independent film competitions.",
+      es: "Un largometraje de Jaclyn Bethany. Cuando una joven camarera conformista de un pequeño pueblo de Maine acepta posar para una pintora en crisis existencial durante un retiro artístico, ambas mujeres deben enfrentar sus propias ideas sobre lo que significa llevar una buena vida. Seleccionado en competencia oficial en el Edinburgh International Film Festival 2025 y el Deauville American Film Festival 2025, dos de los certámenes más prestigiosos del cine independiente internacional.",
+    },
+    emphasisText: {
+      en: "Sound Designers and Sound Mixers: Alexandra Alvarez Pilonieta & Michelle Deniesse Lugo.",
+      es: "Diseño de sonido y mezcla de sonido por: Alexandra Alvarez Pilonieta & Michelle Deniesse Lugo.",
+    },
+    id: "InTransit",
+    image: InTransit,
+    link: "https://www.imdb.com/es/title/tt21275854",
+    title: "IN TRANSIT (2025)",
+  },
+  {
+    alt: "GiveMeAWildfire",
+    description: {
+      en: "A podcast series by Daniel Duren. When his eco-journalist wife goes missing on assignment in Northern Minnesota, David frantically searches her abandoned cabin and uncovers secrets that could lead him back to her before it's too late.",
+      es: "Un Podcast Serie de Daniel Duren. Cuando su esposa, periodista ambiental, desaparece durante una cobertura en el norte de Minnesota, David busca desesperadamente en su cabaña abandonada y descubre secretos que podrían guiarlo de regreso a ella antes de que sea demasiado tarde.",
+    },
+    emphasisText: {
+      en: "Sound Designers and Sound Mixers: Alexandra Alvarez Pilonieta & Michelle Deniesse Lugo.",
+      es: "Diseño de sonido y mezcla de sonido por: Alexandra Alvarez Pilonieta & Michelle Deniesse Lugo.",
+    },
+    id: "GiveMeAWildfire",
+    image: GiveMeAWildfire,
+    link: "https://www.imdb.com/es/title/tt32228807",
+    title: "GIVE ME A WILDFIRE (2025)",
+  },
+  {
+    alt: "Delusion",
+    description: {
+      en: "A short film by Jaclyn Bethany. At a prestigious yet cutthroat New York drama school, a young woman becomes obsessed with securing the lead role in Eugene O' Neill's ANNA CHRISTIE.",
+      es: "Un cortometraje de Jaclyn Bethany. En una prestigiosa pero competitiva escuela de drama en Nueva York, una joven se obsesiona con conseguir el papel principal en Anna Christie de Eugene O'Neill.",
+    },
+    emphasisText: {
+      en: "Sound Designers and Sound Mixers: Alexandra Alvarez Pilonieta & Michelle Deniesse Lugo.",
+      es: "Diseño de sonido y mezcla de sonido por: Alexandra Alvarez Pilonieta & Michelle Deniesse Lugo.",
+    },
+    id: "Delusion",
+    image: Delusion,
+    link: "https://www.imdb.com/es/title/tt31511273",
+    title: "DELUSION (2025)",
+  },
   {
     alt: "Ruby",
     description: {
@@ -23,9 +71,9 @@ export const films: Film[] = [
       en: "Sound Designers and Sound Mixers: Alexandra Alvarez Pilonieta & Michelle Deniesse Lugo.",
       es: "Diseño de sonido y mezcla de sonido por: Alexandra Alvarez Pilonieta & Michelle Deniesse Lugo.",
     },
-    id: 1,
+    id: "Ruby",
     image: Ruby,
-    link: "https://www.imdb.com/title/tt29008683/?ref_=nm_flmg_unrel_2_snd",
+    link: "https://www.imdb.com/title/tt29008683",
     title: "RUBY (2024)",
   },
   {
@@ -38,9 +86,9 @@ export const films: Film[] = [
       en: "Sound Designers and Sound Mixers: Alexandra Alvarez Pilonieta & Michelle Deniesse Lugo.",
       es: "Diseño de sonido y mezcla de sonido por: Alexandra Alvarez Pilonieta & Michelle Deniesse Lugo.",
     },
-    id: 2,
+    id: "BeforeTheWorldSetOnFire",
     image: BeforeTheWorldSetOnFire,
-    link: "https://www.imdb.com/title/tt12457712/?ref_=tt_mv_close",
+    link: "https://www.imdb.com/title/tt12457712",
     title: "BEFORE THE WORLD SET ON FIRE (2023)",
   },
   {
@@ -53,9 +101,9 @@ export const films: Film[] = [
       en: "Sound Designers and Sound Mixers: Alexandra Alvarez Pilonieta & Michelle Deniesse Lugo.",
       es: "Diseño de sonido y mezcla de sonido por: Alexandra Alvarez Pilonieta & Michelle Deniesse Lugo.",
     },
-    id: 3,
+    id: "Angelica",
     image: Angelica,
-    link: "https://pro.imdb.com/title/tt26677664/?ref_=nm_filmo_pastfilmvid_2",
+    link: "https://pro.imdb.com/title/tt26677664",
     title: "ANGELICA (2023)",
   },
   {
@@ -68,9 +116,9 @@ export const films: Film[] = [
       en: "Sound Designers and Sound Mixers: Alexandra Alvarez Pilonieta & Michelle Deniesse Lugo.",
       es: "Diseño de sonido y mezcla de sonido por: Alexandra Alvarez Pilonieta & Michelle Deniesse Lugo.",
     },
-    id: 4,
+    id: "TheFallingWorld",
     image: TheFallingWorld,
-    link: "https://www.imdb.com/title/tt13374994/?ref_=nm_flmg_snd_2",
+    link: "https://www.imdb.com/title/tt13374994",
     title: "THE FALLING WORLD (2022)",
   },
   {
@@ -83,9 +131,9 @@ export const films: Film[] = [
       en: "Sound Designers and Sound Mixers: Alexandra Alvarez Pilonieta & Michelle Deniesse Lugo.",
       es: "Diseño de sonido y mezcla de sonido por: Alexandra Alvarez Pilonieta & Michelle Deniesse Lugo.",
     },
-    id: 5,
+    id: "Deployed",
     image: Deployed,
-    link: "https://www.imdb.com/title/tt14398144/?ref_=nm_flmg_snd_3",
+    link: "https://www.imdb.com/title/tt14398144",
     title: "DEPLOYED (2022)",
   },
   {
@@ -98,9 +146,9 @@ export const films: Film[] = [
       en: "Sound Designers and Sound Mixers: Alexandra Alvarez Pilonieta & Michelle Deniesse Lugo.",
       es: "Diseño de sonido y mezcla de sonido por: Alexandra Alvarez Pilonieta & Michelle Deniesse Lugo.",
     },
-    id: 6,
+    id: "HighwayOne",
     image: HighwayOne,
-    link: "https://www.imdb.com/title/tt10195722/?ref_=nm_flmg_snd_5",
+    link: "https://www.imdb.com/title/tt10195722",
     title: "HIGHWAY ONE (2021)",
   },
   {
@@ -113,9 +161,9 @@ export const films: Film[] = [
       en: "Dialogue Editors: Alexandra Alvarez Pilonieta & Michelle Deniesse Lugo.",
       es: "Diálogos editados por: Alexandra Alvarez Pilonieta & Michelle Deniesse Lugo.",
     },
-    id: 7,
+    id: "AsOfYet",
     image: AsOfYet,
-    link: "https://www.imdb.com/title/tt14494520/?ref_=nm_flmg_snd_4",
+    link: "https://www.imdb.com/title/tt14494520",
     title: "AS OF YET (2021)",
   },
   {
@@ -128,9 +176,9 @@ export const films: Film[] = [
       en: "Sound Designers: Alexandra Alvarez Pilonieta & Michelle Deniesse Lugo.",
       es: "Diseño de sonido por: Alexandra Alvarez Pilonieta & Michelle Deniesse Lugo.",
     },
-    id: 8,
+    id: "Superstar",
     image: Superstar,
-    link: "https://www.imdb.com/title/tt14228174/?ref_=nm_flmg_snd_6",
+    link: "https://www.imdb.com/title/tt14228174",
     title: "SUPERESTAR (2021)",
   },
   {
@@ -143,9 +191,9 @@ export const films: Film[] = [
       en: "Sound Effects Editors: Alexandra Alvarez Pilonieta & Michelle Deniesse Lugo.",
       es: "Efectos de sonido editados por: Alexandra Alvarez Pilonieta & Michelle Deniesse Lugo.",
     },
-    id: 9,
+    id: "Memorama",
     image: Memorama,
-    link: "https://www.imdb.com/title/tt8878874/?ref_=nm_flmg_snd_1",
+    link: "https://www.imdb.com/title/tt8878874",
     title: "MEMORAMA (2019)",
   },
 ];

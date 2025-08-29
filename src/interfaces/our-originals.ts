@@ -10,14 +10,18 @@ export interface OurOriginals {
   tiktokUrl: string;
 }
 
+export interface Awards {
+  image: string;
+  imageAlt: string;
+  text: LanguageOptions;
+}
+
 export interface OurOriginalSeries {
-  awardImage: string;
-  awardText: LanguageOptions | null;
+  awards: Awards[];
   banner: string;
   bannerAlt: string;
   credits: LanguageOptions;
   description: LanguageOptions;
-  hasAward: boolean;
   id: number;
   imdbLink: string;
   logo: string;
@@ -48,4 +52,5 @@ export interface OurOriginalsSocialMediaParagraphs {
   socialMediaDescription: LanguageOptions;
   socialMediaFooter: LanguageOptions;
   socialMediaHeader: LanguageOptions;
+  socialMediaYoutubePlaque: LanguageOptions;
 }

@@ -5,7 +5,7 @@ export interface Film {
   alt: string;
   description: LanguageOptions;
   emphasisText: LanguageOptions;
-  id: number;
+  id: string;
   image: string;
   link: string;
   title: string;

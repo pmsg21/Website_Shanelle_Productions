@@ -6,9 +6,9 @@ import { Container, Image } from "react-bootstrap";
 import { useScreenDimensions } from "../hooks";
 
 // ASSETS
-import BackgroundVideo from "../assets/images/home/shanelle-productions-homepage-video.mp4";
-import BackgroundVideoMobile from "../assets/images/home/background-home-video-mobile.mp4";
-import BackgroundVideoTablet from "../assets/images/home/background-home-video-tablet.mp4";
+import BackgroundVideo from "../assets/images/home/shanelle-productions-homepage-video.webm";
+import BackgroundVideoMobile from "../assets/images/home/background-home-video-mobile.webm";
+import BackgroundVideoTablet from "../assets/images/home/background-home-video-tablet.webm";
 import HomeHeader from "../assets/images/home/home-header.svg";
 import HomeHeaderPhone from "../assets/images/home/home-header-phone.svg";
 import HomeHeaderTablet from "../assets/images/home/home-header-tablet.svg";
@@ -61,7 +61,7 @@ export const Home = (): ReactElement => {
         loop
         className="shanelle-home-video rounded-0"
       >
-        <source src={videoSrc} type="video/mp4" />
+        <source src={videoSrc} type="video/webm" />
         Your browser does not support the video tag.
       </video>
       <HomeButtons />

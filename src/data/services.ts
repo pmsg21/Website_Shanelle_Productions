@@ -13,68 +13,74 @@ import PortableLogo from "../assets/images/services/portable-logo.svg";
 import SouthviewLogo from "../assets/images/services/southview-logo.svg";
 import SwirlycurlyLogo from "../assets/images/services/swirlycurly-logo.svg";
 import UpworkLogo from "../assets/images/services/upwork-logo.svg";
+import CaliDogSpaLogo from "../assets/images/services/cali-dog-spa-logo.svg";
 
 export const organizationsTopRow: Organization[] = [
   {
-    id: "1",
+    id: "MoonbugLogo",
     logo: MoonbugLogo,
     logoAlt: "Moonbug Logo",
   },
   {
-    id: "2",
+    id: "CyclebarLogo",
     logo: CyclebarLogo,
     logoAlt: "Cyclebar Logo",
   },
   {
-    id: "3",
+    id: "NovariseLogo",
     logo: NovariseLogo,
     logoAlt: "Novarise Logo",
   },
   {
-    id: "4",
+    id: "MendozaRepairLogo",
     logo: MendozaRepairLogo,
     logoAlt: "Mendoza Repair Logo",
   },
   {
-    id: "5",
+    id: "PortableLogo",
     logo: PortableLogo,
     logoAlt: "Portable Logo",
   },
   {
-    id: "6",
+    id: "UpworkLogo",
     logo: UpworkLogo,
     logoAlt: "Upwork Logo",
+  },
+  {
+    id: "CaliDogSpaLogo",
+    logo: CaliDogSpaLogo,
+    logoAlt: "Cali Dog Spa Logo",
   },
 ];
 
 export const organizationsBottomRow: Organization[] = [
   {
-    id: "7",
+    id: "ChecklistLogo",
     logo: ChecklistLogo,
     logoAlt: "Checklist Logo",
   },
   {
-    id: "8",
+    id: "MendozaSalesLogo",
     logo: MendozaSalesLogo,
     logoAlt: "Mendoza Sales Logo",
   },
   {
-    id: "9",
+    id: "AlohaLogo",
     logo: AlohaLogo,
     logoAlt: "Aloha Logo",
   },
   {
-    id: "10",
+    id: "SouthviewLogo",
     logo: SouthviewLogo,
     logoAlt: "Southview Logo",
   },
   {
-    id: "11",
+    id: "MendozaInsuranceLogo",
     logo: MendozaInsuranceLogo,
     logoAlt: "Mendoza Insurance Logo",
   },
   {
-    id: "12",
+    id: "SwirlycurlyLogo",
     logo: SwirlycurlyLogo,
     logoAlt: "Swirlycurly Logo",
   },

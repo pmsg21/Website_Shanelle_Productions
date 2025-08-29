@@ -19,13 +19,11 @@ type OurOriginalsSeriesSectionProps = OurOriginalSeries & {
 };
 
 export const OurOriginalsSeriesSection = ({
-  awardImage,
-  awardText,
+  awards,
   banner,
   bannerAlt,
   credits,
   description,
-  hasAward,
   imdbLink,
   logo,
   logoAlt,
@@ -52,31 +50,48 @@ export const OurOriginalsSeriesSection = ({
   );
 
   const renderText = (text: LanguageOptions) => (
-    <p className="mb-0">{translate(text)}</p>
+    <p className="mb-0 w-100">{translate(text)}</p>
   );
 
-  const renderButton = (link: string, text: string) => (
-    <Button
-      onClick={() => window.open(link, "_blank", "noopener, noreferrer")}
-      className="home-buttons shanelle-bold-text"
-      type="button"
-    >
-      <h5 className="mb-0">{text}</h5>
-    </Button>
-  );
-
-  const renderLink = (link: string, text: string) => (
-    <p className="text-center m-0">
-      <a
-        href={link}
-        target="_blank"
-        className="link transition"
-        rel="noopener noreferrer"
+  const renderButtonAndLink = () => (
+    <div className="d-flex flex-column gap-3">
+      <Button
+        onClick={() => window.open(watchLink, "_blank", "noopener, noreferrer")}
+        className="home-buttons shanelle-bold-text"
+        type="button"
       >
-        {text} IMDb
-        <Image fluid alt="Link Icon" src={LinkIcon} className="ms-2 mb-1" />
-      </a>
-    </p>
+        <h5 className="mb-0">
+          {siteLanguage === "en" ? "Watch Series" : "Ver serie"}
+        </h5>
+      </Button>
+      <p className="text-center m-0">
+        <a
+          href={imdbLink}
+          target="_blank"
+          className="link transition"
+          rel="noopener noreferrer"
+        >
+          {siteLanguage === "en" ? "Go to " : "Visita "} IMDb
+          <Image fluid alt="Link Icon" src={LinkIcon} className="ms-2 mb-1" />
+        </a>
+      </p>
+    </div>
+  );
+
+  const renderAwards = () => (
+    <div className="d-flex flex-column gap-2 align-items-start w-100">
+      {awards.map(({ image, imageAlt, text }, index) => (
+        <div
+          className={`d-flex flex-row gap-2 align-items-${
+            isPhone ? "start" : "center"
+          }`}
+          key={`${imageAlt}-${index}`}
+        >
+          {renderImage(image, imageAlt)}
+          {renderText(text)}
+        </div>
+      ))}
+    </div>
   );
 
   return (
@@ -88,8 +103,15 @@ export const OurOriginalsSeriesSection = ({
             : `row align-items-${isTablet ? "center" : "start"}`
         } gap-5`}
       >
-        {renderImage(banner, bannerAlt, `w-${isTablet ? "50" : "100"}`)}
-        <div className="d-flex flex-column gap-3">
+        <div
+          className={`d-flex flex-column gap-3 ${isTablet ? "w-100" : ""} ${
+            isDesktop ? "w-40" : ""
+          }`}
+        >
+          {renderImage(banner, bannerAlt, "w-100")}
+          {isDesktop && renderButtonAndLink()}
+        </div>
+        <div className="d-flex flex-column gap-3 w-100">
           <div
             className={`d-flex flex-${
               isPhone || isTablet
@@ -109,56 +131,30 @@ export const OurOriginalsSeriesSection = ({
                 </h4>
               </div>
             </div>
+            {isTablet && renderButtonAndLink()}
           </div>
           {!isTablet && (
             <>
               {renderText(description)}
               {renderText(credits)}
+              {renderAwards()}
             </>
           )}
-          <div
-            className={`d-flex flex-${
-              isPhone || isTablet ? "column" : "row"
-            } gap-3 align-items-center`}
-          >
-            {!isTablet && hasAward && renderImage(awardImage, "Award image")}
-            <div className="d-flex flex-column gap-3">
-              {!isTablet && hasAward && awardText && renderText(awardText)}
-              <div
-                className={`d-flex flex-${
-                  isPhone || isTablet ? "column" : "row"
-                } gap-3 align-items-center ${isPhone ? "my-3" : ""}`}
-              >
-                {renderButton(
-                  watchLink,
-                  siteLanguage === "en" ? "Watch Series" : "Ver serie"
-                )}
-                {renderLink(
-                  imdbLink,
-                  siteLanguage === "en" ? "Go to " : "Visita "
-                )}
-              </div>
-            </div>
-          </div>
         </div>
       </div>
       {isTablet && (
         <>
           {renderText(description)}
           {renderText(credits)}
+          {renderAwards()}
         </>
       )}
-      {isTablet && hasAward && (
-        <div className="d-flex flex-row gap-3">
-          {renderImage(awardImage, "Award image")}
-          {awardText && renderText(awardText)}
-        </div>
-      )}
+      {isPhone && renderButtonAndLink()}
       <iframe
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowFullScreen
         className={`${
-          isDesktop ? "my-5" : "mb-6"
+          isDesktop ? "my-5" : "mb-5"
         } d-block m-auto transition scale`}
         frameBorder="0"
         src={trailerLink}

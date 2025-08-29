@@ -6,10 +6,15 @@ import Andres from "../assets/images/about/andres.png";
 import Chloe from "../assets/images/about/chloe.png";
 import Enzo from "../assets/images/about/enzo.png";
 import Ermarina from "../assets/images/about/ermarina.png";
+import Denisse from "../assets/images/about/denisse.png";
 import Nestor from "../assets/images/about/nestor.png";
 import Oriana from "../assets/images/about/oriana.png";
 import Pablo from "../assets/images/about/pablo.png";
+import Daniela from "../assets/images/about/daniela.png";
+
 import type { LanguageOptions } from "../interfaces/language";
+import { aboutMichelleEnglish, aboutMichelleSpanish } from "./about-michelle";
+import { aboutShanaEnglish, aboutShanaSpanish } from "./about-shana";
 
 export const missionVisionValues: MissionVisionValues = {
   mission: {
@@ -27,9 +32,13 @@ export const missionVisionValues: MissionVisionValues = {
 };
 
 export const aboutTeamMembers: AboutTeamMembers = {
-  michelleShana: {
-    en: "Shana (Alexandra) and Mich (Michelle) are Sound Designers, Sound Producers, Voice Artists, Singers, Media Producers and Content Creators. They’re both Associates of Arts in Sound Design For Visual Media and Sound Production for Audiovisuals. Both are voting members of the Audio Engineering Society, a Technical GRAMMY® Award-winning worldwide network of audio professionals, students, and enthusiasts. Winners of the Best Episodic Television Award at the 2024 Bangkok Movie Awards in Bangkok, Thailand for their original series Elixir: After Time. Winners of the Best Web Series International Award at the 2024 Shunyatam International Film Festival in Mumbai, India for their original series Again The Series. They were nominated for Best Sound Design in 2022 at FilmHaus Festival in Berlin, Germany.  In 2020, they received a Silver Button YouTube Creator Award for their work as content creative directors. During their time as college students they were awarded Best Sound Art (2017), Best Sound for Sci-Fi Scene (2017), Best Sound Design for a Commercial (2018), Best Original Composition (2018), Best Short Film in an Audiovisual Marathon (2016), and multiple GPA-based Honorific Mentions and Honorific Roll Awards (2016-2019). Both of them were born and raised in Caracas, Venezuela. Shana is fluent in English, Spanish, and speaks intermediate French, and Mich is fluent in Spanish, English, Italian, and speaks intermediate French. Their love for languages drives them to keep learning more languages such as Korean, Thai, and Brazilian Portuguese. Shana is also known for pursuing a singing career in a renowned Venezuelan musical group from 2013 to 2016, and has production credits on a well known Venezuelan radio show. Mich participated in the acting summer intensive program of The American Academy of Dramatic Arts in Los Angeles, California (2015), and has minor acting credits in Venezuelan theater, TV, commercials, and radio.",
-    es: "Shana (Alexandra) y Mich (Michelle) son Diseñadoras de Sonido, Productoras de Sonido, Artistas de Voz, Productoras Audiovisuales y Creadoras de Contenido. Ambas se graduaron como Diseñadoras y Productoras de Sonido para Audiovisuales. Son miembros votantes de la Audio Engineering Society, una red mundial de profesionales, estudiantes y entusiastas del audio ganadora del premio Technical GRAMMY®. Ganadoras del Premio a la Mejor Serie Episódica en los Bangkok Movie Awards 2024 en Bangkok, Tailandia, por su serie original Elixir: After Time. Ganadoras del premio a la Mejor Serie Web Internacional en el Festival Internacional de Cine Shunyatam 2024 en Mumbai, India, por su serie original Again The Series. Fueron nominadas por Mejor Diseño Sonoro en 2022 en el Festival FilmHaus en Berlín, Alemania. En 2020, recibieron un YouTube Creator Award por su labor como directoras creativas de contenido. Durante su etapa como estudiantes universitarias fueron galardonadas por Mejor Arte Sonoro (2017), Mejor Sonido para Escena de Ciencia Ficción (2017), Mejor Composición Original (2018), Mejor Diseño de Sonido para un Comercial (2018), Mejor Cortometraje en un Maratón Audiovisual (2016) y múltiples Menciones Honoríficas y Matrículas Honoríficas basadas en sus calificaciones (2016-2019). Ambas nacieron y crecieron en Caracas, Venezuela. Shana habla Inglés, Español y Francés intermedio. Mich habla Español, Inglés, Italiano y Francés intermedio. Su pasión por los idiomas las ha llevado a continuar estudiando nuevas lenguas como el Coreano, Tailandés y el Portugués de Brasil. Shana también es conocida por seguir una carrera como cantante en un reconocido grupo musical venezolano del 2013 al 2016, y tiene créditos de producción en un popular programa de radio Venezolano. Mich acudió al programa intensivo de verano de actuación de la American Academy of Dramatic Arts en Los Ángeles, California (2015), y participó en teatro, televisión, comerciales y radio en Venezuela.",
+  michelle: {
+    en: aboutMichelleEnglish,
+    es: aboutMichelleSpanish,
+  },
+  shana: {
+    en: aboutShanaEnglish,
+    es: aboutShanaSpanish,
   },
   teamMembers: [
     {
@@ -49,6 +58,14 @@ export const aboutTeamMembers: AboutTeamMembers = {
       },
     },
     {
+      name: "Nestor Caro",
+      pic: Nestor,
+      role: {
+        en: "Sound Producer and Composer",
+        es: "Productor de Sonido y Musicalizador",
+      },
+    },
+    {
       name: "Andrés Henry",
       pic: Andres,
       role: {
@@ -60,16 +77,24 @@ export const aboutTeamMembers: AboutTeamMembers = {
       name: "Ermarina Tortolero",
       pic: Ermarina,
       role: {
-        en: "Accountant",
-        es: "Contadora",
+        en: "Accountant & Human Resources Manager.",
+        es: "Contabilidad y Recursos Humanos",
       },
     },
     {
-      name: "Nestor Caro",
-      pic: Nestor,
+      name: "Denisse Ramírez",
+      pic: Denisse,
       role: {
-        en: "Sound Producer and Composer",
-        es: "Productor de Sonido y Musicalizador",
+        en: "Business and Production Advisor",
+        es: "Asesora de Negocios y Producción",
+      },
+    },
+    {
+      name: "Daniela Ramírez",
+      pic: Daniela,
+      role: {
+        en: "Photographer",
+        es: "Fotógrafa",
       },
     },
     {
