@@ -78,6 +78,11 @@ export const press: Press[] = [
         title: "QUE TAL ESPECTÁCULOS",
         url: "https://quetalespectaculos.wordpress.com/2025/08/26/michelle-deniesse-y-shana-pilonieta-reciben-el-youtube-creator-award-por-100000-suscriptores/",
       },
+      {
+        id: 3,
+        title: "NOTICIAS VENEVISION",
+        url: "https://noticiasvenevision.com/noticias/entretenimiento/michelle-deniesse-y-shana-pilonieta-reciben-el-youtube-creator-award-por-100000-suscriptores",
+      },
     ],
     hasModal: true,
   },
