@@ -72,6 +72,14 @@ export const ourOriginalSeries: OurOriginalSeries[] = [
         },
       },
       {
+        image: FirstPlaceMedalIcon,
+        imageAlt: "First Place Medal Icon Elixir: After Time",
+        text: {
+          en: "Best LGBTQ – California Indies Festival (2025)",
+          es: "Best LGBTQ – California Indies Festival (2025)",
+        },
+      },
+      {
         image: ClapperboardIcon,
         imageAlt: "Clapperboard Icon Elixir: After Time",
         text: {
